@@ -24,27 +24,20 @@
         
         <div class="error">
 
-                        <h2>The website is protected by CloudFlare</h2>
+            
+        
+        
+        
+        
+                    <h2>503 Service Unavailable</h2>
             <p>
-                RSS-Bridge tried to fetch a website.
-                The fetching was blocked by CloudFlare.
-                CloudFlare is anti-bot software.
-                Its purpose is to block non-humans.
+                Common causes are a server that is down for maintenance
+                or that is overloaded.
             </p>
-        
-        
-        
-        
-                    <h2>429 Too Many Requests</h2>
-            <p>
-                RSS-Bridge tried to fetch a website.
-                They told us to try again later.
-            </p>
-        
         
                     <p>
-                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429">
-                    https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429                </a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503">
+                    https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503                </a>
             </p>
         
     
@@ -52,19 +45,30 @@
 
     <div style="margin-bottom: 15px">
         <div class="error-type">
-            <strong>Type:</strong> CloudFlareException        </div>
+            <strong>Type:</strong> HttpException        </div>
 
         <div>
-            <strong>Code:</strong> 429        </div>
+            <strong>Code:</strong> 503        </div>
 
         <div class="error-message">
-            <strong>Message:</strong> https://www.bleepingcomputer.com/news/security/intel-amd-cpus-on-linux-impacted-by-newly-disclosed-spectre-bypass/ resulted in 429 Too Many Requests &lt;!DOCTYPE html&gt;&lt;html lang=&quot;en-US&quot;&gt;&lt;head&gt;&lt;title&gt;Just a moment...&lt;/title&gt;&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=Edge&quot;&gt;&lt;meta name=&quot;robots&quot; content=&quot;noindex,nofollow&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;&lt;style&gt;*{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetic        </div>
+            <strong>Message:</strong> https://www.bleepingcomputer.com/news/security/over-6-000-wordpress-hacked-to-install-plugins-pushing-infostealers/ resulted in 503 Service Unavailable &lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;We are sorry for the temporary outage.&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;center&gt;
+&lt;div align=&quot;center&quot; style=&quot;width: 60%;&quot;&gt;
+&lt;img src=&quot;https://www.bleepstatic.com/errors/broken_computer.jpg&quot; align=&quot;absmiddle&quot; style=&quot;float:left&quot;&gt;&lt;br/&gt;&lt;br&gt;&lt;Br&gt;&lt;b&gt;&lt;font color=&quot;blue&quot;&gt;We apologize for the temporary outage. The administrators have been notified and the problem should be rectified soon.&lt;p&gt;Please refresh this page again shortly.&lt;/p&gt;&lt;/b&gt;&lt;/font&gt;
+&lt;/div&gt;
+&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;        </div>
 
         <div>
             <strong>File:</strong> lib/http.php        </div>
 
         <div>
-            <strong>Line:</strong> 34        </div>
+            <strong>Line:</strong> 36        </div>
     </div>
 
     <h2>Trace</h2>
@@ -136,7 +140,7 @@
             #21 lib/contents.php(117): HttpException::fromResponse()        </code>
         <br>
             <code>
-            #22 lib/http.php(34)        </code>
+            #22 lib/http.php(36)        </code>
         <br>
     
     <br>
@@ -147,7 +151,7 @@
         <strong>Query:</strong> action=display&amp;bridge=BleepingComputerBridge&amp;format=Html    </div>
 
     <div>
-        <strong>Version:</strong> 2024-02-02 (git.fork-master.dd7d432)    </div>
+        <strong>Version:</strong> 2024-02-02 (git.fork-master.e57ab53)    </div>
 
     <div>
         <strong>OS:</strong> Linux    </div>
