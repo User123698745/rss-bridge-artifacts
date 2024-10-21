@@ -15,7 +15,7 @@
 | AlbionOnline | [1 *untitled*](https://User123698745.github.io/rss-bridge-artifacts/status/AlbionOnline_1.html) | ❌ `Bridge returned error 403! (20017)`<br>❌ `Type: CloudFlareException`<br>❌ `Message: https://albiononline.com/en/changelog/1/5 resulted in 403 Forbidden <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" ...` |
 | AlfaBankBy | [1 News](https://User123698745.github.io/rss-bridge-artifacts/status/AlfaBankBy_1.html) | ❌ `Bridge returned error 0! (20017)`<br>❌ `Type: Error`<br>❌ `Message: Call to a member function getTimestamp() on bool` |
 | AllSides | [1 Headline Roundups](https://User123698745.github.io/rss-bridge-artifacts/status/AllSides_1.html) | ❌ `Bridge returned error 403! (20017)`<br>❌ `Type: CloudFlareException`<br>❌ `Message: https://www.allsides.com/headline-roundups resulted in 403 Forbidden <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible"...` |
-| Allegro | [1 *untitled*](https://User123698745.github.io/rss-bridge-artifacts/status/Allegro_1.html) | ❌ `Bridge returned error 403! (20017)`<br>❌ `Type: HttpException`<br>❌ `Message: https://allegro.pl/kategoria/swieze-warzywa-cebula-318660?order=n resulted in 403 Forbidden <html><head><title>allegro.pl</title><style>#cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}}</style></head><body ...` |
+| Allegro | [1 *untitled*](https://User123698745.github.io/rss-bridge-artifacts/status/Allegro_1.html) | ❌ `HTTP status 504 Gateway Time-out` |
 | AllocineFR | [1 *untitled*](about:blank) | ✔️ |
 | AllocineFRSorties | [1 *untitled*](about:blank) | ✔️ |
 | Amazon | [1 *untitled*](https://User123698745.github.io/rss-bridge-artifacts/status/Amazon_1.html) | ❌ `HTTP status 503 Service Unavailable`<br>❌ `Type: HttpException`<br>❌ `Message: https://www.amazon.com/s/?field-keywords=watch&sort=relevanceblender resulted in 503 Service Unavailable <!--` |
@@ -57,13 +57,13 @@
 | Basta | [1 *untitled*](about:blank) | ✔️ |
 | Binance | [1 *untitled*](about:blank) | ✔️ |
 | BlaguesDeMerde | [1 *untitled*](about:blank) | ✔️ |
-| BleepingComputer | [1 *untitled*](about:blank) | ✔️ |
+| BleepingComputer | [1 *untitled*](https://User123698745.github.io/rss-bridge-artifacts/status/BleepingComputer_1.html) | ❌ `HTTP status 429 Too Many Requests`<br>❌ `Type: CloudFlareException`<br>❌ `Message: https://www.bleepingcomputer.com/news/security/intel-amd-cpus-on-linux-impacted-by-newly-disclosed-spectre-bypass/ resulted in 429 Too Many Requests <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Con...` |
 | BlizzardNews | [1 *untitled*](https://User123698745.github.io/rss-bridge-artifacts/status/BlizzardNews_1.html) | ⚠️ `The feed has no items` |
 | Bodacc | [1 Annonces commerciales](about:blank) | ✔️ |
 | BookMyShow | [1 *untitled*](https://User123698745.github.io/rss-bridge-artifacts/status/BookMyShow_1.html) | ❌ `Bridge returned error 403! (20017)`<br>❌ `Type: CloudFlareException`<br>❌ `Message: https://in.bookmyshow.com/serv/getData?cmd=QUICKBOOK&type=MT resulted in 403 Forbidden <!DOCTYPE html>` |
 | Booruproject | [1 Booru subdomain (subdomain.booru.org)](about:blank) | ✔️ |
 | Brut | [1 *untitled*](https://User123698745.github.io/rss-bridge-artifacts/status/Brut_1.html) | ❌ `Bridge returned error 0! (20017)`<br>❌ `Type: ErrorException`<br>❌ `Message: Undefined array key 1` |
-| Bugzilla | [1 Bug comments](https://User123698745.github.io/rss-bridge-artifacts/status/Bugzilla_1.html) | ❌ `HTTP status 504 Gateway Time-out` |
+| Bugzilla | [1 Bug comments](about:blank) | ✔️ |
 | Bukowskis | [1 *untitled*](about:blank) | ✔️ |
 | Bundesbank | [1 *untitled*](https://User123698745.github.io/rss-bridge-artifacts/status/Bundesbank_1.html) | ❌ `Bridge returned error 0! (20017)`<br>❌ `Type: ErrorException`<br>❌ `Message: Attempt to read property "plaintext" on null` |
 | BundestagParteispenden | [1 *untitled*](about:blank) | ✔️ |
@@ -102,7 +102,7 @@
 | CssSelectorFeedExpander | [1 *untitled*](https://User123698745.github.io/rss-bridge-artifacts/status/CssSelectorFeedExpander_1.html) | ❌ `Bridge returned error 404! (20017)`<br>❌ `Type: HttpException`<br>❌ `Message: https://example.com/feed.xml resulted in 404 Not Found <!doctype html>` |
 | Cubari | [1 *untitled*](about:blank) | ✔️ |
 | CubariProxy | [1 *untitled*](about:blank) | ✔️ |
-| CuriousCat | [1 *untitled*](https://User123698745.github.io/rss-bridge-artifacts/status/CuriousCat_1.html) | ❌ `HTTP status 504 Gateway Time-out` |
+| CuriousCat | [1 *untitled*](https://User123698745.github.io/rss-bridge-artifacts/status/CuriousCat_1.html) | ❌ `Bridge returned error 0! (20017)`<br>❌ `Type: HttpException`<br>❌ `Message: cURL error Operation timed out after 15001 milliseconds with 0 bytes received: 28 (https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://curiouscat.me/api/v2/profile?username=koethekoethe` |
 | DagensNyheterDirekt | [1 *untitled*](https://User123698745.github.io/rss-bridge-artifacts/status/DagensNyheterDirekt_1.html) | ❌ `Bridge returned error 0! (20017)`<br>❌ `Type: ErrorException`<br>❌ `Message: Attempt to read property "plaintext" on null` |
 | Dailymotion | [1 By username](https://User123698745.github.io/rss-bridge-artifacts/status/Dailymotion_1.html) | ❌ `Bridge returned error 0! (20017)`<br>❌ `Type: Error`<br>❌ `Message: Call to a member function getAttribute() on null` |
 | Dailymotion | [2 By playlist id](https://User123698745.github.io/rss-bridge-artifacts/status/Dailymotion_2.html) | ❌ `Bridge returned error 0! (20017)`<br>❌ `Type: Error`<br>❌ `Message: Call to a member function getAttribute() on null` |
@@ -299,12 +299,12 @@
 | Indiegogo | [3 Creative Works](about:blank) | ✔️ |
 | Indiegogo | [4 Community Projects](about:blank) | ✔️ |
 | Instagram | [1 Username](https://User123698745.github.io/rss-bridge-artifacts/status/Instagram_1.html) | ❌ `Bridge returned error 0! (20017)`<br>❌ `Type: ErrorException`<br>❌ `Message: Attempt to read property "users" on null` |
-| Instagram | [2 Hashtag](https://User123698745.github.io/rss-bridge-artifacts/status/Instagram_2.html) | ❌ `Bridge returned error 401! (20017)`<br>❌ `Type: HttpException`<br>❌ `Message: https://www.instagram.com/graphql/query/?query_hash=9b498c08113f1e09617a1703c22b2f32&variables={"tag_name"%3A"beautifulday"%2C"first"%3A10} resulted in 401 Unauthorized {"message":"Please wait a few minutes before you try again.","require_lo...` |
+| Instagram | [2 Hashtag](https://User123698745.github.io/rss-bridge-artifacts/status/Instagram_2.html) | ❌ `Bridge returned error 0! (20017)`<br>❌ `Type: ErrorException`<br>❌ `Message: Undefined property: stdClass::$edge_sidecar_to_children` |
 | Instagram | [3 Location](https://User123698745.github.io/rss-bridge-artifacts/status/Instagram_3.html) | ⚠️ `The feed has no items` |
 | InstituteForTheStudyOfWar | [1 *untitled*](about:blank) | ✔️ |
 | Instructables | [1 Category](about:blank) | ✔️ |
 | InternationalInstituteForStrategicStudies | [1 *untitled*](about:blank) | ✔️ |
-| InternetArchive | [1 Account](https://User123698745.github.io/rss-bridge-artifacts/status/InternetArchive_1.html) | ❌ `HTTP status 503 Service Unavailable`<br>❌ `Type: HttpException`<br>❌ `Message: https://archive.org/details/@verifiedjoseph&tab=uploads resulted in 503 Service Unavailable <html><head><meta charset="UTF-8"><title>Internet Archive: Service Availability</title><style>p{font-size:24px;}img{margin-bottom:2rem;}</style></hea...` |
+| InternetArchive | [1 Account](https://User123698745.github.io/rss-bridge-artifacts/status/InternetArchive_1.html) | ⚠️ `The feed has no items` |
 | Itaku | [1 Image Search](https://User123698745.github.io/rss-bridge-artifacts/status/Itaku_1.html) | ❌ `Bridge returned error 0! (20017)`<br>❌ `Type: ErrorException`<br>❌ `Message: Uninitialized string offset 0` |
 | Itaku | [2 Post Search](https://User123698745.github.io/rss-bridge-artifacts/status/Itaku_2.html) | ❌ `Bridge returned error 0! (20017)`<br>❌ `Type: ErrorException`<br>❌ `Message: Uninitialized string offset 0` |
 | Itaku | [3 User profile](about:blank) | ❌ `Missing example or default value for parameter "user"` |
@@ -336,7 +336,7 @@
 | LWNprev | [1 *untitled*](about:blank) | ✔️ |
 | LaCentrale | [1 *untitled*](https://User123698745.github.io/rss-bridge-artifacts/status/LaCentrale_1.html) | ❌ `Bridge returned error 403! (20017)`<br>❌ `Type: HttpException`<br>❌ `Message: https://www.lacentrale.fr/listing?vertical=car&makesModelsCommercialNames=%3A&categories=&distance=&regions=&energies=&firstHand=false&gearbox=&doors=&sortBy=priceAsc resulted in 403 Forbidden <html><head><title>lacentrale.fr</title><style>#...` |
 | LaTeX3ProjectNewsletters | [1 *untitled*](about:blank) | ✔️ |
-| LeBonCoin | [1 *untitled*](https://User123698745.github.io/rss-bridge-artifacts/status/LeBonCoin_1.html) | ❌ `Bridge returned error 403! (20017)`<br>❌ `Type: HttpException`<br>❌ `Message: https://api.leboncoin.fr/api/adfinder/v1/search resulted in 403 Forbidden {"url":"https://geo.captcha-delivery.com/captcha/?initialCid=AHrlqAAAAAMA1ufiARl0jxQArLeD_w==&cid=7Uy9ZtNJdkLuS_cHn0PrTJgwaTW~Sv22rh6UifC0uYoCW8qOZHGyEsH8t1kZDcVu1_3Zh...` |
+| LeBonCoin | [1 *untitled*](https://User123698745.github.io/rss-bridge-artifacts/status/LeBonCoin_1.html) | ❌ `Bridge returned error 403! (20017)`<br>❌ `Type: HttpException`<br>❌ `Message: https://api.leboncoin.fr/api/adfinder/v1/search resulted in 403 Forbidden {"url":"https://geo.captcha-delivery.com/captcha/?initialCid=AHrlqAAAAAMAQ1lAl7mdjCAArLeDFQ==&cid=NUELqNR~Vtk_i3Pc6zvSF8aV4R5eEwC8ThZ71rlpfj4XqmAWA0tzt2Rk1oi1uSPD5gwJg...` |
 | LeMondeInformatique | [1 *untitled*](about:blank) | ✔️ |
 | LegifranceJO | [1 *untitled*](https://User123698745.github.io/rss-bridge-artifacts/status/LegifranceJO_1.html) | ❌ `Bridge returned error 0! (20017)`<br>❌ `Type: ErrorException`<br>❌ `Message: Attempt to read property "plaintext" on null` |
 | LegoIdeas | [1 *untitled*](about:blank) | ✔️ |
@@ -365,7 +365,7 @@
 | Moebooru | [1 *untitled*](https://User123698745.github.io/rss-bridge-artifacts/status/Moebooru_1.html) | ❌ `Bridge returned error 0! (20017)`<br>❌ `Type: HttpException`<br>❌ `Message: cURL error SSL: no alternative certificate subject name matches target host name 'moe.dev.myconan.net': 60 (https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://moe.dev.myconan.net/post?page=1&tags=` |
 | MoinMoin | [1 *untitled*](about:blank) | ✔️ |
 | MondeDiplo | [1 *untitled*](about:blank) | ✔️ |
-| Motatos | [1 *untitled*](https://User123698745.github.io/rss-bridge-artifacts/status/Motatos_1.html) | ❌ `Bridge returned error 500! (20017)`<br>❌ `Type: HttpException`<br>❌ `Message: https://api.findify.io/v4/4359f7b3-17e0-4f74-9fdb-e6606dfed25c/smart-collection/new-arrivals?t_client=0&user={%22uid%22:%220%22,%22sid%22:%220%22} resulted in 500 Internal Server Error {"error":{"message":"Unexpected error","id":"sc-3d5c633f...` |
+| Motatos | [1 *untitled*](https://User123698745.github.io/rss-bridge-artifacts/status/Motatos_1.html) | ❌ `Bridge returned error 500! (20017)`<br>❌ `Type: HttpException`<br>❌ `Message: https://api.findify.io/v4/4359f7b3-17e0-4f74-9fdb-e6606dfed25c/smart-collection/new-arrivals?t_client=0&user={%22uid%22:%220%22,%22sid%22:%220%22} resulted in 500 Internal Server Error {"error":{"message":"Unexpected error","id":"sc-ac6dfcfc...` |
 | MozillaBugTracker | [1 Bug comments](about:blank) | ✔️ |
 | MozillaSecurity | [1 *untitled*](about:blank) | ✔️ |
 | MsnMonde | [1 *untitled*](https://User123698745.github.io/rss-bridge-artifacts/status/MsnMonde_1.html) | ❌ `HTTP status 503 Service Unavailable`<br>❌ `Type: HttpException`<br>❌ `Message: https://rss.msn.com/fr-fr resulted in 503 Service Unavailable <HTML><HEAD><TITLE>Error</TITLE></HEAD><BODY>` |
@@ -385,7 +385,7 @@
 | NewOnNetflix | [1 *untitled*](about:blank) | ✔️ |
 | Newgrounds | [1 User](about:blank) | ✔️ |
 | NextInk | [1 *untitled*](about:blank) | ✔️ |
-| Nextgov | [1 *untitled*](https://User123698745.github.io/rss-bridge-artifacts/status/Nextgov_1.html) | ❌ `Bridge returned error 404! (20017)`<br>❌ `Type: HttpException`<br>❌ `Message: https://www.nextgov.com/ideas/2024/10/cyber-meets-warfare-real-time/400406/ resulted in 404 Not Found ` |
+| Nextgov | [1 *untitled*](about:blank) | ✔️ |
 | NiceMatin | [1 *untitled*](about:blank) | ✔️ |
 | NikonDownloadCenter | [1 *untitled*](about:blank) | ✔️ |
 | NineGag | [1 Popular](https://User123698745.github.io/rss-bridge-artifacts/status/NineGag_1.html) | ❌ `Bridge returned error 403! (20017)`<br>❌ `Type: CloudFlareException`<br>❌ `Message: https://9gag.com/v1/group-posts/group/default/type/hot?c=10 resulted in 403 Forbidden <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv=...` |
@@ -401,7 +401,7 @@
 | NvidiaDriver | [2 Linux](about:blank) | ✔️ |
 | NvidiaDriver | [3 FreeBSD](about:blank) | ✔️ |
 | NyaaTorrents | [1 *untitled*](about:blank) | ✔️ |
-| OLX | [1 *untitled*](about:blank) | ✔️ |
+| OLX | [1 *untitled*](https://User123698745.github.io/rss-bridge-artifacts/status/OLX_1.html) | ❌ `HTTP status 500 Internal Server Error` |
 | OMonline | [1 *untitled*](about:blank) | ✔️ |
 | Oglaf | [1 *untitled*](about:blank) | ✔️ |
 | OnVaSortir | [1 *untitled*](about:blank) | ✔️ |
@@ -430,9 +430,9 @@
 | Picnob | [2 Hashtag](https://User123698745.github.io/rss-bridge-artifacts/status/Picnob_2.html) | ❌ `Bridge returned error 403! (20017)`<br>❌ `Type: CloudFlareException`<br>❌ `Message: https://www.picnob.com/tag/beautifulday/ resulted in 403 Forbidden <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" c...` |
 | Picuki | [1 Username](https://User123698745.github.io/rss-bridge-artifacts/status/Picuki_1.html) | ❌ `Bridge returned error 403! (20017)`<br>❌ `Type: CloudFlareException`<br>❌ `Message: https://www.picuki.com/profile/aesoprockwins resulted in 403 Forbidden <!DOCTYPE html>` |
 | Picuki | [2 Hashtag](https://User123698745.github.io/rss-bridge-artifacts/status/Picuki_2.html) | ❌ `Bridge returned error 403! (20017)`<br>❌ `Type: CloudFlareException`<br>❌ `Message: https://www.picuki.com/tag/beautifulday resulted in 403 Forbidden <!DOCTYPE html>` |
-| Pikabu | [1 По тегу](about:blank) | ✔️ |
-| Pikabu | [2 По сообществу](about:blank) | ✔️ |
-| Pikabu | [3 По пользователю](about:blank) | ✔️ |
+| Pikabu | [1 По тегу](https://User123698745.github.io/rss-bridge-artifacts/status/Pikabu_1.html) | ❌ `Bridge returned error 403! (20017)`<br>❌ `Type: HttpException`<br>❌ `Message: https://pikabu.ru/tag/it/hot resulted in 403 Forbidden <!doctype html><html><head><title>DDoS-Guard</title><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="stylesheet" href="/.well-known/d...` |
+| Pikabu | [2 По сообществу](https://User123698745.github.io/rss-bridge-artifacts/status/Pikabu_2.html) | ❌ `Bridge returned error 403! (20017)`<br>❌ `Type: HttpException`<br>❌ `Message: https://pikabu.ru/community/linux resulted in 403 Forbidden <!doctype html><html><head><title>DDoS-Guard</title><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="stylesheet" href="/.well-kn...` |
+| Pikabu | [3 По пользователю](https://User123698745.github.io/rss-bridge-artifacts/status/Pikabu_3.html) | ❌ `Bridge returned error 403! (20017)`<br>❌ `Type: HttpException`<br>❌ `Message: https://pikabu.ru/@admin resulted in 403 Forbidden <!doctype html><html><head><title>DDoS-Guard</title><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="stylesheet" href="/.well-known/ddos-...` |
 | Pillowfort | [1 *untitled*](about:blank) | ✔️ |
 | Pinterest | [1 By username and board](about:blank) | ✔️ |
 | PirateCommunity | [1 *untitled*](https://User123698745.github.io/rss-bridge-artifacts/status/PirateCommunity_1.html) | ❌ `Bridge returned error 403! (20017)`<br>❌ `Type: CloudFlareException`<br>❌ `Message: https://raymanpc.com/forum/viewtopic.php?t=12651&sd=d resulted in 403 Forbidden <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-...` |
@@ -542,7 +542,7 @@
 | TwitScoop | [1 *untitled*](about:blank) | ✔️ |
 | Twitch | [1 *untitled*](about:blank) | ✔️ |
 | Twitter | [1 By keyword or hashtag](https://User123698745.github.io/rss-bridge-artifacts/status/Twitter_1.html) | ❌ `Bridge returned error 404! (20017)`<br>❌ `Type: HttpException`<br>❌ `Message: https://api.twitter.com/1.1/search/tweets.json?q=rss-bridge%2BOR%2Brssbridge&tweet_mode=extended&tweet_search_mode=live resulted in 404 Not Found {"errors":[{"message":"Sorry, that page does not exist","code":34}]}` |
-| Twitter | [2 By username](https://User123698745.github.io/rss-bridge-artifacts/status/Twitter_2.html) | ❌ `HTTP status 429 Too Many Requests`<br>❌ `Type: HttpException`<br>❌ `Message: https://api.twitter.com/graphql/3JNH4e9dq1BifLxAa3UMWg/UserWithProfileTweetsQueryV2?variables=%7B%22autoplay_enabled%22%3Atrue%2C%22count%22%3A40%2C%22includeEditControl%22%3Atrue%2C%22includeEditPerspective%22%3Afalse%2C%22includeHasBirdwat...` |
+| Twitter | [2 By username](https://User123698745.github.io/rss-bridge-artifacts/status/Twitter_2.html) | ❌ `Bridge returned error 404! (20017)`<br>❌ `Type: HttpException`<br>❌ `Message: https://api.twitter.com/graphql/3JNH4e9dq1BifLxAa3UMWg/UserWithProfileTweetsQueryV2?variables=%7B%22autoplay_enabled%22%3Atrue%2C%22count%22%3A40%2C%22includeEditControl%22%3Atrue%2C%22includeEditPerspective%22%3Afalse%2C%22includeHasBirdwat...` |
 | Twitter | [3 By list](https://User123698745.github.io/rss-bridge-artifacts/status/Twitter_3.html) | ❌ `Bridge returned error 404! (20017)`<br>❌ `Type: HttpException`<br>❌ `Message: https://twitter.com/i/api/graphql/-kmqNvm5Y-cVrfvBy6docg/ListBySlug?variables=%7B%22screenName%22%3A%22scobleizer%22%2C%22listSlug%22%3A%22tech-news%22%7D&features=%7B%22android_graphql_skip_api_media_color_palette%22%3Afalse%2C%22blue_busin...` |
 | Twitter | [4 By list ID](https://User123698745.github.io/rss-bridge-artifacts/status/Twitter_4.html) | ❌ `Bridge returned error 404! (20017)`<br>❌ `Type: HttpException`<br>❌ `Message: https://api.twitter.com/graphql/BbGLL1ZfMibdFNWlk7a0Pw/ListTimeline?variables=%7B%22rest_id%22%3A%2231748%22%2C%22count%22%3A20%7D&features=%7B%22android_graphql_skip_api_media_color_palette%22%3Afalse%2C%22blue_business_profile_image_shape_...` |
 | TwitterEngineering | [1 *untitled*](https://User123698745.github.io/rss-bridge-artifacts/status/TwitterEngineering_1.html) | ❌ `Bridge returned error 403! (20017)`<br>❌ `Type: CloudFlareException`<br>❌ `Message: https://blog.twitter.com/engineering/en_us/blog.rss resulted in 403 Forbidden <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Co...` |
@@ -579,10 +579,10 @@
 | WordPress | [1 *untitled*](about:blank) | ✔️ |
 | WordPressMadara | [1 Manga Chapters](about:blank) | ✔️ |
 | WordPressPluginUpdate | [1 *untitled*](about:blank) | ✔️ |
-| WorldCosplay | [1 Character](https://User123698745.github.io/rss-bridge-artifacts/status/WorldCosplay_1.html) | ❌ `Bridge returned error 0! (20017)`<br>❌ `Type: HttpException`<br>❌ `Message: cURL error Failed to connect to worldcosplay.net port 443 after 21 ms: Couldn't connect to server: 7 (https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://worldcosplay.net/api/photo/list.json?character_id=18204&limit=1` |
-| WorldCosplay | [2 Cosplayer](https://User123698745.github.io/rss-bridge-artifacts/status/WorldCosplay_2.html) | ❌ `Bridge returned error 0! (20017)`<br>❌ `Type: HttpException`<br>❌ `Message: cURL error Failed to connect to worldcosplay.net port 443 after 41 ms: Couldn't connect to server: 7 (https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://worldcosplay.net/api/member/photos.json?member_id=406782&limit=1` |
-| WorldCosplay | [3 Series](https://User123698745.github.io/rss-bridge-artifacts/status/WorldCosplay_3.html) | ❌ `Bridge returned error 0! (20017)`<br>❌ `Type: HttpException`<br>❌ `Message: cURL error Failed to connect to worldcosplay.net port 443 after 38 ms: Couldn't connect to server: 7 (https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://worldcosplay.net/api/photo/list.json?title_id=3139&limit=1` |
-| WorldCosplay | [4 Tag](https://User123698745.github.io/rss-bridge-artifacts/status/WorldCosplay_4.html) | ❌ `Bridge returned error 0! (20017)`<br>❌ `Type: HttpException`<br>❌ `Message: cURL error Failed to connect to worldcosplay.net port 443 after 38 ms: Couldn't connect to server: 7 (https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://worldcosplay.net/api/tag/photo_list.json?id=33643&limit=1` |
+| WorldCosplay | [1 Character](https://User123698745.github.io/rss-bridge-artifacts/status/WorldCosplay_1.html) | ❌ `Bridge returned error 0! (20017)`<br>❌ `Type: HttpException`<br>❌ `Message: cURL error Failed to connect to worldcosplay.net port 443 after 41 ms: Couldn't connect to server: 7 (https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://worldcosplay.net/api/photo/list.json?character_id=18204&limit=1` |
+| WorldCosplay | [2 Cosplayer](https://User123698745.github.io/rss-bridge-artifacts/status/WorldCosplay_2.html) | ❌ `Bridge returned error 0! (20017)`<br>❌ `Type: HttpException`<br>❌ `Message: cURL error Failed to connect to worldcosplay.net port 443 after 39 ms: Couldn't connect to server: 7 (https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://worldcosplay.net/api/member/photos.json?member_id=406782&limit=1` |
+| WorldCosplay | [3 Series](https://User123698745.github.io/rss-bridge-artifacts/status/WorldCosplay_3.html) | ❌ `Bridge returned error 0! (20017)`<br>❌ `Type: HttpException`<br>❌ `Message: cURL error Failed to connect to worldcosplay.net port 443 after 41 ms: Couldn't connect to server: 7 (https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://worldcosplay.net/api/photo/list.json?title_id=3139&limit=1` |
+| WorldCosplay | [4 Tag](https://User123698745.github.io/rss-bridge-artifacts/status/WorldCosplay_4.html) | ❌ `Bridge returned error 0! (20017)`<br>❌ `Type: HttpException`<br>❌ `Message: cURL error Failed to connect to worldcosplay.net port 443 after 42 ms: Couldn't connect to server: 7 (https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://worldcosplay.net/api/tag/photo_list.json?id=33643&limit=1` |
 | WorldOfTanks | [1 *untitled*](about:blank) | ✔️ |
 | Worldbank | [1 *untitled*](about:blank) | ✔️ |
 | XPath | [1 *untitled*](https://User123698745.github.io/rss-bridge-artifacts/status/XPath_1.html) | ⚠️ `The feed has no items` |
@@ -605,4 +605,4 @@
 | Zeit | [1 *untitled*](about:blank) | ✔️ |
 | Zenodo | [1 *untitled*](https://User123698745.github.io/rss-bridge-artifacts/status/Zenodo_1.html) | ⚠️ `The feed has no items` |
 
-*last change: Monday 2024-10-21 16:38:10*
+*last change: Monday 2024-10-21 19:32:34*
