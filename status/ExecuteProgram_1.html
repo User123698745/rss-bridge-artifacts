@@ -1,0 +1,1568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><base href="https://rss-bridge.org/bridge01/" target="_blank">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/ >
+    <meta name="description" content="RSS-Bridge" />
+    <title>Execute Program Blog</title>
+    <link href="static/style.css?2023-03-24" rel="stylesheet">
+    <link rel="icon" type="image/png" href="static/favicon.png">
+
+    
+        <link
+            href="?action=display&amp;bridge=ExecuteProgramBridge&amp;format=Atom"
+            title="Atom"
+            rel="alternate"
+            type="application/atom+xml"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=ExecuteProgramBridge&amp;format=Json"
+            title="Json"
+            rel="alternate"
+            type="application/json"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=ExecuteProgramBridge&amp;format=Mrss"
+            title="Mrss"
+            rel="alternate"
+            type="application/rss+xml"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=ExecuteProgramBridge&amp;format=Plaintext"
+            title="Plaintext"
+            rel="alternate"
+            type="text/plain"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=ExecuteProgramBridge&amp;format=Sfeed"
+            title="Sfeed"
+            rel="alternate"
+            type="text/plain"
+        >
+	
+    <meta name="robots" content="noindex, follow">
+</head>
+
+<body>
+    <div class="container">
+
+        <h1 class="pagetitle">
+            <a href="https://www.executeprogram.com/blog" target="_blank">Execute Program Blog</a>
+        </h1>
+
+        <div class="buttons">
+            <a href="./#bridge-ExecuteProgramBridge">
+                <button class="backbutton">← back to rss-bridge</button>
+            </a>
+
+                            <a href="?action=display&amp;bridge=ExecuteProgramBridge&amp;format=Atom">
+                    <button class="rss-feed">
+                        Atom                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=ExecuteProgramBridge&amp;format=Json">
+                    <button class="rss-feed">
+                        Json                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=ExecuteProgramBridge&amp;format=Mrss">
+                    <button class="rss-feed">
+                        Mrss                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=ExecuteProgramBridge&amp;format=Plaintext">
+                    <button class="rss-feed">
+                        Plaintext                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=ExecuteProgramBridge&amp;format=Sfeed">
+                    <button class="rss-feed">
+                        Sfeed                    </button>
+                </a>
+            
+                    </div>
+
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://www.executeprogram.com/blog/the-code-is-the-to-do-list"
+                    >The Code Is the To-Do List</a>
+                </h2>
+
+                                    <time datetime="2022-05-17 20:43:07">
+                        2022-05-17 20:43:07                    </time>
+                    <p></p>
+                
+                
+                <!-- Intentionally not escaping for html context -->
+                <p>Managing our focus during development can be a challenge.
+Here's a common scenario: we're in the middle of working on <code>user.ts</code> when we find ourselves thinking: &quot;I really need to go change this other thing in <code>login.ts</code>&quot;.
+But it's rarely a good idea to interrupt ourselves during a complex change.
+We have a lot of context in our heads that we don't want to lose.</p>
+<p>There are two common ways to deal with this: we can write down a note that reminds us to do it later, or we can write a quick failing (or pending) test that forces us to do it later.</p>
+<p>Both approaches work just fine.
+However, there's a third way that's superior to both in some situations: we can use the code itself as a to-do list.
+Specifically, we can use the linter to enforce our to-dos.</p>
+<p>In <a href="/" target="_blank">Execute Program</a>, we use <a href="https://eslint.org/" target="_blank">ESLint</a> with the &quot;no-warning-comments&quot; lint rule enabled:</p>
+<pre><code class="language-javascript">module.exports = {
+  &quot;rules&quot;: {
+    &quot;no-warning-comments&quot;: [&quot;error&quot;, {terms: [&quot;xxx&quot;], location: &quot;anywhere&quot;}],
+    ...
+  },
+  ...
+}
+</code></pre>
+<p>This configuration makes any comment containing &quot;XXX&quot; an error.
+Lint errors cause our <a href="https://en.wikipedia.org/wiki/Continuous_integration" target="_blank">CI</a> builds to fail, which means our XXX comments block deployment to production.
+As a result, we can now use XXX comments to mark critical problems that should never reach production.</p>
+<p>(We could also use TODO comments instead of XXX by changing the ESLint configuration above.
+But our convention is that TODO comments are for longer-term deferred maintenance like &quot;remove this old API endpoint&quot; and XXX means &quot;do not let this go to production&quot;.
+The particular string &quot;XXX&quot; isn't important here.)</p>
+<p>This approach is often better than separate to-do lists and failing tests because:</p>
+<ol>
+<li>Blocking deployment makes XXX comments more reliable than separate notes.
+We might accidentally deploy code without addressing notes in a separate system, but the ESLint rule above prevents deploys that contain &quot;XXX&quot; comments.</li>
+<li>Not all changes are easily expressed as tests.</li>
+<li>Leaving a comment in the code is usually faster than writing a test or switching to a note-taking app.</li>
+<li>Everyone working in the code can see the XXX comments, with no need to agree on a shared note-taking system.</li>
+</ol>
+<p>In the rest of this post, we'll see how XXX comments have helped our development process.
+We'll review four real examples from the <a href="/" target="_blank">Execute Program</a> codebase, ordered from simplest to most complex.
+These examples come from a feature branch that's diverged from our main branch by about 3,500 lines.</p>
+<pre><code class="language-text">$ git diff main --stat | tail -1
+ 40 files changed, 2448 insertions(+), 1155 deletions(-)
+</code></pre>
+<p>There are a lot of moving parts in this release, so it's crucial to keep track of all the changes we need to make as we develop!</p>
+<p><strong>1. Simplifying code</strong></p>
+<pre><code class="language-typescript">// XXX: Remove this module; it's trivial now.
+</code></pre>
+<p>We have a module that used to export several <a href="/courses/typescript" target="_blank">TypeScript</a> types.
+On this branch, all but one of those types are now gone.
+We don't need this whole module to export one small type.
+The type can live in the subsystem's top-level module instead.</p>
+<p>This change feels quick, so it's tempting to make it immediately.
+But it will be just as fast if we do it tomorrow.
+We don't have any special context in our heads that makes this change faster today.</p>
+<p>On the other hand, we probably have a lot of context in our heads about the bigger change that we were making when we noticed this.
+Programming is highly dependent on short-term memory, and any distraction is a chance for us to forget details that may be important.
+Leaving an XXX comment only takes a few seconds, keeps our attention on the current task, and ensures that we'll remember to remove this module later.</p>
+<p><strong>2. Deferring a data format change</strong></p>
+<pre><code class="language-typescript">// XXX: This is inserting &quot;Start Case&quot; property names. They should be &quot;camelCase&quot;.
+</code></pre>
+<p>While working on this branch, we needed to change a data format.
+Unlike the type definition change above, updating the rest of the code to match the new format will take a substantial amount of work.
+This change will also impact some other parts of the system, so we'd rather isolate it in a separate commit.</p>
+<p>Like the module removal example, we don't want to distract ourselves.
+And the need for a separate commit makes deferring this change an even easier decision.</p>
+<p>Sometimes, the fine-grained version control details also matter.
+You might think: Why not make the change now, then tease the two changes apart after the fact with <code>git add -p</code> or an interactive rebase?
+In this case, many of the affected lines are very close to lines that we've already changed.
+Individual modifications from both of our changes would end up in the same <a href="https://www.gnu.org/software/diffutils/manual/html_node/Hunks.html" target="_blank">diff hunks</a>, which makes teasing them apart much more difficult.
+The version control wrangling could end up taking longer than the change itself.</p>
+<p><strong>3. Managing temporary environment changes</strong></p>
+<pre><code class="language-typescript">// XXX: Changed the number here for faster testing. Change it back.
+</code></pre>
+<p>Our code has an event-triggering threshold: when event A happens enough times, it triggers event B.
+On this branch, we sometimes want to manually trigger event B after only a few occurrences of A, so we've temporarily lowered this threshold.
+But we don't want to accidentally push that change out, so we added an XXX comment.</p>
+<p>Because we're working on a very stable part of the system, it doesn't make sense to lower the threshold permanently for our development environment.
+Changing the threshold based on the environment adds application complexity.
+Worse, it's yet another way that dev diverges from production, which is never desirable.
+We decided that it was better for this branch to diverge temporarily than for the dev environment to diverge permanently.</p>
+<p>An XXX comment allows us to keep using the lower threshold, and gives us peace of mind that we won't accidentally push this dangerous change to production.</p>
+<p><strong>4. Documenting our work</strong></p>
+<p>The application-specific details are removed from this example.
+But its structure is as we wrote it in the real code.</p>
+<pre><code class="language-typescript">/* XXX: Write summary comment explaining this module
+ *   - Mention that the foo() function is responsible for frobbing.
+ *   - Mention that bar() hits Stripe, so avoid multiple calls to it. But none
+ *     of the other functions is allowed to hit Stripe, so call them at will.
+ */
+</code></pre>
+<p>This branch introduces a major new module to the system.
+The module will need a summary comment, so it's tempting to write it right away.
+But writing module-level comments early on can be risky.</p>
+<p>First, we may end up reverting our current changes, and this module may not even exist when the branch lands.
+If we write a perfect, nicely-formed comment, that effort might be wasted.</p>
+<p>Second, this module or the other modules around it might change during the lifetime of our branch.
+We'll have a better sense for how the module fits into the system once the branch is stabilized, so that's a better time to finalize a high-level comment.</p>
+<p>Finally, even if neither of those apply, the usual reasoning does still apply: we don't want to interrupt the change that we're making right now.</p>
+<p>Even if we don't write the big comment up front, we can still make notes about what to include in it.
+Using a bulleted list lets us capture notes in the moment, without needing to take the time to write a full, nicely-formatted comment.
+This is a great example of how using the code as a to-do list balances tracking future work vs. interrupting our current task.</p>
+<p><strong>ESLint in action</strong></p>
+<p>Once the comments are in place, we can see them in our ESLint output.
+Our dev script automatically runs ESLint on every source file change, so we'll see this continually.
+This is also the output that will show up in CI, blocking deploys to production.</p>
+<p>(The filenames are anonymized here because the exact details of the new subsystem aren't important.)</p>
+<pre><code class="language-text">[eslint:server] src/server/old-subsystem/old-file.ts
+[eslint:server]   63:13  warning  Unexpected 'xxx' comment: 'XXX: This is inserting &quot;Start Case&quot;...'  no-warning-comments
+[eslint:server]
+[eslint:server] src/server/new-subsystem/types.d.ts
+[eslint:server]   5:1  warning  Unexpected 'xxx' comment: 'XXX: Remove this module; it's trivial...'  no-warning-comments
+[eslint:server]
+[eslint:server] src/server/new-subsystem/index.ts
+[eslint:server]    7:1   warning  Unexpected 'xxx' comment: 'XXX: Write summary comment explaining...'    no-warning-comments
+[eslint:server]   94:11  warning  Unexpected 'xxx' comment: 'XXX: Changed the number here for faster...'  no-warning-comments
+[eslint:server]
+[eslint:server] ✖ 4 problems (0 errors, 4 warnings)
+[eslint:server]
+[eslint:server] ESLint found too many warnings (maximum: 0).
+</code></pre>
+<p><strong>Development flow</strong></p>
+<p>In large changes, it's common for us to have dozens of these XXX lint errors live at once.
+Usually, the arc of a large change is:</p>
+<ul>
+<li>Begin with the most risky parts of the change.
+It's usually best to start with the riskiest part.
+If the risks turn into serious problems, we may reprioritize or even cancel this project.
+We want that to happen at the beginning, rather than after we've spent a lot of effort on it.</li>
+<li>As we do the most risky work, we defer other work that we encounter along the way, adding XXX comments.</li>
+<li>At some point, we reach &quot;peak XXX&quot;, which is often dozens of XXX comments at once.</li>
+<li>Then we begin resolving them until there are none left.</li>
+</ul>
+<p>By the time we're resolving XXX comments, some will be outdated due to other changes made after we added the comment.
+That's fine; it's just a comment, and we can delete it.
+(But if we'd made the change at the time, that work would've been wasted!)</p>
+<p>Even when the comments are still current, they're often quick changes that were just a bit too big to distract ourselves with at the time.
+We estimate that the downward slope from &quot;peak XXX&quot; to &quot;0 XXX&quot; is usually around 10% of the total development time for a branch.
+All of that work was going to happen one way or another; we just shifted it in time to aid our concentration and to allow better risk prioritization.</p>
+<p>Using the linter to block XXXs from going to production is a great alternative to keeping a separate to-do list, or writing a test for every change we think of.
+Writing XXX comments isn't just faster; it protects our focus and prioritizes our attention.
+Give this approach a try on your next project!</p>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://www.executeprogram.com/blog/typescript-features-to-avoid"
+                    >TypeScript Features to Avoid</a>
+                </h2>
+
+                                    <time datetime="2022-01-18 20:43:07">
+                        2022-01-18 20:43:07                    </time>
+                    <p></p>
+                
+                
+                <!-- Intentionally not escaping for html context -->
+                <p>This post lists four TypeScript features that we recommend you avoid.
+Depending on your circumstances, there may be good reasons to use them, but we think that avoiding them is a good default.</p>
+<p>TypeScript is a complex language that has evolved significantly over time.
+Early in its development, the team added features that were incompatible with JavaScript.
+Recent development is more conservative, maintaining stricter compatibility with JavaScript features.</p>
+<p>As with any mature language, we have to make difficult decisions about which TypeScript features to use and which to avoid.
+We experienced these trade-offs firsthand while building <a href="/" target="_blank">Execute Program</a>'s backend and frontend in TypeScript, and while creating our comprehensive <a href="/courses/typescript" target="_blank">TypeScript courses</a>.
+Based on our experience, here are four recommendations about which features to avoid.</p>
+<p><strong>I. Avoid enums (<a href="/courses/everyday-typescript/lessons/enum" target="_blank">See our lesson</a>)</strong></p>
+<p>Enums give names to a set of constants.
+In the example below, <code>HttpMethod.Get</code> is a name for the string <code>'GET'</code>.
+The <code>HttpMethod</code> type is conceptually similar to a union type between literal types, like <code>'GET' | 'POST'</code>.</p>
+<pre><code class="language-typescript">enum HttpMethod {
+  Get = 'GET',
+  Post = 'POST',
+}
+const method: HttpMethod = HttpMethod.Post;
+method; // Evaluates to 'POST'
+</code></pre>
+<p>Here's the argument in favor of enums:</p>
+<p>Suppose that we eventually need to replace the string <code>'POST'</code> above with <code>'post'</code>.
+We change the enum's value to <code>'post'</code> and we're done!
+Other code in the system only references the enum member via <code>HttpMethod.Post</code>, and that enum member still exists.</p>
+<p>Now imagine the same change with a union type instead of an enum.
+We define the union <code>'GET' | 'POST'</code>, then later we decide to change it to <code>'get' | 'post'</code>.
+Any code that tries to use <code>'GET'</code> or <code>'POST'</code> as an <code>HttpMethod</code> is now a type error.
+We have to update all of that code manually, which is an extra step when compared to enums.</p>
+<p>This code maintenance argument for enums isn't very strong.
+When we add a new member to an enum or union, it rarely changes after creation.
+If we use unions, it's true that we may have to spend some time updating them in multiple places, but it's not a big problem because it happens rarely.
+Even when it does happen, the type errors can show us which updates to make.</p>
+<p>The downside to enums comes from how they fit into the TypeScript language.
+TypeScript is supposed to be JavaScript, but with static type features added.
+If we remove all of the types from TypeScript code, what's left should be valid JavaScript code.
+The formal word used in the TypeScript documentation is &quot;type-level extension&quot;: most TypeScript features are type-level extensions to JavaScript, and they don't affect the code's runtime behavior.</p>
+<p>Here's a concrete example of type-level extension.
+We write this TypeScript code:</p>
+<pre><code class="language-typescript">function add(x: number, y: number): number {
+  return x + y;
+}
+add(1, 2); // Evaluates to 3
+</code></pre>
+<p>The compiler checks the code's types.
+Then it needs to generate JavaScript code.
+Fortunately, that step is easy: the compiler simply removes all of the type annotations.
+In this case, that means removing the <code>: number</code>s.
+What's left is perfectly legal JavaScript code.</p>
+<pre><code class="language-javascript">function add(x, y) {
+  return x + y;
+}
+add(1, 2); // Evaluates to 3
+</code></pre>
+<p>Most TypeScript features work in this way, following the type-level extension rule.
+To get JavaScript code, the compiler simply removes the type annotations.</p>
+<p>Unfortunately, enums break this rule.
+<code>HttpMethod</code> and <code>HttpMethod.Post</code> were parts of a type, so they should be removed when TypeScript generates JavaScript code.
+However, if the compiler simply removes the enum types from our code examples above, we're still left with JavaScript code that references <code>HttpMethod.Post</code>.
+That will error during execution: we can't reference <code>HttpMethod.Post</code> if the compiler deleted it!</p>
+<pre><code class="language-javascript">/* This is compiled JavaScript code referencing a TypeScript enum. But if the
+ * TypeScript compiler simply removes the enum, then there's nothing to
+ * reference!
+ *
+ * This code fails at runtime:
+ *   Uncaught ReferenceError: HttpMethod is not defined */
+const method = HttpMethod.Post;
+</code></pre>
+<p>TypeScript's solution in this case is to break its own rule.
+When compiling an enum, the compiler emits extra JavaScript code that never existed in the original TypeScript code.
+Few TypeScript features work like this, and each adds a confusing complication to the otherwise simple TypeScript compiler model.
+For these reasons, we recommend avoiding enums and using unions instead.</p>
+<p>Why does the type-level extension rule matter?</p>
+<p>Let's consider how the rule interacts with the ecosystem of JavaScript and TypeScript tools.
+TypeScript projects are inherently JavaScript projects, so they often use JavaScript build tools like <a href="https://babeljs.io/" target="_blank">Babel</a> and <a href="https://webpack.js.org/" target="_blank">webpack</a>.
+These tools were designed for JavaScript, and it's still their primary focus today.
+Each tool is also an ecosystem of its own.
+There's a seemingly-endless universe of Babel and webpack plugins to process code.</p>
+<p>How can Babel, webpack, their many plugins, and all of the other tools and plugins in the ecosystem fully support TypeScript?
+For most of the TypeScript language, the type-level extension rule makes these tools' jobs relatively easy.
+The tools strip out the type annotations, leaving valid JavaScript.</p>
+<p>When it comes to enums (and namespaces, which we'll see in a moment) things are more difficult.
+It's not good enough to simply remove enums.
+The tools have to turn <code>enum HttpMethod { ... }</code> into working JavaScript code, even though JavaScript doesn't have enums at all.</p>
+<p>This brings us to the practical problem with TypeScript's violations of its own type-level extension rule.
+Tools like Babel, webpack, and their plugins are all designed for JavaScript first, so TypeScript support is just one of their many features.
+Sometimes, TypeScript support doesn't receive as much attention as JavaScript support, which can lead to bugs.</p>
+<p>The vast majority of tools will do a good job with variable declarations, function definitions, etc.; all of those are relatively easy to work with.
+But sometimes mistakes creep in with enums and namespaces, because they require more than just stripping off the type annotations.
+You can trust the TypeScript compiler itself to compile those features correctly, but some rarely-used tools in the ecosystem may make mistakes.</p>
+<p>When your compiler, bundler, minifier, linter, code formatter, etc. silently miscompiles or misinterprets an out-of-the-way piece of your system, it can be very difficult to debug.
+Compiler bugs are <a href="http://r6.ca/blog/20200929T023701Z.html" target="_blank">notoriously difficult</a> to track down.
+Note these words: &quot;over <strong>the week</strong>, with the <strong>help of my colleagues</strong>, we managed to get a better understanding of the scope of the bug.&quot;
+(Emphasis added.)</p>
+<p><strong>II. Avoid namespaces (<a href="/courses/everyday-typescript/lesson/namespaces" target="_blank">See our lesson</a>)</strong></p>
+<p>Namespaces are like modules, except that more than one namespace can live in a single file.
+For example, we might have a file that defines separate namespaces for its exported code and for its tests.
+(We don't recommend doing this, but it's a simple way to show off namespaces.)</p>
+<pre><code class="language-typescript">namespace Util {
+  export function wordCount(s: string) {
+    return s.split(/\b\w+\b/g).length - 1;
+  }
+}
+
+namespace Tests {
+  export function testWordCount() {
+    if (Util.wordCount('hello there') !== 2) {
+      throw new Error(&quot;Expected word count for 'hello there' to be 2&quot;);
+    }
+  }
+}
+
+Tests.testWordCount();
+</code></pre>
+<p>Namespaces can cause problems in practice.
+In the section on enums above, we saw TypeScript's &quot;type-level extension&quot; rule.
+Normally, the compiler removes all of the type annotations, and what's left is valid JavaScript code.</p>
+<p>Namespaces break the type-level extension rule in the same way as enums.
+In <code>namespace Util { export function wordCount ... }</code>, we can't remove the type definitions.
+The entire namespace is a TypeScript-specific type definition!
+What would happen to the other code outside of the namespace calling <code>Util.wordCount(...)</code>?
+If we delete the <code>Util</code> namespace before generating JavaScript code, then <code>Util</code> doesn't exist any more, so the <code>Util.wordCount(...)</code> function call can't possibly work.</p>
+<p>As with enums, the TypeScript compiler can't simply delete the namespace definitions.
+Instead, it has to generate new JavaScript code that doesn't exist in the original TypeScript code.</p>
+<p>For enums, our suggestion was to use unions instead.
+For namespaces, we recommend using regular modules.
+It may be a bit annoying to create many small files, but modules have the same fundamental functionality as namespaces without the potential downsides.</p>
+<p><strong>III. Avoid decorators (for now)</strong></p>
+<p>Decorators are functions that modify or replace other functions (or classes). Here's a decorator example taken from the <a href="https://www.typescriptlang.org/docs/handbook/decorators.html" target="_blank">official docs</a>.</p>
+<pre><code class="language-typescript">// This is the decorator.
+@sealed
+class BugReport {
+  type = &quot;report&quot;;
+  title: string;
+
+  constructor(t: string) {
+    this.title = t;
+  }
+}
+</code></pre>
+<p>The <code>@sealed</code> decorator above alludes to the <a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/sealed" target="_blank">C# sealed modifier</a>, which prevents other classes from inheriting from the sealed class.
+We'd implement it by writing a <code>sealed</code> function that takes a class and modifies it to prevent inheritance.</p>
+<p>Decorators were added to TypeScript first, before beginning their standardization process in JavaScript (ECMAScript).
+As of January 2022, decorators are still a <a href="https://github.com/tc39/proposal-decorators" target="_blank">stage 2 ECMAScript proposal</a>.
+Stage 2 is &quot;draft&quot;.
+The decorator proposal also seems to be stuck in committee purgatory: it's been at stage 2 <a href="https://tc39.es/proposal-decorators/" target="_blank">since February of 2019</a>.</p>
+<p>We recommend avoiding decorators until they're at least a stage 3 (&quot;candidate&quot;) proposal, or stage 4 (&quot;finished&quot;) for more conservative teams.</p>
+<p>There's always a chance that ECMAScript decorators will never be finalized.
+If that happens, they'll end up in a similar situation to TypeScript enums and namespaces.
+They'll continue to break TypeScript's type-level extension rule forever, and they'll be more likely to break when using build tools other than the official TypeScript compiler.
+We don't know whether that will happen or not, but the benefits of decorators are minor enough that we'd rather wait and see.</p>
+<p>Some open source libraries, most notably <a href="https://typeorm.io/" target="_blank">TypeORM</a>, use decorators heavily.
+We recognize that following our recommendation here precludes using TypeORM.
+Using TypeORM and its decorators is a fine choice, but it should be done intentionally, recognizing that decorators are currently in standardization purgatory and may never be finalized.</p>
+<p><strong>IV. Avoid the private keyword (<a href="/courses/everyday-typescript/lessons/classes" target="_blank">See our lesson</a>)</strong></p>
+<p>TypeScript has two ways to make class fields private.
+There's the old <code>private</code> keyword, which is specific to TypeScript.
+Then there's the new <code>#somePrivateField</code> syntax, which is taken from JavaScript.
+Here's an example showing each of them:</p>
+<pre><code class="language-typescript">class MyClass {
+  private field1: string;
+  #field2: string;
+  ...
+}
+</code></pre>
+<p>We recommend the new <code>#somePrivateField</code> syntax for a straightforward reason: these two features are roughly equivalent.
+We'd like to maintain feature parity with JavaScript unless there's a compelling reason not to.</p>
+<p>To recap our four recommendations:</p>
+<ol>
+<li>Avoid enums.</li>
+<li>Avoid namespaces.</li>
+<li>Favor <code>#somePrivateField</code> over <code>private somePrivateField</code>.</li>
+<li>Hold off on using decorators until they're standardized.
+If you really need a library that requires them, consider their standardization status when making that decision.</li>
+</ol>
+<p>Even when avoiding these features, it's good to have a working knowledge of them.
+They show up often in legacy code, and even in some new code.
+Not everyone agrees that they should be avoided.
+Execute Program's TypeScript courses teach these features for the reasons that we explained in our post on <a href="/blog/teaching-the-unfortunate-parts" target="_blank">Teaching the Unfortunate Parts</a>.</p>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://www.executeprogram.com/blog/teaching-the-unfortunate-parts"
+                    >Teaching the Unfortunate Parts</a>
+                </h2>
+
+                                    <time datetime="2020-11-09 20:43:07">
+                        2020-11-09 20:43:07                    </time>
+                    <p></p>
+                
+                
+                <!-- Intentionally not escaping for html context -->
+                <p>When explaining a technology, we have to decide how to approach its shortcomings.
+There might be mistakes in its design, or it might have usability problems, or it might be unreliable.
+How do we approach these and how much emphasis do we place on them?</p>
+<p>One approach is: &quot;This tool has a lot of problems, but we'll show you how to avoid them.&quot;
+That can demotivate the learner: &quot;Why am I learning this thing if it has so many problems?&quot;</p>
+<p>Another common approach is to never call out the problems at all.
+That can also demotivate the learner, but the demotivation is delayed.
+When they finish your video, book, etc. and use the tool in practice, they suddenly encounter the sharp edges.
+Now they might think &quot;I haven't heard about these problems so this must be my fault.&quot;</p>
+<p>In Execute Program, we try to avoid both of the above approaches.
+Instead, we aim for neutral descriptions in our <a href="/courses" target="_blank">courses</a>.
+Where problems exist, we describe them flatly and directly.
+Often, probably due to personal writing quirks, our descriptions involve the word &quot;unfortunate&quot;.</p>
+<p>Here are four times when we used the word &quot;unfortunate&quot; or &quot;unfortunately&quot; in a lesson.
+Each is expanded here because the original surrounding lesson context is missing, but the original &quot;<strong>unfortunate</strong>&quot; is retained in each example.</p>
+<p><strong>1. NaN</strong></p>
+<p>(From the <a href="/courses/modern-javascript/lessons/isnan" target="_blank">Modern JavaScript / isNaN</a> lesson.
+The lesson links in this post, including that one, will take you directly to the interactive lesson, which doesn't require registering an account.)</p>
+<p>Any operation on a <code>NaN</code> returns another <code>NaN</code>.
+<strong>Unfortunately</strong>, that means that <code>NaN</code>s will propagate through the system.
+By the time you actually see the <code>NaN</code>, it might have ended up in a very different place from where it started.</p>
+<pre><code class="language-javascript">&gt; const lastIndex = ['a', 'b', 'c'].elngth - 1;
+  const middleIndex = Math.floor(lastIndex / 2);
+  middleIndex;
+NaN
+</code></pre>
+<p>Note the typo: <code>elngth</code>.
+That returns <code>undefined</code>, then we subtract 1 from it giving <code>NaN</code>, then we divide by 2, then we call <code>Math.floor</code>.
+Now imagine that each of those steps happened in a different function.</p>
+<p>All we know is that a <code>NaN</code> came out the end.
+Now we have to ask the perpetual question in dynamic languages: which function (or class, or module) caused the <code>NaN</code> (or <code>null</code>, <code>undefined</code>, <code>nil</code>, <code>None</code>, etc.), and which functions merely propagated it?</p>
+<p><code>NaN</code> itself is part of the IEEE 754 floating point standard.
+It behaves the way it does for a reason.
+But this is still a JavaScript problem because JavaScript returns <code>NaN</code> in so many cases where other languages don't.
+In our example above, the <code>NaN</code> showed up when we did <code>undefined - 1</code>.
+Other dynamic languages (like Ruby or Python) throw an error when we try to do that, and most static languages prohibit it at compile time.
+This is a problem specific to JavaScript.</p>
+<p><strong>2. Mapping over maps</strong></p>
+<p>(From the <a href="/courses/modern-javascript/lessons/maps" target="_blank">Modern JavaScript / Maps</a> lesson.)</p>
+<p>Modern versions of JavaScript support a map data type.
+It's kind of like an object where the keys can be any type, not just strings.
+JavaScript also has a map method on arrays, which transforms the array's values into other values.</p>
+<p>The data type <code>Map</code> and the method <code>map</code> are related at the conceptual level: they both &quot;map&quot; (or &quot;relate&quot;) things to other things.
+Other than that, they have no relationship.
+Their identical names are just an <strong>unfortunate</strong> accident of history.</p>
+<p><strong>3. No negative array indexes in JavaScript</strong></p>
+<p>(From the <a href="/courses/javascript-array/lessons/negative-array-indexes" target="_blank">JavaScript Arrays / Negative array indexes</a> lesson.)</p>
+<p>Ruby and Python both allow negative indexing on arrays.
+In those languages, <code>arr[-1]</code> means &quot;the last element of the array&quot;.
+JavaScript has a concept of negative indexes: we can call <code>arr.slice(-1)</code> to get an array containing only the last element of <code>arr</code>.</p>
+<p>We might expect that to work for normal array access as well, as it does in Ruby and Python: <code>someArray[-1]</code>.
+Alternately, we might expect <code>someArray[-1]</code> to throw an exception.
+<strong>Unfortunately</strong>, it doesn't do either of those.
+Instead, it returns <code>undefined</code>, the same value that we get when accessing any other index that doesn't exist.</p>
+<pre><code class="language-javascript">&gt; const arr = ['a', 'b', 'c'];
+  arr[-1];
+undefined
+</code></pre>
+<p><strong>4. TypeScript's unsoundness</strong></p>
+<p>(From the <a href="/courses/everyday-typescript/lessons/type-soundness" target="_blank">TypeScript / Type soundness</a> lesson.)</p>
+<p>A sound type system is one that fully enforces its own rules.
+TypeScript is unsound, which means that the compiler will sometimes accept code that violates the compiler's own rules.</p>
+<p>In the example below, we create an array of strings.
+&quot;Array of strings&quot; means that it should never contain anything else.
+It certainly shouldn't contain any numbers.</p>
+<p>Then we assign the array to a new variable with the type <code>string | number</code>.
+That lets us <code>push</code> a number into the array.
+We've now violated the original array variable's type: it says it's a <code>string[]</code>, but it contains both strings and numbers.</p>
+<pre><code class="language-typescript">&gt; let names: string[] = ['Amir', 'Betty'];
+  let unsoundNames: (string | number)[] = names;
+  
+  // This is unsound! It causes the &quot;names&quot; array to contain a number!
+  unsoundNames.push(5);
+  names;
+['Amir', 'Betty', 5]
+</code></pre>
+<p>This is very bad, and <strong>unfortunately</strong> there's no way to fix it.</p>
+<p><strong>Being honest about problems</strong></p>
+<p>It's important to acknowledge design problems, especially when teaching.
+Learners are new to the topic, so they rarely have enough context to analyze designs critically.
+For example, someone learning TypeScript as their first static language won't know what soundness is.</p>
+<p>People are going to hit TypeScript's unsoundness in real code.
+They'll find <code>NaN</code>s propagating through their JavaScript systems running in production.
+They'll wonder why the map data type and the map method have the same name even though they don't interact.
+Their first thought will be that they're just missing something.</p>
+<p>As authors, we could try to head this off with &quot;OK, this technology has a ton of problems... in fact, it's pretty bad, but here we go, let's learn it!&quot;
+That sets the learner up for demotivation from the start.
+Alternately, we could describe only the good parts of the tool, staying silent about the sharp edges.
+But that sets the learner up for demotivation later when they encounter sharp edges and blame themselves.</p>
+<p>It's better to describe the good parts, then tell the learner that, <strong>unfortunately</strong>, TypeScript's type system is also unsound.
+But it's unsound for a reason: it's a trade-off that its designers made to achieve compatibility with the existing JavaScript ecosystem.
+Now the learner knows that the problem is real and they're not imagining it; they know that the problem isn't their fault; and, if the lesson did its job, they know how to spot the problem and work around it.</p>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://www.executeprogram.com/blog/typescripts-excess-properties-can-bite-you"
+                    >TypeScript's excess properties can bite you</a>
+                </h2>
+
+                                    <time datetime="2020-06-25 20:43:07">
+                        2020-06-25 20:43:07                    </time>
+                    <p></p>
+                
+                
+                <!-- Intentionally not escaping for html context -->
+                <p>Recently, our <a href="https://www.cypress.io/" target="_blank">Cypress</a> tests started hanging silently.
+This post explains the cause: because of a subtle part of TypeScript's language design, some circular data structures were invisible in the code, which caused a serialization error, which Cypress handled incorrectly.
+If we don't understand the subtleties of our tools, bugs like this can be inscrutable; but if we learn the subtleties, they can be quick, if annoying, speed bumps.</p>
+<p><strong>1. Excess object properties</strong></p>
+<p>TypeScript's type system is unusual in many ways.
+Here's an example highlighting one of them:</p>
+<pre><code class="language-typescript">type User = {
+  name: string,
+}
+
+function buildAmir() {
+  return {
+    name: 'Amir',
+    age: 36,
+  }
+}
+
+const amir: User = buildAmir()
+
+console.log(amir)
+</code></pre>
+<p>In most statically typed languages, this code wouldn't compile, but TypeScript allows it.
+What comes out when we run it?
+Amir has the type <code>{name: string}</code>, so it seems like the answer should be <code>{name: 'Amir'}</code>.
+What actually comes out at runtime is:</p>
+<pre><code class="language-typescript">{name: 'Amir', age: 36}
+</code></pre>
+<p>This arises from two design decisions in TypeScript.
+First, objects are allowed to have excess keys and still satisfy an object type that doesn't have those keys.
+The excess keys are ignored by the type system.
+For example, the compiler wouldn't let us say <code>amir.age</code>, even though the <code>age</code> property does exist at runtime!</p>
+<p>Second, the TypeScript compiler emits code by stripping the types away.
+What's left is JavaScript.
+For our example, the compiler emits JavaScript roughly like this:</p>
+<pre><code class="language-typescript">function buildAmir() {
+  return {
+    name: 'Amir',
+    age: 36,
+  }
+}
+
+const amir = buildAmir()
+
+console.log(amir)
+</code></pre>
+<p>When we look at it that way... of course the output is <code>{ name: 'Amir', age: 36 }</code>.
+That's what the code says!</p>
+<p>At first glance, this all seems fine.
+So how did it make our tests silently fail to run?</p>
+<p><strong>2. Large objects</strong></p>
+<p>Internally, <a href="/" target="_blank">Execute Program</a> has an <code>Example</code> type representing a single interactive code example in a lesson.
+Its type looks like this, heavily simplified and tweaked to make sense in isolation.</p>
+<pre><code class="language-typescript">type Example = {
+  kind: &quot;example&quot;
+  id: string
+  code: string
+  expectedResult: string
+  isInteractive: boolean
+}
+</code></pre>
+<p>For example, we might have an example where <code>code</code> is <code>'1 + 1'</code> and <code>expectedResult</code> is <code>'2'</code>.
+In that case, Execute Program would show the user <code>1 + 1</code> and wait for them to type <code>2</code>.</p>
+<p>In the past, the lessons referenced their examples, but the examples didn't know about the lessons that contain them.
+(There's no <code>lesson</code> property in the object above.)
+That was done because backreferences would create a reference cycle: the lesson references the example, which references the lesson, which references the example, and so on forever.
+Reference cycles make garbage collectors work harder, as well as causing confusing bugs like the one that we're working toward here.</p>
+<p>(We'll use &quot;reference cycle&quot; and &quot;circular data&quot; interchangeably in this post.)</p>
+<p>It's inconvenient for examples not to know about their lessons, so we recently added some lesson data to the example type.
+But not a full <code>lesson</code>, just a little bit of data: the containing lesson's ID.
+This made a particular new feature much easier to implement.
+Now the <code>Example</code> type becomes:</p>
+<pre><code class="language-typescript">type Example = {
+  // This stuff is all the same as before.
+  kind: &quot;example&quot;
+  id: string
+  code: string
+  expectedResult: string
+  isInteractive: boolean
+
+  // This is new.
+  lesson: {
+    id: string
+  }
+}
+</code></pre>
+<p>No reference cycles!
+That little <code>lesson</code> object only has an <code>id</code>, not a list of examples that would cause a cycle.</p>
+<p>But unfortunately, we naively created the example object like this:</p>
+<pre><code class="language-typescript">const example: Example = {
+  kind: &quot;example&quot;,
+  id,
+  code,
+  expectedResult,
+  isInteractive,
+  lesson,
+}
+</code></pre>
+<p>The <code>lesson</code> there is a full lesson object.
+From TypeScript's perspective, <code>example.lesson</code>'s type is <code>{id: string}</code>.
+But at runtime it will be the entire lesson object, which is (1) huge, and (2) contains references to all of the lesson's examples, which contain references back to the lesson, which contains references to all of the examples, and so on.
+The static types show no reference cycle, but one still exists.</p>
+<p><strong>3. Test data generation</strong></p>
+<p>Our <a href="https://www.cypress.io/" target="_blank">Cypress</a> tests need to load up our actual lessons for testing.
+Unfortunately, there's not a great way to do that in Cypress.
+What we do today is:</p>
+<ul>
+<li>Use a custom Cypress plugin (they're easy to write, fortunately) that runs before the Cypress test browser is launched.</li>
+<li>The plugin looks at the fully loaded curriculum object, which is loaded from our lesson files in the same way that it's loaded in the normal app.</li>
+<li>The plugin dumps that curriculum object (including courses, which contain lessons, which contain examples) to a JSON file.</li>
+<li>The tests can then <code>import</code> that JSON file to access the lesson data.</li>
+</ul>
+<p>This seems clunky because it is clunky.
+But Cypress comes with a lot of constraints, and this was how we satisfied them.</p>
+<p>When we added <code>lesson</code> to the <code>Example</code> object, the clunks came home to roost.
+Trying to call <code>JSON.stringify</code> on any circular data structure will cause an exception in Node.
+Here's a shell command demonstrating:</p>
+<pre><code class="language-text">$ node -e 'const x = {}; x.x = x; JSON.stringify(x)'
+TypeError: Converting circular structure to JSON
+</code></pre>
+<p><strong>The bug</strong></p>
+<p>The <code>JSON.stringify</code> call on our curriculum object definitely threw an exception inside our Cypress plugin code.
+But the way that manifested in Cypress was... nothing.
+Cypress launched the browser process to run the tests and it sat there, blank.</p>
+<p>Having seen this movie before, I took a guess and opened Activity Monitor.
+As expected, the Cypress process was using 100% of the CPU.
+Eventually, CPU usage dropped to zero, but Cypress still showed nothing.
+I knew that errors in the plugin loading stage sometimes (maybe always?) pass silently, and I knew that we only had one plugin, and I knew that it was serializing a lot of data.</p>
+<p>A quick check and... yes, every <code>Example</code> in the system contains a circular reference to its <code>Lesson</code>.
+But then why did this cause 100% CPU usage for several seconds?
+Shouldn't Node have errored immediately after seeing the circular reference?
+What probably happened is: the curriculum object was so large that it took multiple seconds to get to the point where it could even check for cycles!
+(As I write this, our <a href="http://executeprogram.com/courses" target="_blank">course list</a> contains 4,024 code examples, plus all of the accompanying text, all stored in fine-grained data structures with a lot of metadata.)</p>
+<p><strong>The fix</strong></p>
+<p>The bug is weird, but the fix is very simple.
+Here's the buggy code that creates a circular reference:</p>
+<pre><code class="language-typescript">const example: Example = {
+  kind: &quot;example&quot;,
+  id,
+  code,
+  expectedResult,
+  isInteractive,
+  lesson,
+}
+</code></pre>
+<p>We need to avoid putting the entire <code>lesson</code> object inside the example.
+Instead, we pull out only the property we care about, the ID:</p>
+<pre><code class="language-typescript">const example: Example = {
+  kind: &quot;example&quot;,
+  id,
+  code,
+  expectedResult,
+  isInteractive,
+  lesson: {
+    id: lesson.id
+  },
+}
+</code></pre>
+<p>Now there's no cycle and everything works again.
+A trivial solution to a complex problem implicating several subtle topics.
+To summarize:</p>
+<ul>
+<li>TypeScript allows excess properties on objects, which will exist at runtime even though they're not shown in the static types.</li>
+<li>TypeScript's generated JavaScript code doesn't strip those excess properties, so they'll still exist at runtime.</li>
+<li>This allows us to write code where the types have no cycles, but the objects at runtime do have cycles.</li>
+<li>Which will cause an exception when trying to serialize a circular object into JSON.</li>
+<li>Which can cause silent failures if your third party tools, like test runners, aren't careful about handling errors.</li>
+</ul>
+<p>Where do we place blame here?
+TypeScript's design decisions, including this one, allow it to be flexible enough to interact with existing code on the web.
+It's hard to argue against that; it's a major reason that we use TypeScript in the first place.
+And <code>JSON.stringify</code> is correct to error on cyclic data because that data is unrepresentable in JSON.</p>
+<p>Cypress' silent error handling, on the other hand, was a genuine bug.
+But suppose that it had surfaced the error, &quot;TypeError: Converting circular structure to JSON&quot;.
+We'd still have to understand circular data structures, and we'd still have to understand the TypeScript design quirk that lets them show up even when the types don't allow them.</p>
+<p>That leaves us with this plan for debugging problems like this:</p>
+<ol>
+<li>Know the subtleties of your tools, especially your programming language, so you can make reasoned guesses when you see surprising behavior.</li>
+<li>Optional: only use perfect tools that will never have bugs, ever.
+This will let you skip some steps, like using Activity Monitor to guess at what Cypress is doing, but you still have to do most of (1).</li>
+</ol>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://www.executeprogram.com/blog/restoring-react-reducer-state-across-browser-sessions"
+                    >Restoring React Reducer State Across Browser Sessions</a>
+                </h2>
+
+                                    <time datetime="2020-04-20 20:43:07">
+                        2020-04-20 20:43:07                    </time>
+                    <p></p>
+                
+                
+                <!-- Intentionally not escaping for html context -->
+                <p>This is a story about how we used <a href="https://github.com/gcanti/io-ts" target="_blank">io-ts</a> to save React <a href="https://reactjs.org/docs/hooks-reference.html#usereducer" target="_blank"><code>useReducer</code></a> state for later.
+Saved state may be restored months later, in a different browser, while both the React code and the data used by the reducer have continued to change over time.
+The solution described here is in production on the site you're looking at.
+First, a short description of the application itself:</p>
+<p><a href="/" target="_blank">Execute Program</a> is an interactive learning platform made up of courses (like <a href="https://www.executeprogram.com/courses/typescript" target="_blank">TypeScript</a> or <a href="https://www.executeprogram.com/courses/regexes" target="_blank">Regular Expressions</a>).
+Each course is made up of many lessons (like <a href="https://www.executeprogram.com/courses/typescript-basics/lessons/generic-function-types" target="_blank">Generic function types</a> or <a href="https://www.executeprogram.com/courses/regexes/lessons/character-classes" target="_blank">Character classes</a>).
+And each lesson is made up of interactive code examples mixed with paragraphs of text.</p>
+<p>As a user goes through a lesson, they reveal one example or paragraph after another.
+We call those &quot;steps&quot;: each code example is a step and each paragraph is a step.
+When they reach the last step, the client code tells the server that the user has finished the lesson.</p>
+<p>Here's the problem:</p>
+<ol>
+<li>A user starts a long lesson that might take 20 minutes to finish.</li>
+<li>They close the browser tab for some reason.</li>
+<li>The next day, they go back to the lesson.</li>
+<li>Now they have to start from the beginning of the lesson.</li>
+</ol>
+<p>Here's a video of our solution in action.
+We advance through a paragraph and an initial, non-interactive code example.
+Then we reload the page and choose to resume the lesson.
+Then we reload the page again and choose to restart the lesson.</p>
+<div class="vimeo-full-width">
+  <&zwnj;iframe src="https://player.vimeo.com/video/403074120" frameborder="0" allow="fullscreen" allowfullscreen></iframe>
+</div>
+<p>Let's examine a series of possible solutions, beginning with the simplest.</p>
+<p><strong>Solution 1: Store the current step index.</strong></p>
+<p>React's <a href="https://reactjs.org/docs/hooks-reference.html#usereducer" target="_blank"><code>useReducer</code></a> manages large state objects with complex transitions.
+The developer defines how the object will change in response to user actions.
+For example, when we clicked the &quot;Continue&quot; button in the example above, our reducer incremented the step index by 1.</p>
+<p>In our lessons, the reducer state contains the full step objects as retrieved from the API, including the actual code and paragraph text.
+It also contains various metadata, including an index variable: a number representing the current step's index in the step array.
+When the user finishes a step – for example, by completing a code example – we increment the index and the UI shows the next step.</p>
+<p>The first possible solution is to save the step index somewhere: maybe on the server, or maybe in the browser's <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage" target="_blank"><code>localStorage</code></a>.
+This works... but only if our lessons never change.</p>
+<p>Our lessons changes almost every day as we tweak them in response to user feedback.
+If we insert, delete, or reorder steps, then the stored index will be wrong.
+The user will get to a certain point in a lesson, then leave, then come back, and the lesson will resume at the wrong step.
+We need a solution that always resumes to the correct point in the lesson.</p>
+<p><strong>Solution 2: Invalidate the step index when the lesson changes.</strong></p>
+<p>We can store the step index on the server or in the browser's local storage, but also have a way to invalidate it when the lesson content changes.
+The easiest solution here is a <a href="https://en.wikipedia.org/wiki/Hash_function" target="_blank">hash</a> over the entire lesson's content: all of the code examples and all of the explanatory text.
+We store the hash alongside the step index.</p>
+<p>Later, when a user returns to the lesson, we compare the stored hash against the current lesson hash.
+If they match, we offer to resume the lesson.
+Any content change will result in a different hash, so we'll ignore the stored step index whenever the lesson changes.
+This works... but it only restores the step index.
+What about the other metadata that the client gathers during the lesson?</p>
+<p>We care about that metadata!
+For example, we want to know how many attempts the user made at each code example.
+Aggregating those numbers can show us when certain examples are too difficult.</p>
+<p>We need a solution that preserves that metadata in addition to the step index.
+One idea is to pull out the pieces of the reducer state that matter and store only them.
+That would include the exact content of the lesson (or a hash of it), the number of attempts the user made at each code example, etc.</p>
+<p><strong>Solution 3: Store the entire reducer state.</strong></p>
+<p>As it turns out, we care about most of the data in the reducer state; otherwise we wouldn't be tracking it!
+The easiest solution is to store the entire reducer state, then restore it later when the user resumes the lesson.</p>
+<p>Storing the reducer state brings up another data mismatch problem.
+Last time, the mismatch was in the lesson content.
+Now, the mismatch is in the schema or structure of the reducer's state object: the actual keys in the state, and the particular types of data in those keys.</p>
+<p>Here's the problem that will occur:</p>
+<ol>
+<li>The user does part of a lesson.</li>
+<li>We store the reducer state.</li>
+<li>A month passes.
+We make code changes that change the structure of the reducer state: adding and removing keys, changing data types, etc.</li>
+<li>The user comes back and resumes the lesson.</li>
+<li>We restore the reducer state.</li>
+<li>Now the user is running a new version of our app, which expects the new reducer state data, but we just restored the old reducer state data.</li>
+<li>The app crashes (or worse).</li>
+</ol>
+<p>We need a solution that can ignore any saved reducer state that was created by an older, incompatible version of the client-side code.</p>
+<p><strong>Solution 4: Version the reducer state.</strong></p>
+<p>The obvious solution is to add a version number to the saved state data.
+When we make an incompatible change to the reducer state's structure, we change the version number.
+When restoring an old reducer state, we compare its version number against the current code's version number.
+If they don't match, we ignore the saved state and start from the beginning of the lesson.</p>
+<p>Unfortunately, humans are bad at remembering to do things.
+It's likely that we'd change the reducer state's structure at some point, but forget to change the version number.
+This is especially likely because the state contains the lesson content itself, which comes from our API.
+We'd have to remember to increment the version number when changing the state, but also whenever we change any of the related API endpoints.
+That's too error-prone.</p>
+<p>We could automate the version number.
+For example, we could hash the source files that define the relevant parts of the API, as well as the file that defines the reducer state, and use that hash as the &quot;version number&quot;.
+But that has its own problems.</p>
+<p>First, even trivial changes like adding or removing whitespace would invalidate all lesson states for all users.
+Second, what happens if we break one of those API files into two different files?
+If we forget to add those two new files to our hashing scheme, then the system won't know to invalidate saved states when they change.
+Hashing the source files would only provide the illusion of safety; in reality, it's probably more error-prone than a manual version number.</p>
+<p>We need a solution that can detect changes to the structure of the state data only when that structure genuinely changes, and regardless of why it changed.</p>
+<p><strong>Interlude: An introduction to io-ts.</strong></p>
+<p>Execute Program is written in TypeScript.
+It already uses <a href="https://github.com/gcanti/io-ts" target="_blank">io-ts</a> to do runtime validation of API data.
+For example, when an API request comes in, we use io-ts to check that all of the keys are present; that keys that should be numbers are numbers; that arrays are arrays; etc.</p>
+<p>Our reducer problem is similar to the API problem.
+In an API, we have network data coming in from another computer.
+It could be coming from a malicious attacker, or it could be coming from a future version of ourselves who made a mistake and sent the wrong data to our own API.
+We want to detect those problems and throw an error.</p>
+<p>In our reducer state problem, we also have data coming in from &quot;another&quot; computer.
+In this case, that computer is the user's own computer from some point in the past: the state was saved a month ago and it's being resumed now.
+Like with the API, we need to check the structure of the data: make sure that all expected keys are present; that keys that should be numbers are numbers; etc.
+We can use io-ts to solve this, just as we do with our API.</p>
+<p>Here's a quick primer on how io-ts works.
+Suppose that our API has a <code>register</code> endpoint for registering new accounts.
+It accepts an email address.
+We can define an io-ts codec that validates the incoming data:</p>
+<pre><code class="language-typescript">import * as t from 'io-ts'
+import { isRight } from 'fp-ts/lib/Either'
+
+const register = t.strict({
+  email: t.string,
+})
+</code></pre>
+<p>Then, we can use it to check for whether some data matches our codec:</p>
+<pre><code class="language-typescript">// This returns true.
+isRight(register.decode(
+  {email: 'amir@example.com'}
+))
+
+// Each of these returns false.
+isRight(register.decode(
+  {email: 1234}
+))
+isRight(register.decode(
+  {email: undefined}
+))
+isRight(register.decode(
+  {userEmail: 'amir@example.com'}
+))
+isRight(register.decode(
+  {}
+))
+isRight(register.decode(
+  null
+))
+</code></pre>
+<p>This is how Execute Program checks API data.
+We define io-ts codecs for every API endpoint.
+Then the server uses <code>decode</code> and <code>isRight</code> to validate all incoming and outgoing data.</p>
+<p>Some of our API data is complex: objects nested in arrays nested in other objects nested in yet other objects, etc.
+We break those complex io-ts codecs into smaller, more manageable pieces, which are sometimes shared between multiple endpoints.</p>
+<p>There's one more important fact about io-ts.
+We're in TypeScript, so we want static types for our data.
+For our <code>register</code> codec above, that might look like:</p>
+<pre><code class="language-typescript">type Register = {
+  email: string
+}
+</code></pre>
+<p>But that duplicates our io-ts codec.
+Instead of writing the type manually, we can extract the exact type above from the io-ts validator:</p>
+<pre><code class="language-typescript">type Register = t.TypeOf&lt;typeof register&gt;
+</code></pre>
+<p>That will look quite arcane if you're new to TypeScript.
+But this pattern always looks the same when extracting a static type from an io-ts codec, so it becomes routine with with some TypeScript and io-ts experience.
+One short line of code using <code>t.TypeOf</code> can replace hundreds of lines of duplicated type definitions.</p>
+<p>(Full disclosure: doing this sometimes makes type error messages more confusing, but the details of that are out of scope here.
+In some situations, we do define the types explicitly, effectively duplicating the io-ts codec definitions.
+It's annoying, but the type system will keep us honest: it will error if our types don't match the codec's structure.
+These definitions are used all over the system but change rarely, so a bit of extra code in a complex codec is often a good trade-off to get better error messages.)</p>
+<p>To summarize:</p>
+<ul>
+<li>io-ts lets us validate data at runtime, ensuring that it has the structure that we expect.</li>
+<li>We can extract static types from our io-ts codecs, so we don't have to define the types twice unless we choose to.</li>
+</ul>
+<p><strong>Solution 5: Validate the reducer state with io-ts.</strong></p>
+<p>Now we can talk about our chosen solution for the lesson resuming problem.</p>
+<p>We define an io-ts codec that describes the structure of the reducer state.
+Remember that the reducer state contains the steps (the code examples and paragraphs), which come from the API.
+Our entire API is defined using io-ts, so we can reuse all of those codecs.
+Excluding imports and whitespace, the io-ts codecs for our reducer state are 66 lines long.</p>
+<p>If we ever change the reducer state's structure, we'll be forced to update the io-ts codec.
+That's because the TypeScript type system checks all of this: the io-ts codec must match the reducer state types, and the reducer code in our React components must also match those types.</p>
+<p>Now we can formulate a solution to the problem of deciding whether a lesson state came from an old, incompatible version of the application:</p>
+<ol>
+<li>Deserialize the JSON-encoded state.
+If it's not legal JSON, abort.</li>
+<li>Check the JSON against our reducer state io-ts codec.
+If it doesn't conform to the io-ts codec, then it's from an older, incompatible version of the code.
+Abort.</li>
+<li>If we get here then the state is compatible!</li>
+</ol>
+<p>Now we have to solve the second problem: what if the lesson content has changed?
+Fortunately, the reducer state contains all of the steps (the code examples and paragraphs) as they existed when the state was saved.
+The client also has the current examples and paragraphs: it's showing a lesson, so it just got all of the lesson content from the API.
+We can compare the two to decide whether the content has changed since this state was saved:</p>
+<ol>
+<li>Get the steps array from the reducer state.</li>
+<li>Use the API's io-ts codecs to &quot;narrow&quot; those steps to only the keys that exist in the API.
+This removes the metadata fields added by our reducer.
+(In addition to validating data, io-ts codecs can narrow data down, which removes any object keys that are in the data but aren't part of the codec.)</li>
+<li>Use <a href="https://lodash.com/" target="_blank">lodash</a>'s <a href="https://lodash.com/docs/4.17.15#isEqual" target="_blank"><code>isEqual</code></a> to do a deep comparison of the saved state's steps and the current API steps.</li>
+<li>If they're not equal, then the content has changed since this state was saved, so abort.</li>
+</ol>
+<p>This is a full solution to the problem!
+The type system ensures that we never create invalid reducer states in our normal React code.
+The io-ts codecs ensure that we never restore an old state with the wrong structure.
+And checking the saved steps against the current steps ensures that we don't confuse the user or the app by restoring to the wrong point.</p>
+<p>Here's the function that loads the state.
+It takes a string that (hopefully) contains a JSON-serialized state.</p>
+<pre><code class="language-typescript">export function loadSerializedState(
+  apiSteps: readonly ApiStep[],
+  serializedModelState: string
+): State | undefined {
+  return validateSteps(
+    apiSteps,
+    validateStateType(
+      deserializeJson(serializedModelState)
+    )
+  )
+}
+</code></pre>
+<p>The three functions called here are quite short.
+Excluding imports and comments, all four functions sum to 38 lines of code.</p>
+<p>Each of the three functions called here will return <code>undefined</code> if something doesn't match, and each of them passes <code>undefined</code>s along.
+That allows us to write the top-level <code>loadSerializedState</code> function in this simple way.</p>
+<p>If <code>loadSerializedState</code> returns an object, then we know it's a valid reducer state that corresponds to the current lesson content and the current client-side code.
+We feed it into <code>useReducer</code>, and React uses it without knowing or caring that it was created a month ago!</p>
+<p>It's important to note that this is a conservative solution.
+Suppose that we make a typo in the lesson content: we write &quot;proimse&quot; instead of &quot;promise&quot;.
+When we fix that typo, the current lesson content will no longer match any of the saved states for that lesson.
+Every saved state for that lesson is immediately invalidated.</p>
+<p>In the future, we may try to detect trivial content changes and allow those saved states to be restored.
+But the perfect is the enemy of the good, and we get most of the benefit without doing any deep content comparison.</p>
+<p><strong>Where do we store the state?</strong></p>
+<p>Now that we can save and restore our reducer state, there's one more question: where do we store it?
+The initial plan was to store it in the browser's local storage.
+But that has a big problem.
+If a user begins a lesson on their phone, then later tries to resume it on their laptop, the state won't be there.
+The laptop's browser can't see the saved state on the phone.</p>
+<p>Our actual solution is to store the state in our server-side database.
+This feels wrong at first glance: we're storing a client-side React component's state as an opaque JSON blob in our server-side database, and we're doing that knowing that some of those JSON blobs will go out of date and be unusable in the future.
+But io-ts and the type system keep us honest here!
+And this is a convenience feature, so we can always change it later, even if that means throwing away all of the saved states.
+(When a user finishes a lesson, that record is stored in a separate part of the database.)</p>
+<p><strong>A simple solution</strong></p>
+<p>It took a lot of words to describe this solution, but that's because there was a lot of background to explain.
+In reality, I went almost directly to the io-ts solution because I could see that this problem was analogous to the API validation problem.</p>
+<p>This code change was quite simple: it added 470 lines of code containing 1,102 words.
+(This article contains almost three times as many words!)
+Those 470 lines include the new modal UI for resuming, the new API endpoint, the API server handler, the database migration, and the database model class, all of which would exist with or without this solution based on io-ts.</p>
+<p>Our tools are a good match for our problems, which allows us to solve problems like this smoothly:</p>
+<ul>
+<li>React's <code>useReducer</code> represents states as simple JavaScript objects, so we can serialize them to JSON and bring them back later.</li>
+<li>Defining our API's structure with io-ts makes it easy to validate objects that contain API data.</li>
+<li>TypeScript statically guarantees that our system's data all has the correct shape.
+If io-ts says that the restored state object is correct, we can trust TypeScript to keep other parts of the system honest.</li>
+</ul>
+<p>If you're interested in trying Execute Program to see this in action, we recommend the <a href="https://www.executeprogram.com/courses/typescript" target="_blank">TypeScript courses</a> or the <a href="https://www.executeprogram.com/courses/regexes/lessons/literals" target="_blank">Regular Expressions course</a>.
+Please use the feedback item in the menu to tell us what you think!</p>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://www.executeprogram.com/blog/problems-with-typescript-in-2020"
+                    >Problems With TypeScript in 2020</a>
+                </h2>
+
+                                    <time datetime="2020-04-15 20:43:07">
+                        2020-04-15 20:43:07                    </time>
+                    <p></p>
+                
+                
+                <!-- Intentionally not escaping for html context -->
+                <p>TypeScript is very good.
+We <a href="/blog/porting-a-react-frontend-to-typescript" target="_blank">ported our frontend</a> and <a href="/blog/porting-to-typescript-solved-our-api-woes" target="_blank">backend</a> to it with no regrets.
+We have a <a href="/blog/are-tests-necessary-in-typescript" target="_blank">much smaller test suite</a> than we ever could've had in a dynamic language.
+All of this is great.
+Still, there are downsides to TypeScript, and we should be honest about them too.</p>
+<p><strong>JavaScript</strong></p>
+<p>TypeScript is a superset of JavaScript, and JavaScript is a mess.
+It was designed <a href="https://thenewstack.io/brendan-eich-on-creating-javascript-in-10-days-and-what-hed-do-differently-today/" target="_blank">in 10 days</a>, then it evolved haphazardly for almost two decades, then it was finally cleaned up in the last few years.
+A lot of the warts are still there and will always be there. For example:</p>
+<ul>
+<li><code>1 * '1'</code> returns <code>1</code> instead of an error.</li>
+<li><code>({name: 'Amir'}).age</code> returns <code>undefined</code> rather than erroring.</li>
+<li><code>x &amp;&amp; x + 1</code> looks like it means &quot;add 1 to x if it's not null or undefined&quot;; but when x is 0 it returns 0, not 1.</li>
+</ul>
+<p>TypeScript can't fix all of JavaScript's warts.
+But having used JavaScript since the 90s, I'm amazed at how well TypeScript did its dirty, improbable job.
+The first two code examples in the previous list are illegal in TypeScript.
+By adding a linter, the third one becomes illegal too.
+Those examples are simple, but TypeScript has saved us from many complex, subtle bugs that are too complex to show here.</p>
+<p>The TypeScript team has been working to standardize new JavaScript features that let them increase safety further.
+For example, the new <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator" target="_blank">nullish coalescing operator</a> mitigates JavaScript's design defects around the falsiness of 0 and the empty string, &quot;&quot;.</p>
+<p>Overall, the JavaScript underneath TypeScript is still frustrating in many situations, but TypeScript mitigates many of the worst frustrations.
+(A <a href="https://www.destroyallsoftware.com/talks/wat" target="_blank">past version of myself</a> would be very surprised to see this future!)</p>
+<p><strong>Compiler bugs</strong></p>
+<p>For decades, programmers joked that &quot;It's never a compiler bug.&quot;
+Compilers weren't perfect, but &quot;compiler bugs&quot; almost always turned out to be the programmer misunderstanding the language.</p>
+<p>When used as a long-lived watcher process, TypeScript has broken this trend: it's buggy.
+The compiler tends to hit bugs when files are deleted or renamed.
+We have a special script that notices those events and restarts the compiler.
+But our script is imperfect, so we still end up restarting the compiler manually.
+Last Saturday, I manually restarted the TypeScript compiler dozens of times as it encountered multiple bugs over and over again.</p>
+<p>Sometimes the compiler doesn't realize that a file was deleted, so it produces incorrect errors.
+For example, if file A imports file B, and we delete both, it will sometimes complain that file A is trying to import B, which doesn't exist.
+But A doesn't exist either, so it shouldn't be causing an error!
+Other times, the compiler &quot;successfully&quot; compiles when there are actually type errors.
+In all of those cases, killing and restarting the compiler makes the errors go away, which is an unambiguous sign that it's a compiler bug in the watcher's state management.</p>
+<p>(Webpack's watcher also has similar bugs around file deletion and renames.
+The easiest workaround for both TypeScript and Webpack is to restart all of the tools when a file is renamed or deleted, then wait as they all start back up.
+I feel embarrassed while waiting for those restarts.)</p>
+<p>In the compiler's defense, this all seems to be limited to the watcher.
+I've never seen a bug in the compiler when it's cold booted, as it is during a production deploy or a CI run.
+And TypeScript doesn't seem worse than most other long-running development tools.
+As any long-time IDE user knows, any development tool that runs for a long time will break.</p>
+<p>Unfortunately, booting the TypeScript compiler is very expensive, so we have no choice but to keep the compiler running between changes.
+This is in contrast to some other static languages like Go and Reason, which can compile systems the size of <a href="/" target="_blank">Execute Program</a> in the neighborhood of 100 times faster than TypeScript.
+Those compilers are fast enough to be booted as-needed and then terminated.
+No need for a long-lived watcher.</p>
+<p><strong>The Node/NPM ecosystem</strong></p>
+<p>TypeScript is a superset of JavaScript, so it's closely connected to the Node and NPM ecosystems.
+Like any large ecosystem, the Node and NPM ecosystem is a mixed bag.
+There are so many packages; it's great!
+But some of them are very good and others are less good.</p>
+<p>TypeScript allows us to write types for existing JavaScript libraries.
+People (often not a package's original authors) publish these type definitions in a <a href="https://github.com/DefinitelyTyped/DefinitelyTyped" target="_blank">central repository</a>.
+On GitHub, that repository says &quot;The repository for high-quality TypeScript type definitions.&quot;
+There's a bit of aspiration in that description.
+Sometimes it's true and the type definitions are high-quality!
+Sometimes they're not.</p>
+<p>As one example, we recently did a major version upgrade of the database library that underpins our own database library.
+That made some of our valid code fail to type check.
+Worse, it allowed other code to type check even though it had major type errors.
+From our perspective, the &quot;upgrade&quot; was a step backward.
+But we don't have a choice if we want to continue to get security updates, and continue to upgrade other packages that depend on the database library.</p>
+<p>None of that happened because TypeScript is bad; it happened because the type definitions for that library are wrong.
+Fortunately, our recent experience with that database library is an outlier.
+Most of the time, everything goes fine.
+Still, this is an annoyance that's relatively unique to TypeScript because it's a type system layered over an existing dynamic language.</p>
+<p>It's hard to say whether the Node+NPM+TypeScript ecosystem is &quot;better&quot; or &quot;worse&quot; than, say, Ruby's or Python's.
+However, it's definitely far more complex, and it requires a more careful approach.
+Sometimes, there will be 50 packages that claim to do the thing that we need.
+Sometimes, one of them has more downloads than the other 49 combined.
+Sometimes, the best solution is the ninth-most-popular.</p>
+<p>Overall, less-experienced programmers face an uphill battle in deciding which packages are worth using.
+Adding TypeScript increases that burden: now we have to analyze all of the library options, and we also have to analyze the presence and quality of third-party type definitions.
+Arguments for or against packages may be written by JavaScript users, so they won't be considering the quality of the library's TypeScript type definitions.</p>
+<p>These problems don't outweigh the benefits.
+Compiler bugs are annoyances, but they've never affected our CI or production environments.
+Ecosystem complexity is a danger that can be navigated with forethought and by learning from past mistakes.
+I mention these problems to balance out the praise in <a href="/blog/porting-a-react-frontend-to-typescript" target="_blank">earlier</a> <a href="/blog/porting-to-typescript-solved-our-api-woes" target="_blank">articles</a> <a href="/blog/are-tests-necessary-in-typescript" target="_blank">about</a> TypeScript, but for us the trade-off is unambiguously in TypeScript's favor!</p>
+<p>Gary Bernhardt</p>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://www.executeprogram.com/blog/are-tests-necessary-in-typescript"
+                    >Are Tests Necessary in TypeScript?</a>
+                </h2>
+
+                                    <time datetime="2020-04-13 20:43:07">
+                        2020-04-13 20:43:07                    </time>
+                    <p></p>
+                
+                
+                <!-- Intentionally not escaping for html context -->
+                <p>We <a href="/blog/porting-a-react-frontend-to-typescript" target="_blank">ported our React frontend from JavaScript to TypeScript</a>, then <a href="/blog/porting-to-typescript-solved-our-api-woes" target="_blank">did the same for our Ruby backend</a>.
+It was a success; large classes of mistakes became impossible.
+You might wonder whether we could have achieved these results with full test coverage instead.</p>
+<p>Type systems aren't good at everything.
+One common example is: type systems usually can't stop us from accidentally inverting a conditional.
+In most cases, switching the &quot;if&quot; and &quot;else&quot; won't cause a type error.
+For that, we have tests.</p>
+<p>In <a href="/" target="_blank">Execute Program</a>, we always write tests around subsystems that either (1) are critical to the product or (2) contain a lot of details that can't be statically checked.
+Billing is covered by tests because we don't want to charge someone incorrectly.
+Our progression course model is covered by tests because it contains a lot of conditional logic that the type system can't check.</p>
+<p>We don't want tests covering most of our React components, though.
+That wouldn't help with the main difficulties in writing components:</p>
+<ol>
+<li>We might pass props around incorrectly.
+TypeScript already <a href="/blog/porting-a-react-frontend-to-typescript" target="_blank">solves this problem</a> for us almost completely.</li>
+<li>The components might use the API incorrectly.
+Again, we've <a href="/blog/porting-to-typescript-solved-our-api-woes" target="_blank">solved this problem</a> with TypeScript.</li>
+<li>The components might look wrong when rendered.
+Tests are very bad at this.
+We don't want to go down the esoteric and labor-intensive path of automated image capture and image diffing.</li>
+</ol>
+<p>It may still be a good idea to cover all of our components, even if our main component problems aren't solved by normal tests.
+We should do a cost/benefit analysis to find out what we'd be &quot;paying&quot; to get those tests.</p>
+<p>First, what's our starting state?
+Our entire system is 24,065 lines including all current tests, with none of those tests covering the components directly.
+(Some of the components are partially exercised through browser-driving tests.)</p>
+<p>Assuming a 2:1 test:code ratio for full coverage, covering our 9,000 lines of component code with unit tests would require 18,000 lines of test code.
+Adding 18,000 lines of client tests would almost double the total amount of code that we maintain.
+In practice, we already have a low defect rate in our TypeScript frontend, so there's no reason to pay that maintenance cost.</p>
+<p>Although we don't test components directly, there are some other parts of the frontend code that are tested directly.
+For example, we have some high-value tests around some React reducers because they're tricky and full of conditionals.
+Those tests add up to around 300 lines, giving us a test:code ratio of about 1:30 for client code.</p>
+<p>We also don't have tests covering our backend API handlers.
+Only a few of those handlers have any conditionals at all; they mostly translate API requests into calls to other subsystems.
+We push conditional logic down into those subsystems and test it there.
+As usual, TypeScript ensures that the handlers are properly wired up to the lower subsystems.</p>
+<p>The subsystems below the API handlers do all kinds of different things.
+We have subsystems for tracking which lessons a user has unlocked; for computing statistics about their finished lessons; for managing subscriptions and billing; for deciding what content users have access to; etc.
+All of those subsystems are fully tested.
+That gives the server a roughly 1:2 test:code ratio: two lines of production code for every line of test.</p>
+<p>All of this is to say: there are places where tests are necessary to achieve confidence in the system.
+But any production web application will have large regions where we can gain confidence via the type system and avoid writing almost all tests.</p>
+<p>We have 19,498 lines of production code covered by 4,567 lines of tests.
+That gives an actual test:code ratio of about 1:5 overall.
+It feels about right.</p>
+<p>Let's imagine an alternate version of Execute Program with a 2:1 test:code ratio.
+Naively covering all 19,498 lines of our production code with 2:1 tests would require 38,996 lines of test code, increasing our total line count from 24,065 lines to 58,494 lines.
+That's 243% as much code for very little additional benefit.</p>
+<p>To answer the question that we started with: could we have achieved these results by forgetting TypeScript and fully covering the app with tests?
+The most literal answer is: yes, we might be able to get to the same low defect rate, but that ignores all other trade-offs in play here.
+We'd be maintaining an extra 150% or so more code, depending on our final test:code ratio.
+We'd also spend a lot more time writing and maintaining test code, rather than building features.</p>
+<p>Types and tests <a href="https://www.destroyallsoftware.com/talks/ideology" target="_blank">are not equivalent</a> at all; they give very different kinds of confidence.
+Tests can never provide an unbroken chain of checks, from the database all the way to the frontend React props, guaranteeing that all of the data has the right shape.
+Types can't (usually) tell us when we accidentally put a &quot;!&quot; in front of a conditional.
+Focusing on one or the other means sacrificing quality, work efficiency, or both.</p>
+<p>Gary Bernhardt</p>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://www.executeprogram.com/blog/porting-to-typescript-solved-our-api-woes"
+                    >Porting to TypeScript Solved Our API Woes</a>
+                </h2>
+
+                                    <time datetime="2020-04-08 20:43:07">
+                        2020-04-08 20:43:07                    </time>
+                    <p></p>
+                
+                
+                <!-- Intentionally not escaping for html context -->
+                <p>We <a href="/blog/porting-a-react-frontend-to-typescript" target="_blank">ported our React frontend from JavaScript to TypeScript</a>, but left the backend in Ruby.
+Eventually, we ported the backend to TypeScript too.</p>
+<p>With the Ruby backend, we sometimes forgot that a particular API property held an array of strings, not a single string.
+Sometimes we changed a piece of the API that was referenced in multiple places but forgot to update one of those places.
+These are normal dynamic language problems in any system whose tests don't have 100% test coverage.
+(And it will still happen even with 100% coverage; it's just less likely.)</p>
+<p>At the same time, these kinds of problems were gone from the frontend since porting it to TypeScript.
+I had more experience with backend development, but I was making more simple errors in the backend than the frontend.
+That was a sign that porting the backend was a good idea.</p>
+<p>I ported the backend from Ruby to TypeScript in about two weeks in March of 2019.
+It went well!
+We pushed it to production, which was then in a closed beta, on April 14, 2019.
+Nothing blew up; users didn't notice.
+Here's a timeline of the run-up to the backend port, plus the time immediately after:</p>
+<p><img
+  src="/images/blog/2020-04-08-porting-to-typescript-solved-our-api-woes/execprog-code-over-time-2.png"
+  width=529
+  alt="A plot showing Execute Program's Ruby and JavaScript code growing over time. Around April 14, 2019, the TypeScript line appears, then the Ruby code disappears shortly after." /></p>
+<p>I wrote an unusual amount of custom infrastructure during that port.
+We have a custom 200-line test runner; a custom 120-line database model library; and a larger API router library that spans the frontend and backend code.</p>
+<p>Of our custom infrastructure, the router is the most interesting piece to discuss.
+It wraps <a href="https://expressjs.com/" target="_blank">Express</a>, enforcing the API types that are shared between the client and server code.
+That means that when one side of the API changes, the other side won't even compile until it's updated to match.</p>
+<p>Here's the backend handler for the blog post list, one of the simplest in the system:</p>
+<pre><code class="language-typescript">router.handleGet(api.blog, async () =&gt; {
+  return {
+    posts: blog.posts,
+  }
+})
+</code></pre>
+<p>If we rename the <code>posts</code> key to <code>blogPosts</code>, we get a compile error ending with the line below.
+(The actual object types are removed from the error message to keep it short here.)</p>
+<pre><code>Property 'posts' is missing in type '...' but required in type '...'.
+</code></pre>
+<p>Each endpoint is defined by an <code>api.someNameHere</code> object, which is shared between the client and server.
+Notice that the handler definition doesn't name any types directly; they're all inferred from the <code>api.blog</code> argument.</p>
+<p>This works for trivial endpoints like <code>blog</code> above, but it also works well for complex endpoints.
+For example, our lesson API endpoint has a deep key <code>.lesson.steps[index].isInteractive</code>, which is a boolean.
+All of these mistakes are now impossible:</p>
+<ul>
+<li>If we try to access <code>isinteractive</code> on the client or to return it from the server, that won't compile; it has to be <code>isInteractive</code>, with a capital &quot;I&quot;.</li>
+<li>If the server returns a number for <code>isInteractive</code>, it won't compile.</li>
+<li>If the client  stores <code>isInteractive</code> in a variable of type <code>number</code>, it won't compile.</li>
+<li>If we change the API definition itself to say that <code>isInteractive</code> is a number rather than a boolean, then neither the client nor server will compile until they're fixed.</li>
+</ul>
+<p>None of that involves code generation; it's done using <a href="https://github.com/gcanti/io-ts" target="_blank">io-ts</a> and a couple hundred lines of custom router code.</p>
+<p>There's overhead in defining these API types, but it's not difficult.
+When changing the API's structure, we have to know how the structure is changing.
+We write our understanding down in the API type definitions, then the compiler shows us all of the places that have to be fixed.</p>
+<p>It's difficult to appreciate how valuable this is until you've used it for a while.
+We can  move large sub-objects in the API from one place to another, rename their keys, split one object into two separate objects, merge multiple objects into one new one, or split and merge entire endpoints, all without worrying about whether we missed a corresponding change in the client or server.</p>
+<p>Here's a real example.
+I recently spent around 20 hours redesigning <a href="/" target="_blank">Execute Program</a>'s API over four weekends.
+The entire API structure changed, totaling tens of thousands of lines of diff across the API, server, and client.
+I redesigned the server-side route definition code (like <code>handleGet</code> shown above); rewrote all of the type definitions for the API, making huge structural changes to many of them; and rewrote every part of the client that called the API.
+246 of our 292 source files were modified in this change.</p>
+<p>Throughout most of the redesign, I relied only on the type system.
+In the final hour of the 20-hour process, I started running the tests, which mostly passed.
+At the very end, we did a full manual testing pass and found three small bugs.</p>
+<p>All three bugs were logic errors: conditionals that accidentally went the wrong way, which type systems usually can't detect.
+The bugs were fixed in a few minutes.
+That redesigned API was deployed a few months ago, so it served you this blog post (and everything else on <a href="/" target="_blank">Execute Program</a>).</p>
+<p>(This doesn't mean that a static type system will guarantee that our code is always correct, or guarantee that we don't need tests.
+But refactoring becomes much easier.
+We'll talk about the larger question of testing in the next post.)</p>
+<p>There is one place where we do code generation: we use <a href="https://github.com/SweetIQ/schemats" target="_blank">schemats</a> to generate type definitions from our database structure.
+It connects to the Postgres database, looks at the columns' types, and dumps corresponding TypeScript type definitions to a normal &quot;.d.ts&quot; file used by the rest of the application.</p>
+<p>The database schema type file is regenerated by our migration script on every migration run, so we don't do any manual maintenance on those types.
+The database models use the database type definitions to ensure that application code accesses every part of the database correctly.
+No missing tables; no missing columns; no putting a null in a non-nullable column; no forgetting to handle null in columns that are nullable; all statically verified at compile time.</p>
+<p>All of that together creates an unbroken statically typed chain from the database all the way to the frontend React props:</p>
+<ul>
+<li>If a database column's type changes, other server-side code (like the API handlers) won't compile until everything is updated to match.</li>
+<li>If the server-side API handlers don't match the client-side API consumers, one or both won't compile.</li>
+<li>If the client-side React components don't match the data coming out of the API, they won't compile.</li>
+</ul>
+<p>Since finishing this port, I don't remember any API mismatch making it past the compiler.
+We've had no production failures due to mistakes where the two sides of the API disagree about the shape of the data.
+This isn't due to automated testing; we don't write any tests for the API itself.</p>
+<p>These guarantees are wonderful: we can focus on the parts of the app that matter!
+I spend very little time wrangling types – far less than I spent chasing down confusing errors that propagated through layers of Ruby or JavaScript code before causing a confusing exception somewhere far away from the original source of the bug.</p>
+<p>Here's a timeline of our development since the backend port.
+We've had a lot of time and new code to evaluate the results:</p>
+<p><img
+  src="/images/blog/2020-04-08-porting-to-typescript-solved-our-api-woes/execprog-code-over-time-3.png"
+  width=529
+  alt="A plot showing Execute Program's Ruby and JavaScript code growing over time. Once everything is in TypeScript, the overall code keeps growing to around 25,000 lines." /></p>
+<p>We haven't discussed a common objection to any post like this: couldn't you get the same result by writing tests?
+Absolutely not, which we'll cover in the next post!</p>
+<p>Gary Bernhardt</p>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://www.executeprogram.com/blog/porting-a-react-frontend-to-typescript"
+                    >Porting a React Frontend to TypeScript</a>
+                </h2>
+
+                                    <time datetime="2020-04-06 20:43:07">
+                        2020-04-06 20:43:07                    </time>
+                    <p></p>
+                
+                
+                <!-- Intentionally not escaping for html context -->
+                <p>The beta version of Execute Program was written in Ruby and JavaScript.
+Then we ported all of it to TypeScript in multiple steps.
+This is the story of the frontend port, which was the first step.</p>
+<p>In Execute Program's original JavaScript frontend, I often made small mistakes.
+For example, I'd pass the wrong prop names to a React component, or leave a prop out, or pass the wrong kind of data.
+(Props are pieces of data sent as arguments to a React component.
+It's common for a component to pass some props to one of its sub-components, which pass them on again, etc.)</p>
+<p>This is a big problem with dynamic languages like JavaScript and Ruby.
+I've been learning to mitigate it for 15 years.
+<a href="https://www.destroyallsoftware.com/screencasts/catalog/how-and-why-to-avoid-nil" target="_blank">Here I am</a> talking about it way back in 2011.
+Mitigations like the ones discussed there do help, but they don't scale well as a system grows, and there's no safety net for when we forget them.</p>
+<p>I thought that 15 years was enough; I wanted to return to static type systems, where these mistakes are impossible.
+There were a few options: Elm, Reason, Flow, TypeScript, PureScript.
+(That's not an exhaustive list.)
+I decided on TypeScript because:</p>
+<ol>
+<li>TypeScript is a superset of JavaScript, so porting to it is easy.
+Reversing a port is even easier: delete the type definitions; now we have JavaScript again.</li>
+<li>The TypeScript compiler is written in TypeScript and distributed as compiled JavaScript, so we can run it in our web app.
+Our <a href="/courses/typescript-basics/lessons/basic-types" target="_blank">TypeScript course</a> does exactly that: we evaluate users' TypeScript code in the browser to avoid network latency.</li>
+<li>This one is particular to our business, but: TypeScript is more popular than the other options.
+That means more people want to learn TypeScript from courses like ours.
+Writing Execute Program itself in TypeScript was a good way to set us up for writing a <a href="/courses/typescript-basics/lessons/basic-types" target="_blank">TypeScript course</a>.</li>
+</ol>
+<p>Porting the frontend JavaScript code to TypeScript took about 2 days in October of 2018.
+Here's a plot showing how much code we had in each language leading up to, and immediately after, that port.</p>
+<p><img
+  src="/images/blog/2020-04-06-porting-a-react-frontend-to-typescript/execprog-code-over-time-1.png"
+  width=529
+  alt="A plot showing Execute Program's Ruby and JavaScript code growing over time. In October 2018, the JavaScript line disappears and is replaced with TypeScript." /></p>
+<p>That was pre-beta, so the system was still small: about 6,000 lines.
+The period after the port is missing here; we'll expand on that in future posts.</p>
+<p>After that port, React prop problems disappeared.
+We'll look at a couple examples, starting with an easy one.
+Here's the code that renders the &quot;Continue&quot; button that appears after every paragraph of text in our courses:</p>
+<pre><code class="language-typescript">&lt;Button
+  autofocus={true}
+  icon=&quot;arrowRight&quot;
+  onClick={continue}
+  primary
+&gt;
+  Continue
+&lt;/Button&gt;
+</code></pre>
+<p>The type of that <code>Button</code> component's props is shown below.
+When reading a property type like <code>autofocus?: boolean</code>, &quot;autofocus&quot; is the name of the property; &quot;?&quot; means that it's optional; &quot;:&quot; separates the property name from its type; and &quot;boolean&quot; is the type.
+The last property type, <code>onClick</code>, means &quot;a function that takes no arguments and returns nothing&quot;.
+(If TypeScript's function type syntax is unfamiliar, you can get a comprehensive overview in our lesson on <a href="/courses/typescript-basics/lessons/function-types" target="_blank">TypeScript's function types</a>.)</p>
+<pre><code class="language-typescript">type ButtonProps = {
+  autofocus?: boolean
+  icon?: IconName
+  primary?: boolean
+  onClick: () =&gt; void
+}
+</code></pre>
+<p>What happens if we change the &quot;autofocus&quot; prop from true to 1?
+We're now passing a number value where the type system expects a boolean.
+Less than a second later, the compiler prints the error below.
+(Some irrelevant details have been removed here; we'll do that for all of the errors in this series of articles.)</p>
+<pre><code>src/client/components/explanation.tsx(13,27):
+  error: Type 'number' is not assignable to type 'boolean | undefined'.
+</code></pre>
+<p>The offending code also turns red in vim.
+I fix it and the red goes away.
+Fixing the mistake takes seconds.
+In Ruby or JavaScript, I might spend minutes manually testing the app and rummaging around in its state to find out what happened.
+(I could also rely on automated tests, but we cover the issue of tests vs. types in <a href="/blog/are-tests-necessary-in-typescript" target="_blank">another post</a>.)</p>
+<p>That integer-to-boolean change was a simple and low-stakes use of the type system.
+<code>Button</code>'s <code>icon</code> property shows more advanced use.
+Here's the <code>Button</code> invocation again:</p>
+<pre><code class="language-typescript">&lt;Button
+  autofocus={true}
+  icon=&quot;arrowRight&quot;
+  onClick={continue}
+  primary
+&gt;
+  Continue
+&lt;/Button&gt;
+</code></pre>
+<p>It looks like the icon prop is just a string: &quot;arrowRight&quot;.
+At runtime, in the compiled JavaScript code, it will be a string.
+But in the <code>ButtonProps</code> type shown above, we defined it as an <code>IconName</code>, which is defined elsewhere.</p>
+<p>Let's see what the type does before we look at its definition.
+Suppose that we change the &quot;icon&quot; prop to &quot;banana&quot;.
+We don't actually have an icon named &quot;banana&quot;.</p>
+<pre><code class="language-typescript">&lt;Button
+  autofocus={true}
+  icon=&quot;banana&quot;
+  onClick={continue}
+  primary
+&gt;
+  Continue
+&lt;/Button&gt;
+</code></pre>
+<p>Less than a second later, the TypeScript compiler rejects that change:</p>
+<pre><code>src/client/components/explanation.tsx(13,44):
+  error: Type '&quot;banana&quot;' is not assignable to type
+    '&quot;menu&quot; | &quot;arrowDown&quot; | &quot;arrowLeft&quot; | ... 21 more ... | undefined'.
+</code></pre>
+<p>The compiler is saying that &quot;icon&quot; can't be any arbitrary string; it has to be one of the 24 strings that we've defined as icon names.
+The compiler will reject any change that leaves us referencing a non-existent icon; it's not a valid program and can't even begin executing.</p>
+<p>There are multiple ways to implement the <code>IconName</code> type.
+One is to write a type that explicitly lists all of the possible icon names.
+Then we'll have to keep the icon names in sync with their image files on disk.
+That type might look like:</p>
+<pre><code class="language-typescript">type IconName =
+  &quot;menu&quot; |
+  &quot;arrowDown&quot; |
+  &quot;arrowLeft&quot; |
+  &quot;arrowRight&quot; |
+  ...
+</code></pre>
+<p>In English: &quot;a value of type <code>IconName</code> is statically guaranteed to be one of the strings specified here, but not any other string.&quot;
+(This type is a combination of two topics covered by Execute Program lessons: <a href="/courses/typescript-basics/lessons/literal-types" target="_blank">literal types</a> and <a href="/courses/typescript-basics/lessons/type-unions" target="_blank">type unions</a>.)</p>
+<p>Our <code>IconName</code> isn't defined as a simple union of literal string types.
+Keeping a list of icon names in sync with a list of files is boring work that we can make the computer do!
+Instead, our icon.tsx file looks like this:</p>
+<pre><code class="language-typescript">export const icons = {
+  arrowDown: {
+    label: &quot;Down Arrow&quot;,
+    data() {
+      return &lt;path ... /&gt;
+    }
+  },
+
+  arrowLeft: {
+    label: &quot;Left Arrow&quot;,
+    data() {
+      return &lt;path ... /&gt;
+    }
+  },
+
+  ...
+}
+</code></pre>
+<p>The actual SVG <code>&lt;path /&gt;</code> tags are right inside the source code, in an object keyed by the icon's name.
+(It's also possible to do this without inlining the SVG into a source file.
+For example, we could use some Webpack tricks to keep the images in their own files, but still have a guarantee that every icon in the list also exists on disk.
+So far, this simpler solution has worked well for us.)</p>
+<p>By defining the icons in this way, we can extract a union type of their names automatically with one line of code:</p>
+<pre><code class="language-typescript">export type IconName = keyof typeof icons
+</code></pre>
+<p>(In English, you can think of that type as saying &quot;whenever something has the type &quot;IconName&quot;, it must be a string that matches one of the keys of the <code>icons</code> object.)</p>
+<p>That's it; there's no other type-level work required.
+The rest of the code is just a straightforward <code>Icon</code> React component that looks up an icon in a list and returns its SVG path.
+There are no explicit TypeScript types in that function; it looks like pure JavaScript, though it's still type-checked.
+Here's a minimal version with all unrelated details stripped away:</p>
+<pre><code class="language-typescript">export function Icon(props: {
+  name: IconName
+}) {
+  return &lt;svg&gt;
+    {icons[props.name].data()}
+  &lt;/svg&gt;
+}
+</code></pre>
+<p>Now we can drop new icons into the &quot;icons&quot; list by putting the SVG tags in that source file.
+When we do that, the icon becomes available for use in the Button component, as well as any other part of the system that accepts an icon name.
+If we delete an icon from the list, every part of the system that references it instantly fails to compile, ensuring that we have no stale icon references that can cause errors at runtime.</p>
+<p>These examples are simple by static type standards, but I think that they illustrate how much low-hanging fruit there is in a web application.
+Most of an application's code doesn't involve advanced type system features; it's simple stuff like &quot;make sure that we're passing the right props&quot; and &quot;make sure that our icons actually exist.&quot;</p>
+<p>We do this kind of thing all over the system.
+Some more examples:</p>
+<ol>
+<li>We have a <code>Note</code> component used throughout the system.
+It has a <code>tone</code> prop to determine the style of the note: &quot;info&quot;, &quot;warning&quot;, &quot;error&quot;, etc.
+If we retire one of those tone options, we'll remove it from the union type, and all <code>Note</code> uses that referenced that tone will error until we update them.</li>
+<li>Every URL that we link to is statically guaranteed to exist.
+When we rename or delete a URL, every component linking to it fails to compile until we update them to match.</li>
+<li>When we link to those URLs, the type system ensures that we fill in any holes in the URL.
+For example, the path &quot;/courses/:courseId/lessons/:lessonId&quot; has two holes, &quot;courseId&quot; and &quot;lessonId&quot;.
+If we try to link to that path but forget to supply a &quot;courseId&quot;, then the code won't compile.</li>
+<li>Every API request that we make on the client is statically guaranteed to match the payload structure of the corresponding server-side API endpoint.
+If we rename a property in an endpoint, even deep inside a nested API object, then any code referencing that endpoint property will fail to compile until we update it to match.
+(We cover this in <a href="/blog/porting-to-typescript-solved-our-api-woes" target="_blank">another post</a>.)</li>
+</ol>
+<p>Problems like these come up often in programming, especially in dynamic languages, but can be statically prevented without writing any automated tests and without doing any manual testing.
+Some of them take work; our API router verification was tricky to write.
+But a lot of them are easy.
+The one-line &quot;IconName&quot; type above really is the entire solution to the problem; it will work if you copy it into a TypeScript file.</p>
+<p>Porting our frontend code to TypeScript was just the beginning.
+We've since <a href="/blog/porting-to-typescript-solved-our-api-woes" target="_blank">ported the backend from Ruby to TypeScript</a>, then grown and maintained it for nine months after the port.</p>
+<p>Gary Bernhardt</p>
+
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://www.executeprogram.com/blog/why-you-should-learn-sql"
+                    >Why You Should Learn SQL</a>
+                </h2>
+
+                                    <time datetime="2019-10-31 20:43:07">
+                        2019-10-31 20:43:07                    </time>
+                    <p></p>
+                
+                
+                <!-- Intentionally not escaping for html context -->
+                <p>The SQL language is old, strange, and important.
+We'll take those in reverse order:</p>
+<p>SQL is important.
+Unlike many other types of databases, SQL databases can give strong guarantees of data correctness.</p>
+<p>If we have a regular, user-facing bug in our application, some users will see an error.
+When we fix the bug, the users stop seeing the error and everything is fine.</p>
+<p>But if we have a bug that inserts incorrect data into the database, then fixing the bug doesn't fix the problem.
+Even after the fix, the database is full of incorrect data, so we have to do something to clean it up.
+Here's a concrete example:</p>
+<p>We never expected orders to have a null phone_number, but a temporary application bug inserted some nulls there.
+Now our order history page is rendering those orders incorrectly.
+The business reports used by the management team throw errors because they don't expect nulls, so the business's cashflow is now invisible.
+Our analytics continue to run, but they produce incorrect numbers because every order with a null phone_number is defaulting to country code 1 (the USA and Canada).</p>
+<p>There's no way to retroactively get correct phone numbers for all of those orders!</p>
+<p>We have two possible ways to mitigate this problem once it's happened.
+First, we can adapt the rest of the system to correctly handle the nulls.
+That's a lot of work to handle a case that was never supposed to happen; we're only considering this because of a bug we already fixed.</p>
+<p>The second option is to make up fake phone numbers for all of the affected orders.
+Said another way: we can intentionally put incorrect data into the database, complicating attempts to contact those customers.</p>
+<p>Neither of those options is desirable.
+However, there is a third option: tell the database that the phone_number is never allowed to be null.</p>
+<p>In a SQL database like PostgreSQL, that non-nullability is guaranteed.
+If we try to insert a null, the database rejects it.
+If PostgreSQL allows us to insert a null in that column, it's a bug in PostgreSQL itself.
+(PostgreSQL is stable and well-tested; you should never expect to find a bug like this.)</p>
+<p>OK: SQL is important because our data is important.
+It's also very strange, but in ways that make it powerful.</p>
+<p>Most popular languages are imperative: code starts at the top of the function and executes line by line until the bottom.
+This is our default for a good reason: it's easy to think about how the code executes, at least within a single function.</p>
+<p>SQL isn't like that at all.
+In SQL, we describe the results that we want declaratively.
+For example, in an imperative language we might say: &quot;Loop over each cat. If a cat's age is over 5, add it to the oldCats array. Then return the oldCats array.&quot;
+In SQL, we say something more akin to &quot;Give me all of the cats whose age is over 5.&quot;</p>
+<p>What happens when we execute these two versions of the code?
+The imperative version says what the computer should do, step by step.
+It's difficult for a compiler to optimize it because it's so rigid.</p>
+<p>The SQL version doesn't say what order things should happen in; it just describes the result.
+That lets the database optimize it aggressively.
+The database will slice up the query into its smallest parts, reorder it as needed, throw some parts away if they're not needed, replace them with more efficient versions, etc.
+This all happens without any input from us as the programmers, and it's guaranteed not to change the results.</p>
+<p>In everyday situations, that optimization turns minutes-long queries into single-digit milliseconds.
+In extreme cases, it turns years-long queries into seconds.</p>
+<p>Compilers for imperative languages have optimizers too.
+But SQL databases' optimizers are much more powerful because SQL lets us say what data we want, rather than how to get it.</p>
+<p>OK: SQL is important and strange.
+It's also old: it first appeared in 1974.
+That definitely shows, so let's not kid ourselves.
+In SQL, we say things like &quot;ALTER TABLE users ALTER COLUMN email DROP NOT NULL&quot;.</p>
+<p>In English, that means &quot;allow users' email addresses to be null from now on&quot;.
+The SHOUTING PARTS are SQL syntax, whereas &quot;users&quot; and &quot;email&quot; are parts of our data.
+This shouting convention comes from THE OLD TIMES.</p>
+<p>You can see that SQL is unusually wordy.
+JavaScript has 64 keywords: &quot;if&quot;, &quot;function&quot;, &quot;for&quot;, etc.
+C has 34.
+SQLite has <a href="https://www.sqlite.org/lang_keywords.html" target="_blank">140 keywords</a>.
+But SQLite is &quot;lite&quot;, like its name says.
+PostgreSQL 11 has <a href="https://www.postgresql.org/docs/11/sql-keywords-appendix.html" target="_blank">760 keywords</a>.
+That's the exact number of words that you've read in this article so far, not including this sentence!</p>
+<p>OK, so SQL is important, which makes it worth learning.
+But it's also strange and old, which can make it offputting.</p>
+<p>That's a great reason for us to teach Execute Program to teach you SQL.
+We build complex knowledge models of tools like SQL, regular expressions, and TypeScript, which allows Execute Program to teach the topics in thousands of different orders depending on your strengths.
+Unlike most learning tools, you'll rarely go a full minute without completing an interactive code example.
+Those examples are then reviewed automatically, on exponentially increasing intervals, so you don't forget them.</p>
+<p>You can <a href="/courses/sql/lessons/basic-tables" target="_blank">try our first SQL lesson</a> without creating an account.
+It starts lightly, at the very beginning, and ramps up from there.
+Our favorite lesson comes late in the course, when you write a real SQL injection exploit to attack your own database.
+We hope that you enjoy it!</p>
+<p>Gary Bernhardt</p>
+
+                
+                            </section>
+        
+    </div>
+ </body>
+</html>

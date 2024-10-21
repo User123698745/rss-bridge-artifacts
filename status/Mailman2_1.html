@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><base href="https://rss-bridge.org/bridge01/" target="_blank">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/ >
+    <meta name="description" content="RSS-Bridge" />
+    <title>Mailman2Bridge</title>
+    <link href="static/style.css?2023-03-24" rel="stylesheet">
+    <link rel="icon" type="image/png" href="static/favicon.png">
+
+    
+        <link
+            href="?action=display&amp;bridge=Mailman2Bridge&amp;context=Mailman+2&amp;url=https%3A%2F%2Fmailman.nginx.org%2Fpipermail%2Fnginx-announce%2F&amp;format=Atom"
+            title="Atom"
+            rel="alternate"
+            type="application/atom+xml"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=Mailman2Bridge&amp;context=Mailman+2&amp;url=https%3A%2F%2Fmailman.nginx.org%2Fpipermail%2Fnginx-announce%2F&amp;format=Json"
+            title="Json"
+            rel="alternate"
+            type="application/json"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=Mailman2Bridge&amp;context=Mailman+2&amp;url=https%3A%2F%2Fmailman.nginx.org%2Fpipermail%2Fnginx-announce%2F&amp;format=Mrss"
+            title="Mrss"
+            rel="alternate"
+            type="application/rss+xml"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=Mailman2Bridge&amp;context=Mailman+2&amp;url=https%3A%2F%2Fmailman.nginx.org%2Fpipermail%2Fnginx-announce%2F&amp;format=Plaintext"
+            title="Plaintext"
+            rel="alternate"
+            type="text/plain"
+        >
+	
+        <link
+            href="?action=display&amp;bridge=Mailman2Bridge&amp;context=Mailman+2&amp;url=https%3A%2F%2Fmailman.nginx.org%2Fpipermail%2Fnginx-announce%2F&amp;format=Sfeed"
+            title="Sfeed"
+            rel="alternate"
+            type="text/plain"
+        >
+	
+    <meta name="robots" content="noindex, follow">
+</head>
+
+<body>
+    <div class="container">
+
+        <h1 class="pagetitle">
+            <a href="https://list.org" target="_blank">Mailman2Bridge</a>
+        </h1>
+
+        <div class="buttons">
+            <a href="./#bridge-Mailman2Bridge">
+                <button class="backbutton">← back to rss-bridge</button>
+            </a>
+
+                            <a href="?action=display&amp;bridge=Mailman2Bridge&amp;context=Mailman+2&amp;url=https%3A%2F%2Fmailman.nginx.org%2Fpipermail%2Fnginx-announce%2F&amp;format=Atom">
+                    <button class="rss-feed">
+                        Atom                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=Mailman2Bridge&amp;context=Mailman+2&amp;url=https%3A%2F%2Fmailman.nginx.org%2Fpipermail%2Fnginx-announce%2F&amp;format=Json">
+                    <button class="rss-feed">
+                        Json                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=Mailman2Bridge&amp;context=Mailman+2&amp;url=https%3A%2F%2Fmailman.nginx.org%2Fpipermail%2Fnginx-announce%2F&amp;format=Mrss">
+                    <button class="rss-feed">
+                        Mrss                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=Mailman2Bridge&amp;context=Mailman+2&amp;url=https%3A%2F%2Fmailman.nginx.org%2Fpipermail%2Fnginx-announce%2F&amp;format=Plaintext">
+                    <button class="rss-feed">
+                        Plaintext                    </button>
+                </a>
+                            <a href="?action=display&amp;bridge=Mailman2Bridge&amp;context=Mailman+2&amp;url=https%3A%2F%2Fmailman.nginx.org%2Fpipermail%2Fnginx-announce%2F&amp;format=Sfeed">
+                    <button class="rss-feed">
+                        Sfeed                    </button>
+                </a>
+            
+                    </div>
+
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://mailman.nginx.org/pipermail/nginx-announce/2024/MJX4Z3G6NEX2J6W2AFK7MJEIPLIDGXO2.html"
+                    >[nginx-announce] njs-0.8.6</a>
+                </h2>
+
+                                    <time datetime="2024-10-02 21:58:26">
+                        2024-10-02 21:58:26                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: xeioex@nginx.com (Dmitry Volyntsev)</p>
+                
+                <!-- Intentionally not escaping for html context -->
+                Hello,<br />
+<br />
+I'm glad to announce a new release of NGINX JavaScript module (njs).<br />
+<br />
+This release introduced the QuickJS engine support in nginx modules.<br />
+Read more here: https://nginx.org/en/docs/njs/engine.html<br />
+<br />
+Notable new features:<br />
+- QuickJS in nginx:<br />
+: nginx.conf:<br />
+: location /engine {<br />
+:     js_engine qjs;<br />
+:     js_content main.entry;<br />
+: }<br />
+:<br />
+: main.js:<br />
+: function entry(r) {<br />
+:     let  m = new Map();<br />
+:     m.set(1, "QJS");<br />
+:     r.return(200, "Hello from " + m.get(1));<br />
+: }<br />
+<br />
+Learn more about njs:<br />
+<br />
+- Overview and introduction:<br />
+       https://nginx.org/en/docs/njs/<br />
+- NGINX JavaScript in Your Web Server Configuration:<br />
+       https://youtu.be/Jc_L6UffFOs<br />
+- Extending NGINX with Custom Code:<br />
+       https://youtu.be/0CVhq4AUU7M<br />
+- Using node modules with njs:<br />
+       https://nginx.org/en/docs/njs/node_modules.html<br />
+- Writing njs code using TypeScript definition files:<br />
+       https://nginx.org/en/docs/njs/typescript.html<br />
+<br />
+Feel free to try it and give us feedback on:<br />
+<br />
+- Github:<br />
+       https://github.com/nginx/njs/issues<br />
+<br />
+Additional examples and howtos can be found here:<br />
+<br />
+- Github:<br />
+       https://github.com/nginx/njs-examples<br />
+<br />
+Changes with njs 0.8.6                                            02 Oct <br />
+2024<br />
+<br />
+     nginx modules:<br />
+<br />
+     *) Feature: introduced QuickJS engine.<br />
+<br />
+     *) Feature: added optional nocache flag for js_set directive.<br />
+        Thanks to Thomas P.<br />
+<br />
+     *) Feature: exposed capture group variables in HTTP module.<br />
+        Thanks to Thomas P.<br />
+<br />
+     Core:<br />
+<br />
+     *) Feature: added Buffer module for QuickJS engine.<br />
+<br />
+     *) Bugfix: fixed handling of empty labelled statement in a function.<br />
+<br />
+     *) Bugfix: fixed Function constructor handling when called without<br />
+        arguments.<br />
+<br />
+     *) Bugfix: fixed Buffer.prototype.writeInt8() and friends.<br />
+<br />
+     *) Bugfix: fixed Buffer.prototype.writeFloat() and friends.<br />
+<br />
+     *) Bugfix: fixed Buffer.prototype.lastIndexOf().<br />
+<br />
+     *) Bugfix: fixed Buffer.prototype.write().<br />
+<br />
+     *) Bugfix: fixed maybe-uninitialized warnings in error creation.<br />
+<br />
+     *) Bugfix: fixed 'ctx.codepoint' initialization in UTF-8 decoding.<br />
+<br />
+     *) Bugfix: fixed 'length' initialization in Array.prototype.pop().<br />
+<br />
+     *) Bugfix: fixed handling of encode arg in fs.readdir() and<br />
+        fs.realpath().
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://mailman.nginx.org/pipermail/nginx-announce/2024/XTDQ5IH4IFLPVWJSHPAVGO6BHRN76GAS.html"
+                    >[nginx-announce] nginx-1.27.2</a>
+                </h2>
+
+                                    <time datetime="2024-10-02 16:17:55">
+                        2024-10-02 16:17:55                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: pluknet@nginx.com (Sergey Kandaurov)</p>
+                
+                <!-- Intentionally not escaping for html context -->
+                Changes with nginx 1.27.2                                        02 Oct 2024<br />
+<br />
+    *) Feature: SSL certificates, secret keys, and CRLs are now cached on<br />
+       start or during reconfiguration.<br />
+<br />
+    *) Feature: client certificate validation with OCSP in the stream<br />
+       module.<br />
+<br />
+    *) Feature: OCSP stapling support in the stream module.<br />
+<br />
+    *) Feature: the "proxy_pass_trailers" directive in the<br />
+       ngx_http_proxy_module.<br />
+<br />
+    *) Feature: the "ssl_client_certificate" directive now supports<br />
+       certificates with auxiliary information.<br />
+<br />
+    *) Change: now the "ssl_client_certificate" directive is not required<br />
+       for client SSL certificates verification.<br />
+<br />
+<br />
+-- <br />
+Sergey Kandaurov
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://mailman.nginx.org/pipermail/nginx-announce/2024/ITL3AOQSAJANFJXMM3VOVOIGOUADWFFK.html"
+                    >[nginx-announce] NGINX has moved to Github!</a>
+                </h2>
+
+                                    <time datetime="2024-09-06 15:11:21">
+                        2024-09-06 15:11:21                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: arut@nginx.com (Roman Arutyunyan)</p>
+                
+                <!-- Intentionally not escaping for html context -->
+                Hello from NGINX!<br />
+<br />
+Today we're thrilled to announce that the official NGINX Open Source development<br />
+repository has moved from Mercurial to GitHub [1][2][3], where we will now start<br />
+accepting contributions in the form of Pull Requests. Additionally, starting<br />
+today, we will begin accepting bugs reports, feature requests and enhancements<br />
+directly through GitHub, under the "Issues" tab. Moreover, we've moved our<br />
+community forums to the GitHub "Discussions" area, where you will now be able<br />
+to engage in conversation, ask, and answer questions.<br />
+<br />
+Important: to report a security vulnerability, please follow our security<br />
+policy [4].<br />
+<br />
+We understand that changes like these may require adjustment, so to give you<br />
+more time, we will continue accepting patches and provide community support<br />
+via mailing lists until December 31st, 2024.<br />
+<br />
+We believe these changes will serve to centralize, modernize and expand access<br />
+to NGINX development and communities. They represent our continued commitment<br />
+to open source, as outlined in the blog post [5]. Most of all, we can't wait to<br />
+see all of your contributions, discussions and feedback, as we move into this<br />
+next chapter for NGINX.<br />
+<br />
+[1] https://github.com/nginx/nginx<br />
+[2] https://github.com/nginx/nginx-tests<br />
+[3] https://github.com/nginx/nginx.org<br />
+[4] https://github.com/nginx/nginx/blob/master/SECURITY.md<br />
+[5] https://www.f5.com/company/blog/nginx/meetup-recap-nginxs-commitments-to-the-open-source-community<br />
+<br />
+<br />
+On behalf of the NGINX Team,<br />
+<br />
+Roman Arutyunyan<br />
+arut at nginx.com
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://mailman.nginx.org/pipermail/nginx-announce/2024/UUOCLLONPR6244YQYU65PO5LB7JDYCWM.html"
+                    >[nginx-announce] nginx security advisory (CVE-2024-7347)</a>
+                </h2>
+
+                                    <time datetime="2024-08-14 15:07:13">
+                        2024-08-14 15:07:13                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: f5sirt@F5.com (F5SIRT)</p>
+                
+                <!-- Intentionally not escaping for html context -->
+                A security issue was identified in the ngx_http_mp4_module, which might allow an attacker to cause a worker process crash by using a specially crafted mp4 file (CVE-2024-7347). The issue only affects nginx if it is built with the ngx_http_mp4_module (the module is not built by default) and the “mp4” directive is used in the configuration file. Further, the attack is only possible if an attacker is able to trigger processing of a specially crafted mp4 file with the ngx_http_mp4_module.<br />
+ <br />
+The issue affects nginx 1.5.13+.<br />
+The issue is fixed in 1.27.1, 1.26.2.<br />
+ <br />
+Patch for the issue can be found here: https://nginx.org/download/patch.2024.mp4.txt<br />
+ <br />
+Thanks to Nils Bars for the initial report.<br />
+ <br />
+ 
+                
+                            </section>
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="https://mailman.nginx.org/pipermail/nginx-announce/2024/IZ4EX6IFVEXNNLBVLFXFYKNQR5BDWIWS.html"
+                    >[nginx-announce] nginx-1.26.2</a>
+                </h2>
+
+                                    <time datetime="2024-08-14 14:25:19">
+                        2024-08-14 14:25:19                    </time>
+                    <p></p>
+                
+                                    <p class="author">by: pluknet@nginx.com (Sergey Kandaurov)</p>
+                
+                <!-- Intentionally not escaping for html context -->
+                Changes with nginx 1.26.2                                        14 Aug 2024<br />
+<br />
+    *) Security: processing of a specially crafted mp4 file by the<br />
+       ngx_http_mp4_module might cause a worker process crash<br />
+       (CVE-2024-7347).<br />
+       Thanks to Nils Bars.<br />
+<br />
+<br />
+-- <br />
+Sergey Kandaurov
+                
+                            </section>
+        
+    </div>
+ </body>
+</html>
