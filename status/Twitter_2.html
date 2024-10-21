@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><base href="https://rss-bridge.org/bridge01/" target="_blank">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="RSS-Bridge" />
+    <title>RSS-Bridge</title>
+    <link href="static/style.css?2023-03-24" rel="stylesheet">
+    <link rel="icon" type="image/png" href="static/favicon.png">
+
+    <script src="static/rss-bridge.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <a href="./">
+                <img width="400" src="static/logo_600px.png">
+            </a>
+        </header>
+
+                    <div class="alert-error">
+                Warning : Debug mode is active from any location, make sure only you can access RSS-Bridge.            </div>
+        
+        <div class="error">
+
+            
+        
+        
+        
+                    <h2>429 Too Many Requests</h2>
+            <p>
+                RSS-Bridge tried to fetch a website.
+                They told us to try again later.
+            </p>
+        
+        
+                    <p>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429">
+                    https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429                </a>
+            </p>
+        
+    
+    <h2>Details</h2>
+
+    <div style="margin-bottom: 15px">
+        <div class="error-type">
+            <strong>Type:</strong> HttpException        </div>
+
+        <div>
+            <strong>Code:</strong> 429        </div>
+
+        <div class="error-message">
+            <strong>Message:</strong> https://api.twitter.com/graphql/3JNH4e9dq1BifLxAa3UMWg/UserWithProfileTweetsQueryV2?variables=%7B%22autoplay_enabled%22%3Atrue%2C%22count%22%3A40%2C%22includeEditControl%22%3Atrue%2C%22includeEditPerspective%22%3Afalse%2C%22includeHasBirdwatchNotes%22%3Afalse%2C%22includeTweetImpression%22%3Atrue%2C%22includeTweetVisibilityNudge%22%3Atrue%2C%22rest_id%22%3A%22210182522%22%7D&amp;features=%7B%22android_graphql_skip_api_media_color_palette%22%3Atrue%2C%22blue_business_profile_image_shape_enabled%22%3Atrue%2C%22creator_subscriptions_subscription_count_enabled%22%3Atrue%2C%22creator_subscriptions_tweet_preview_api_enabled%22%3Atrue%2C%22freedom_of_speech_not_reach_fetch_enabled%22%3Atrue%2C%22longform_notetweets_consumption_enabled%22%3Atrue%2C%22longform_notetweets_inline_media_enabled%22%3Atrue%2C%22longform_notetweets_rich_text_read_enabled%22%3Atrue%2C%22subscriptions_verification_info_enabled%22%3Atrue%2C%22super_follow_badge_privacy_enabled%22%3Atrue%2C%22super_follow_exclusive_tweet_notifications_enabled%22%3Atrue%2C%22super_follow_tweet_api_enabled%22%3Atrue%2C%22super_follow_user_api_enabled%22%3Atrue%2C%22tweet_with_visibility_results_prefer_gql_limited_actions_policy_enabled%22%3Atrue%2C%22tweetypie_unmention_optimization_enabled%22%3Atrue%2C%22unified_cards_ad_metadata_container_dynamic_card_content_query_enabled%22%3Atrue%7D resulted in 429 Too Many Requests Rate limit exceeded        </div>
+
+        <div>
+            <strong>File:</strong> lib/http.php        </div>
+
+        <div>
+            <strong>Line:</strong> 36        </div>
+    </div>
+
+    <h2>Trace</h2>
+
+            <code>
+            #0 index.php(68): RssBridge-&gt;main()        </code>
+        <br>
+            <code>
+            #1 lib/RssBridge.php(39): RssBridge-&gt;{closure}()        </code>
+        <br>
+            <code>
+            #2 lib/RssBridge.php(37): CacheMiddleware-&gt;__invoke()        </code>
+        <br>
+            <code>
+            #3 middlewares/CacheMiddleware.php(44): RssBridge-&gt;{closure}()        </code>
+        <br>
+            <code>
+            #4 lib/RssBridge.php(37): ExceptionMiddleware-&gt;__invoke()        </code>
+        <br>
+            <code>
+            #5 middlewares/ExceptionMiddleware.php(17): RssBridge-&gt;{closure}()        </code>
+        <br>
+            <code>
+            #6 lib/RssBridge.php(37): SecurityMiddleware-&gt;__invoke()        </code>
+        <br>
+            <code>
+            #7 middlewares/SecurityMiddleware.php(19): RssBridge-&gt;{closure}()        </code>
+        <br>
+            <code>
+            #8 lib/RssBridge.php(37): MaintenanceMiddleware-&gt;__invoke()        </code>
+        <br>
+            <code>
+            #9 middlewares/MaintenanceMiddleware.php(10): RssBridge-&gt;{closure}()        </code>
+        <br>
+            <code>
+            #10 lib/RssBridge.php(37): BasicAuthMiddleware-&gt;__invoke()        </code>
+        <br>
+            <code>
+            #11 middlewares/BasicAuthMiddleware.php(13): RssBridge-&gt;{closure}()        </code>
+        <br>
+            <code>
+            #12 lib/RssBridge.php(37): TokenAuthenticationMiddleware-&gt;__invoke()        </code>
+        <br>
+            <code>
+            #13 middlewares/TokenAuthenticationMiddleware.php(10): RssBridge-&gt;{closure}()        </code>
+        <br>
+            <code>
+            #14 lib/RssBridge.php(34): DisplayAction-&gt;__invoke()        </code>
+        <br>
+            <code>
+            #15 actions/DisplayAction.php(54): DisplayAction-&gt;createResponse()        </code>
+        <br>
+            <code>
+            #16 actions/DisplayAction.php(89): TwitterBridge-&gt;collectData()        </code>
+        <br>
+            <code>
+            #17 bridges/TwitterBridge.php(245): TwitterClient-&gt;fetchUserTweets()        </code>
+        <br>
+            <code>
+            #18 lib/TwitterClient.php(200): TwitterClient-&gt;fetchTimeline()        </code>
+        <br>
+            <code>
+            #19 lib/TwitterClient.php(338): getContents()        </code>
+        <br>
+            <code>
+            #20 lib/contents.php(117): HttpException::fromResponse()        </code>
+        <br>
+            <code>
+            #21 lib/http.php(36)        </code>
+        <br>
+    
+    <br>
+
+    <h2>Context</h2>
+
+    <div>
+        <strong>Query:</strong> action=display&amp;bridge=TwitterBridge&amp;context=By username&amp;u=sebsauvage&amp;format=Html    </div>
+
+    <div>
+        <strong>Version:</strong> 2024-02-02 (git.fork-master.a0a90eb)    </div>
+
+    <div>
+        <strong>OS:</strong> Linux    </div>
+
+    <div>
+        <strong>PHP:</strong> 8.2.24    </div>
+
+    <br>
+
+    <a href="/">Go back</a>
+</div>
+
+    </div>
+</body>
+</html>
+
