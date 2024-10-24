@@ -51,7 +51,31 @@
             <strong>Code:</strong> 429        </div>
 
         <div class="error-message">
-            <strong>Message:</strong> https://www.threads.net/@zuck resulted in 429 Too Many Requests        </div>
+            <strong>Message:</strong> https://notalwaysright.com// resulted in 429 Too Many Requests &lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+	&lt;head&gt;
+		&lt;meta charset=&quot;utf-8&quot;&gt;
+		&lt;title&gt;429 Too Many Requests&lt;/title&gt;
+		&lt;meta name=&quot;description&quot; content=&quot;&quot;&gt;
+		&lt;meta name=&quot;author&quot; content=&quot;&quot;&gt;
+
+		&lt;style&gt;
+		body {
+			background-color: #f8f8f8;
+			font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+			color: #333;
+			padding-top: 20px;
+		}
+		div {
+			display: block;
+		}
+		.container {
+			width: 1100px;
+			padding-top: 50px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.error-msg, .support-msg {        </div>
 
         <div>
             <strong>File:</strong> lib/http.php        </div>
@@ -111,13 +135,13 @@
             #15 actions/DisplayAction.php(54): DisplayAction-&gt;createResponse()        </code>
         <br>
             <code>
-            #16 actions/DisplayAction.php(89): ThreadsBridge-&gt;collectData()        </code>
+            #16 actions/DisplayAction.php(89): NotAlwaysBridge-&gt;collectData()        </code>
         <br>
             <code>
-            #17 bridges/ThreadsBridge.php(72): getSimpleHTMLDOMCached()        </code>
+            #17 bridges/NotAlwaysBridge.php(38): getSimpleHTMLDOM()        </code>
         <br>
             <code>
-            #18 lib/contents.php(228): getContents()        </code>
+            #18 lib/contents.php(162): getContents()        </code>
         <br>
             <code>
             #19 lib/contents.php(117): HttpException::fromResponse()        </code>
@@ -131,7 +155,7 @@
     <h2>Context</h2>
 
     <div>
-        <strong>Query:</strong> action=display&amp;bridge=ThreadsBridge&amp;context=By username&amp;u=zuck&amp;format=Html    </div>
+        <strong>Query:</strong> action=display&amp;bridge=NotAlwaysBridge&amp;filter=&amp;format=Html    </div>
 
     <div>
         <strong>Version:</strong> 2024-02-02 (git.fork-master.e57ab53)    </div>
