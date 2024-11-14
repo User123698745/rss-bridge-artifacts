@@ -51,7 +51,7 @@
     <div class="container">
 
         <h1 class="pagetitle">
-            <a href="https://gizmodo.com" target="_blank">Gizmodo</a>
+            <a href="https://gizmodo.com/" target="_blank">Gizmodo</a>
         </h1>
 
         <div class="buttons">
@@ -87,11 +87,11 @@
                     <a
                         class="itemtitle"
                         href="http://localhost:3000/?action=display&amp;bridge=GizmodoBridge&amp;format=Html"
-                    >Bridge returned error 0! (20034)</a>
+                    >Bridge returned error 0! (20041)</a>
                 </h2>
 
-                                    <time datetime="2024-11-07 00:57:37">
-                        2024-11-07 00:57:37                    </time>
+                                    <time datetime="2024-11-14 00:58:25">
+                        2024-11-14 00:58:25                    </time>
                     <p></p>
                 
                 
@@ -105,20 +105,19 @@
 
     <div style="margin-bottom: 15px">
         <div class="error-type">
-            <strong>Type:</strong> Exception        </div>
+            <strong>Type:</strong> ErrorException        </div>
 
         <div>
             <strong>Code:</strong> 0        </div>
 
         <div class="error-message">
-            <strong>Message:</strong> Failed to parse xml from https://gizmodo.com/rss: Exception: Unable to parse xml: PCDATA invalid Char value 8
- in lib/FeedParser.php line 26        </div>
+            <strong>Message:</strong> Undefined array key &quot;data-chomp-id&quot;        </div>
 
         <div>
-            <strong>File:</strong> lib/FeedExpander.php        </div>
+            <strong>File:</strong> bridges/GizmodoBridge.php        </div>
 
         <div>
-            <strong>Line:</strong> 38        </div>
+            <strong>Line:</strong> 62        </div>
     </div>
 
     <h2>Trace</h2>
@@ -178,7 +177,16 @@
             #17 bridges/GizmodoBridge.php(36): FeedExpander-&gt;collectExpandableDatas()        </code>
         <br>
             <code>
-            #18 lib/FeedExpander.php(38)        </code>
+            #18 lib/FeedExpander.php(45): GizmodoBridge-&gt;parseItem()        </code>
+        <br>
+            <code>
+            #19 bridges/GizmodoBridge.php(17): GizmodoBridge-&gt;handleFigureTags()        </code>
+        <br>
+            <code>
+            #20 bridges/GizmodoBridge.php(62): {closure}()        </code>
+        <br>
+            <code>
+            #21 bridges/GizmodoBridge.php(62)        </code>
         <br>
     
     <br>
@@ -189,7 +197,7 @@
         <strong>Query:</strong> action=display&amp;bridge=GizmodoBridge&amp;format=Html    </div>
 
     <div>
-        <strong>Version:</strong> 2024-02-02 (git.fork-master.fa1b340)    </div>
+        <strong>Version:</strong> 2024-02-02 (git.fork-master.0b4364e)    </div>
 
     <div>
         <strong>OS:</strong> Linux    </div>
@@ -207,7 +215,7 @@
     <button>Find similar bugs</button>
 </a>
 
-<a href="https://github.com/RSS-Bridge/rss-bridge/issues/new?title=Gizmodo+failed+with%3A+Failed+to+parse+xml+from+https%3A%2F%2Fgizmodo.com%2Frss%3A+Exception%3A+Unable+to+parse+xml%3A+PCDATA+invalid+Char+value+8%0A+in+lib%2FFeedParser.php+line+26&body=%60%60%60%0AException%3A+Failed+to+parse+xml+from+https%3A%2F%2Fgizmodo.com%2Frss%3A+Exception%3A+Unable+to+parse+xml%3A+PCDATA+invalid+Char+value+8%0A+in+lib%2FFeedParser.php+line+26+in+lib%2FFeedExpander.php+line+38%0A%0Aindex.php%2868%29%3A+RssBridge-%3Emain%28%29%0Alib%2FRssBridge.php%2839%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+CacheMiddleware-%3E__invoke%28%29%0Amiddlewares%2FCacheMiddleware.php%2844%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+ExceptionMiddleware-%3E__invoke%28%29%0Amiddlewares%2FExceptionMiddleware.php%2817%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+SecurityMiddleware-%3E__invoke%28%29%0Amiddlewares%2FSecurityMiddleware.php%2819%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+MaintenanceMiddleware-%3E__invoke%28%29%0Amiddlewares%2FMaintenanceMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+BasicAuthMiddleware-%3E__invoke%28%29%0Amiddlewares%2FBasicAuthMiddleware.php%2813%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+TokenAuthenticationMiddleware-%3E__invoke%28%29%0Amiddlewares%2FTokenAuthenticationMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2834%29%3A+DisplayAction-%3E__invoke%28%29%0Aactions%2FDisplayAction.php%2854%29%3A+DisplayAction-%3EcreateResponse%28%29%0Aactions%2FDisplayAction.php%2889%29%3A+GizmodoBridge-%3EcollectData%28%29%0Abridges%2FGizmodoBridge.php%2836%29%3A+FeedExpander-%3EcollectExpandableDatas%28%29%0Alib%2FFeedExpander.php%2838%29%0A%0AQuery+string%3A+action%3Ddisplay%26bridge%3DGizmodoBridge%26format%3DHtml%0AVersion%3A+2024-02-02+%28git.fork-master.fa1b340%29%0AOs%3A+Linux%0APHP+version%3A+8.2.24%0A%60%60%60%0AMaintainer%3A+%40polopollo&labels=Bridge-Broken&assignee=p" title="After clicking this button you can review the issue before submitting it">
+<a href="https://github.com/RSS-Bridge/rss-bridge/issues/new?title=Gizmodo+failed+with%3A+Undefined+array+key+%22data-chomp-id%22&body=%60%60%60%0AErrorException%3A+Undefined+array+key+%22data-chomp-id%22+in+bridges%2FGizmodoBridge.php+line+62%0A%0Aindex.php%2868%29%3A+RssBridge-%3Emain%28%29%0Alib%2FRssBridge.php%2839%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+CacheMiddleware-%3E__invoke%28%29%0Amiddlewares%2FCacheMiddleware.php%2844%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+ExceptionMiddleware-%3E__invoke%28%29%0Amiddlewares%2FExceptionMiddleware.php%2817%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+SecurityMiddleware-%3E__invoke%28%29%0Amiddlewares%2FSecurityMiddleware.php%2819%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+MaintenanceMiddleware-%3E__invoke%28%29%0Amiddlewares%2FMaintenanceMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+BasicAuthMiddleware-%3E__invoke%28%29%0Amiddlewares%2FBasicAuthMiddleware.php%2813%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+TokenAuthenticationMiddleware-%3E__invoke%28%29%0Amiddlewares%2FTokenAuthenticationMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2834%29%3A+DisplayAction-%3E__invoke%28%29%0Aactions%2FDisplayAction.php%2854%29%3A+DisplayAction-%3EcreateResponse%28%29%0Aactions%2FDisplayAction.php%2889%29%3A+GizmodoBridge-%3EcollectData%28%29%0Abridges%2FGizmodoBridge.php%2836%29%3A+FeedExpander-%3EcollectExpandableDatas%28%29%0Alib%2FFeedExpander.php%2845%29%3A+GizmodoBridge-%3EparseItem%28%29%0Abridges%2FGizmodoBridge.php%2817%29%3A+GizmodoBridge-%3EhandleFigureTags%28%29%0Abridges%2FGizmodoBridge.php%2862%29%3A+%7Bclosure%7D%28%29%0Abridges%2FGizmodoBridge.php%2862%29%0A%0AQuery+string%3A+action%3Ddisplay%26bridge%3DGizmodoBridge%26format%3DHtml%0AVersion%3A+2024-02-02+%28git.fork-master.0b4364e%29%0AOs%3A+Linux%0APHP+version%3A+8.2.24%0A%60%60%60%0AMaintainer%3A+%40polopollo&labels=Bridge-Broken&assignee=p" title="After clicking this button you can review the issue before submitting it">
     <button>Create GitHub Issue</button>
 </a>
 
