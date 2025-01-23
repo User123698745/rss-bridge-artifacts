@@ -28,16 +28,16 @@
         
         
         
-                    <h2>429 Too Many Requests</h2>
+        
+                    <h2>503 Service Unavailable</h2>
             <p>
-                RSS-Bridge tried to fetch a website.
-                They told us to try again later.
+                Common causes are a server that is down for maintenance
+                or that is overloaded.
             </p>
         
-        
                     <p>
-                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429">
-                    https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429                </a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503">
+                    https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503                </a>
             </p>
         
     
@@ -48,18 +48,25 @@
             <strong>Type:</strong> HttpException        </div>
 
         <div>
-            <strong>Code:</strong> 429        </div>
+            <strong>Code:</strong> 503        </div>
 
         <div class="error-message">
-            <strong>Message:</strong> https://github.com/search?q=rss-bridge&amp;type=repositories&amp;s=updated&amp;o=desc resulted in 429 Too Many Requests &lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;meta http-equiv=&quot;Content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;
-    &lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#039;none&#039;; base-uri &#039;self&#039;; connect-src &#039;self&#039;; form-action &#039;self&#039;; img-src &#039;self&#039; data:; script-src &#039;self&#039;; style-src &#039;unsafe-inline&#039;&quot;&gt;
-    &lt;meta content=&quot;origin&quot; name=&quot;referrer&quot;&gt;
-    &lt;title&gt;Rate limit &amp;middot; GitHub&lt;/title&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
-    &lt;style type=&quot;text/css&quot; media=&quot;screen&quot;&gt;        </div>
+            <strong>Message:</strong> https://www.senscritique.com/series/actualite resulted in 503 Service Unavailable &lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;SensCritique - Maintenance&lt;/title&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot; /&gt;
+        &lt;meta charset=&quot;utf-8&quot; /&gt;
+        &lt;style&gt;
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                background: #000 no-repeat center;
+                background-size: cover;
+                height: 100%;
+                padding: 0;
+                margin: 0;
+            }
+
+            .container {        </div>
 
         <div>
             <strong>File:</strong> lib/http.php        </div>
@@ -119,10 +126,10 @@
             #15 actions/DisplayAction.php(54): DisplayAction-&gt;createResponse()        </code>
         <br>
             <code>
-            #16 actions/DisplayAction.php(89): GithubSearchBridge-&gt;collectData()        </code>
+            #16 actions/DisplayAction.php(89): SensCritiqueBridge-&gt;collectData()        </code>
         <br>
             <code>
-            #17 bridges/GithubSearchBridge.php(22): getSimpleHTMLDOM()        </code>
+            #17 bridges/SensCritiqueBridge.php(58): getSimpleHTMLDOM()        </code>
         <br>
             <code>
             #18 lib/contents.php(163): getContents()        </code>
@@ -139,10 +146,10 @@
     <h2>Context</h2>
 
     <div>
-        <strong>Query:</strong> action=display&amp;bridge=GithubSearchBridge&amp;s=rss-bridge&amp;format=Html    </div>
+        <strong>Query:</strong> action=display&amp;bridge=SensCritiqueBridge&amp;s=on&amp;format=Html    </div>
 
     <div>
-        <strong>Version:</strong> 2025-01-02 (git.fork-master.65def59)    </div>
+        <strong>Version:</strong> 2025-01-02 (git.fork-master.c2cefd4)    </div>
 
     <div>
         <strong>OS:</strong> Linux    </div>
