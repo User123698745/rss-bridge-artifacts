@@ -4,41 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/ >
     <meta name="description" content="RSS-Bridge" />
-    <title>Dagens Nyheter Direkt</title>
+    <title>Today&#039;s featured article from en.wikipedia.org</title>
     <link href="static/style.css?2023-03-24" rel="stylesheet">
     <link rel="icon" type="image/png" href="static/favicon.png">
 
     
         <link
-            href="?action=display&amp;bridge=DagensNyheterDirektBridge&amp;format=Atom"
+            href="?action=display&amp;bridge=WikipediaBridge&amp;language=en&amp;subject=tfa&amp;format=Atom"
             title="Atom"
             rel="alternate"
             type="application/atom+xml"
         >
 	
         <link
-            href="?action=display&amp;bridge=DagensNyheterDirektBridge&amp;format=Json"
+            href="?action=display&amp;bridge=WikipediaBridge&amp;language=en&amp;subject=tfa&amp;format=Json"
             title="Json"
             rel="alternate"
             type="application/json"
         >
 	
         <link
-            href="?action=display&amp;bridge=DagensNyheterDirektBridge&amp;format=Mrss"
+            href="?action=display&amp;bridge=WikipediaBridge&amp;language=en&amp;subject=tfa&amp;format=Mrss"
             title="Mrss"
             rel="alternate"
             type="application/rss+xml"
         >
 	
         <link
-            href="?action=display&amp;bridge=DagensNyheterDirektBridge&amp;format=Plaintext"
+            href="?action=display&amp;bridge=WikipediaBridge&amp;language=en&amp;subject=tfa&amp;format=Plaintext"
             title="Plaintext"
             rel="alternate"
             type="text/plain"
         >
 	
         <link
-            href="?action=display&amp;bridge=DagensNyheterDirektBridge&amp;format=Sfeed"
+            href="?action=display&amp;bridge=WikipediaBridge&amp;language=en&amp;subject=tfa&amp;format=Sfeed"
             title="Sfeed"
             rel="alternate"
             type="text/plain"
@@ -51,31 +51,31 @@
     <div class="container">
 
         <h1 class="pagetitle">
-            <a href="https://www.dn.se/direkt/" target="_blank">Dagens Nyheter Direkt</a>
+            <a href="https://en.wikipedia.org" target="_blank">Today&#039;s featured article from en.wikipedia.org</a>
         </h1>
 
         <div class="buttons">
-            <a href="./#bridge-DagensNyheterDirektBridge">
+            <a href="./#bridge-WikipediaBridge">
                 <button class="backbutton">← back to rss-bridge</button>
             </a>
 
-                            <a href="?action=display&amp;bridge=DagensNyheterDirektBridge&amp;format=Atom">
+                            <a href="?action=display&amp;bridge=WikipediaBridge&amp;language=en&amp;subject=tfa&amp;format=Atom">
                     <button class="rss-feed">
                         Atom                    </button>
                 </a>
-                            <a href="?action=display&amp;bridge=DagensNyheterDirektBridge&amp;format=Json">
+                            <a href="?action=display&amp;bridge=WikipediaBridge&amp;language=en&amp;subject=tfa&amp;format=Json">
                     <button class="rss-feed">
                         Json                    </button>
                 </a>
-                            <a href="?action=display&amp;bridge=DagensNyheterDirektBridge&amp;format=Mrss">
+                            <a href="?action=display&amp;bridge=WikipediaBridge&amp;language=en&amp;subject=tfa&amp;format=Mrss">
                     <button class="rss-feed">
                         Mrss                    </button>
                 </a>
-                            <a href="?action=display&amp;bridge=DagensNyheterDirektBridge&amp;format=Plaintext">
+                            <a href="?action=display&amp;bridge=WikipediaBridge&amp;language=en&amp;subject=tfa&amp;format=Plaintext">
                     <button class="rss-feed">
                         Plaintext                    </button>
                 </a>
-                            <a href="?action=display&amp;bridge=DagensNyheterDirektBridge&amp;format=Sfeed">
+                            <a href="?action=display&amp;bridge=WikipediaBridge&amp;language=en&amp;subject=tfa&amp;format=Sfeed">
                     <button class="rss-feed">
                         Sfeed                    </button>
                 </a>
@@ -86,12 +86,12 @@
                 <h2>
                     <a
                         class="itemtitle"
-                        href="http://localhost:3000/?action=display&amp;bridge=DagensNyheterDirektBridge&amp;format=Html"
+                        href="http://localhost:3000/?action=display&amp;bridge=WikipediaBridge&amp;language=en&amp;subject=tfa&amp;format=Html"
                     >Bridge returned error 0! (20174)</a>
                 </h2>
 
-                                    <time datetime="2025-03-27 00:57:47">
-                        2025-03-27 00:57:47                    </time>
+                                    <time datetime="2025-03-27 01:17:57">
+                        2025-03-27 01:17:57                    </time>
                     <p></p>
                 
                 
@@ -111,13 +111,13 @@
             <strong>Code:</strong> 0        </div>
 
         <div class="error-message">
-            <strong>Message:</strong> Attempt to read property &quot;plaintext&quot; on null        </div>
+            <strong>Message:</strong> Attempt to read property &quot;href&quot; on null        </div>
 
         <div>
-            <strong>File:</strong> bridges/DagensNyheterDirektBridge.php        </div>
+            <strong>File:</strong> bridges/WikipediaBridge.php        </div>
 
         <div>
-            <strong>Line:</strong> 28        </div>
+            <strong>Line:</strong> 166        </div>
     </div>
 
     <h2>Trace</h2>
@@ -171,13 +171,19 @@
             #15 actions/DisplayAction.php(54): DisplayAction-&gt;createResponse()        </code>
         <br>
             <code>
-            #16 actions/DisplayAction.php(89): DagensNyheterDirektBridge-&gt;collectData()        </code>
+            #16 actions/DisplayAction.php(89): WikipediaBridge-&gt;collectData()        </code>
         <br>
             <code>
-            #17 bridges/DagensNyheterDirektBridge.php(28): {closure}()        </code>
+            #17 bridges/WikipediaBridge.php(122): WikipediaBridge-&gt;getContentsEn()        </code>
         <br>
             <code>
-            #18 bridges/DagensNyheterDirektBridge.php(28)        </code>
+            #18 bridges/WikipediaBridge.php(276): WikipediaBridge-&gt;addTodaysFeaturedArticleGeneric()        </code>
+        <br>
+            <code>
+            #19 bridges/WikipediaBridge.php(166): {closure}()        </code>
+        <br>
+            <code>
+            #20 bridges/WikipediaBridge.php(166)        </code>
         <br>
     
     <br>
@@ -185,7 +191,7 @@
     <h2>Context</h2>
 
     <div>
-        <strong>Query:</strong> action=display&amp;bridge=DagensNyheterDirektBridge&amp;format=Html    </div>
+        <strong>Query:</strong> action=display&amp;bridge=WikipediaBridge&amp;language=en&amp;subject=tfa&amp;format=Html    </div>
 
     <div>
         <strong>Version:</strong> 2025-01-26 (git.fork-master.0470ee2)    </div>
@@ -202,16 +208,16 @@
 </div>
 
 
-<a href="https://github.com/RSS-Bridge/rss-bridge/issues?q=is%3Aissue+is%3Aopen+Dagens+Nyheter+Direkt" title="Opens GitHub to search for similar issues">
+<a href="https://github.com/RSS-Bridge/rss-bridge/issues?q=is%3Aissue+is%3Aopen+Today%27s+featured+article+from+en.wikipedia.org" title="Opens GitHub to search for similar issues">
     <button>Find similar bugs</button>
 </a>
 
-<a href="https://github.com/RSS-Bridge/rss-bridge/issues/new?title=Dagens+Nyheter+Direkt+failed+with%3A+Attempt+to+read+property+%22plaintext%22+on+null&body=%60%60%60%0AErrorException%3A+Attempt+to+read+property+%22plaintext%22+on+null+in+bridges%2FDagensNyheterDirektBridge.php+line+28%0A%0Aindex.php%2873%29%3A+RssBridge-%3Emain%28%29%0Alib%2FRssBridge.php%2839%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+CacheMiddleware-%3E__invoke%28%29%0Amiddlewares%2FCacheMiddleware.php%2844%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+ExceptionMiddleware-%3E__invoke%28%29%0Amiddlewares%2FExceptionMiddleware.php%2817%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+SecurityMiddleware-%3E__invoke%28%29%0Amiddlewares%2FSecurityMiddleware.php%2819%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+MaintenanceMiddleware-%3E__invoke%28%29%0Amiddlewares%2FMaintenanceMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+BasicAuthMiddleware-%3E__invoke%28%29%0Amiddlewares%2FBasicAuthMiddleware.php%2813%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+TokenAuthenticationMiddleware-%3E__invoke%28%29%0Amiddlewares%2FTokenAuthenticationMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2834%29%3A+DisplayAction-%3E__invoke%28%29%0Aactions%2FDisplayAction.php%2854%29%3A+DisplayAction-%3EcreateResponse%28%29%0Aactions%2FDisplayAction.php%2889%29%3A+DagensNyheterDirektBridge-%3EcollectData%28%29%0Abridges%2FDagensNyheterDirektBridge.php%2828%29%3A+%7Bclosure%7D%28%29%0Abridges%2FDagensNyheterDirektBridge.php%2828%29%0A%0AQuery+string%3A+action%3Ddisplay%26bridge%3DDagensNyheterDirektBridge%26format%3DHtml%0AVersion%3A+2025-01-26+%28git.fork-master.0470ee2%29%0AOs%3A+Linux%0APHP+version%3A+8.2.28%0A%60%60%60%0AMaintainer%3A+%40ajain-93&labels=Bridge-Broken&assignee=a" title="After clicking this button you can review the issue before submitting it">
+<a href="https://github.com/RSS-Bridge/rss-bridge/issues/new?title=Today%27s+featured+article+from+en.wikipedia.org+failed+with%3A+Attempt+to+read+property+%22href%22+on+null&body=%60%60%60%0AErrorException%3A+Attempt+to+read+property+%22href%22+on+null+in+bridges%2FWikipediaBridge.php+line+166%0A%0Aindex.php%2873%29%3A+RssBridge-%3Emain%28%29%0Alib%2FRssBridge.php%2839%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+CacheMiddleware-%3E__invoke%28%29%0Amiddlewares%2FCacheMiddleware.php%2844%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+ExceptionMiddleware-%3E__invoke%28%29%0Amiddlewares%2FExceptionMiddleware.php%2817%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+SecurityMiddleware-%3E__invoke%28%29%0Amiddlewares%2FSecurityMiddleware.php%2819%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+MaintenanceMiddleware-%3E__invoke%28%29%0Amiddlewares%2FMaintenanceMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+BasicAuthMiddleware-%3E__invoke%28%29%0Amiddlewares%2FBasicAuthMiddleware.php%2813%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+TokenAuthenticationMiddleware-%3E__invoke%28%29%0Amiddlewares%2FTokenAuthenticationMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2834%29%3A+DisplayAction-%3E__invoke%28%29%0Aactions%2FDisplayAction.php%2854%29%3A+DisplayAction-%3EcreateResponse%28%29%0Aactions%2FDisplayAction.php%2889%29%3A+WikipediaBridge-%3EcollectData%28%29%0Abridges%2FWikipediaBridge.php%28122%29%3A+WikipediaBridge-%3EgetContentsEn%28%29%0Abridges%2FWikipediaBridge.php%28276%29%3A+WikipediaBridge-%3EaddTodaysFeaturedArticleGeneric%28%29%0Abridges%2FWikipediaBridge.php%28166%29%3A+%7Bclosure%7D%28%29%0Abridges%2FWikipediaBridge.php%28166%29%0A%0AQuery+string%3A+action%3Ddisplay%26bridge%3DWikipediaBridge%26language%3Den%26subject%3Dtfa%26format%3DHtml%0AVersion%3A+2025-01-26+%28git.fork-master.0470ee2%29%0AOs%3A+Linux%0APHP+version%3A+8.2.28%0A%60%60%60%0AMaintainer%3A+%40logmanoriginal&labels=Bridge-Broken&assignee=l" title="After clicking this button you can review the issue before submitting it">
     <button>Create GitHub Issue</button>
 </a>
 
 <p class="maintainer">
-    ajain-93</p>
+    logmanoriginal</p>
                 
                             </section>
         
