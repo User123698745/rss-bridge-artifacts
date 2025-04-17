@@ -28,16 +28,16 @@
         
         
         
-        
-                    <h2>503 Service Unavailable</h2>
+                    <h2>429 Too Many Requests</h2>
             <p>
-                Common causes are a server that is down for maintenance
-                or that is overloaded.
+                RSS-Bridge tried to fetch a website.
+                They told us to try again later.
             </p>
         
+        
                     <p>
-                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503">
-                    https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503                </a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429">
+                    https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429                </a>
             </p>
         
     
@@ -48,10 +48,34 @@
             <strong>Type:</strong> HttpException        </div>
 
         <div>
-            <strong>Code:</strong> 503        </div>
+            <strong>Code:</strong> 429        </div>
 
         <div class="error-message">
-            <strong>Message:</strong> https://kitsu.io/api/edge/episodes?filter[mediaType]=Anime&amp;sort=-airdate&amp;include=media&amp;page[limit]=20 resulted in 503 Service Unavailable &lt;html&gt;&lt;body&gt;&lt;h1&gt;503 Service Unavailable&lt;/h1&gt;No server is available to handle this request.&lt;/body&gt;&lt;/html&gt;        </div>
+            <strong>Message:</strong> https://notalwaysright.com// resulted in 429 Too Many Requests &lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+	&lt;head&gt;
+		&lt;meta charset=&quot;utf-8&quot;&gt;
+		&lt;title&gt;429 Too Many Requests&lt;/title&gt;
+		&lt;meta name=&quot;description&quot; content=&quot;&quot;&gt;
+		&lt;meta name=&quot;author&quot; content=&quot;&quot;&gt;
+
+		&lt;style&gt;
+		body {
+			background-color: #f8f8f8;
+			font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+			color: #333;
+			padding-top: 20px;
+		}
+		div {
+			display: block;
+		}
+		.container {
+			width: 1100px;
+			padding-top: 50px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.error-msg, .support-msg {        </div>
 
         <div>
             <strong>File:</strong> lib/http.php        </div>
@@ -111,16 +135,19 @@
             #15 actions/DisplayAction.php(54): DisplayAction-&gt;createResponse()        </code>
         <br>
             <code>
-            #16 actions/DisplayAction.php(89): KitsuBridge-&gt;collectData()        </code>
+            #16 actions/DisplayAction.php(89): NotAlwaysBridge-&gt;collectData()        </code>
         <br>
             <code>
-            #17 bridges/KitsuBridge.php(75): getContents()        </code>
+            #17 bridges/NotAlwaysBridge.php(38): getSimpleHTMLDOM()        </code>
         <br>
             <code>
-            #18 lib/contents.php(118): HttpException::fromResponse()        </code>
+            #18 lib/contents.php(163): getContents()        </code>
         <br>
             <code>
-            #19 lib/http.php(36)        </code>
+            #19 lib/contents.php(118): HttpException::fromResponse()        </code>
+        <br>
+            <code>
+            #20 lib/http.php(36)        </code>
         <br>
     
     <br>
@@ -128,10 +155,10 @@
     <h2>Context</h2>
 
     <div>
-        <strong>Query:</strong> action=display&amp;bridge=KitsuBridge&amp;context=Episodes from all shows&amp;format=Html    </div>
+        <strong>Query:</strong> action=display&amp;bridge=NotAlwaysBridge&amp;filter=&amp;format=Html    </div>
 
     <div>
-        <strong>Version:</strong> 2025-01-26 (git.fork-master.ab05e65)    </div>
+        <strong>Version:</strong> 2025-01-26 (git.fork-master.a0d892f)    </div>
 
     <div>
         <strong>OS:</strong> Linux    </div>
