@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/ >
     <meta name="description" content="RSS-Bridge" />
-    <title>Issue 100: Add support for metrics and pprof</title>
+    <title>Issue 100: </title>
     <link href="static/style.css?2023-03-24" rel="stylesheet">
     <link rel="icon" type="image/png" href="static/favicon.png">
 
@@ -51,7 +51,7 @@
     <div class="container">
 
         <h1 class="pagetitle">
-            <a href="https://gitea.com/gitea/helm-chart/issues/100" target="_blank">Issue 100: Add support for metrics and pprof</a>
+            <a href="https://gitea.com/gitea/helm-chart/issues/100" target="_blank">Issue 100: </a>
         </h1>
 
         <div class="buttons">
@@ -87,11 +87,11 @@
                     <a
                         class="itemtitle"
                         href="http://localhost:3000/?action=display&amp;bridge=GiteaBridge&amp;context=Single+issue&amp;issue=100&amp;host=https%3A%2F%2Fgitea.com&amp;user=gitea&amp;project=helm-chart&amp;format=Html"
-                    >Bridge returned error 0! (20230)</a>
+                    >Bridge returned error 0! (20237)</a>
                 </h2>
 
-                                    <time datetime="2025-05-22 01:08:02">
-                        2025-05-22 01:08:02                    </time>
+                                    <time datetime="2025-05-29 01:08:47">
+                        2025-05-29 01:08:47                    </time>
                     <p></p>
                 
                 
@@ -111,13 +111,13 @@
             <strong>Code:</strong> 0        </div>
 
         <div class="error-message">
-            <strong>Message:</strong> Attempt to read property &quot;title&quot; on null        </div>
+            <strong>Message:</strong> Attempt to read property &quot;content&quot; on null        </div>
 
         <div>
             <strong>File:</strong> bridges/GiteaBridge.php        </div>
 
         <div>
-            <strong>Line:</strong> 281        </div>
+            <strong>Line:</strong> 161        </div>
     </div>
 
     <h2>Trace</h2>
@@ -174,13 +174,10 @@
             #16 actions/DisplayAction.php(89): GiteaBridge-&gt;collectData()        </code>
         <br>
             <code>
-            #17 bridges/GiteaBridge.php(174): GiteaBridge-&gt;collectSingleIssueOrPrData()        </code>
+            #17 bridges/GiteaBridge.php(161): {closure}()        </code>
         <br>
             <code>
-            #18 bridges/GiteaBridge.php(281): {closure}()        </code>
-        <br>
-            <code>
-            #19 bridges/GiteaBridge.php(281)        </code>
+            #18 bridges/GiteaBridge.php(161)        </code>
         <br>
     
     <br>
@@ -191,7 +188,7 @@
         <strong>Query:</strong> action=display&amp;bridge=GiteaBridge&amp;context=Single issue&amp;issue=100&amp;host=https://gitea.com&amp;user=gitea&amp;project=helm-chart&amp;format=Html    </div>
 
     <div>
-        <strong>Version:</strong> 2025-01-26 (git.fork-master.96a958c)    </div>
+        <strong>Version:</strong> 2025-01-26 (git.fork-master.fe395c3)    </div>
 
     <div>
         <strong>OS:</strong> Linux    </div>
@@ -205,11 +202,11 @@
 </div>
 
 
-<a href="https://github.com/RSS-Bridge/rss-bridge/issues?q=is%3Aissue+is%3Aopen+Issue+100%3A+Add+support+for+metrics+and+pprof" title="Opens GitHub to search for similar issues">
+<a href="https://github.com/RSS-Bridge/rss-bridge/issues?q=is%3Aissue+is%3Aopen+Issue+100%3A+" title="Opens GitHub to search for similar issues">
     <button>Find similar bugs</button>
 </a>
 
-<a href="https://github.com/RSS-Bridge/rss-bridge/issues/new?title=Issue+100%3A+Add+support+for+metrics+and+pprof+failed+with%3A+Attempt+to+read+property+%22title%22+on+null&body=%60%60%60%0AErrorException%3A+Attempt+to+read+property+%22title%22+on+null+in+bridges%2FGiteaBridge.php+line+281%0A%0Aindex.php%2873%29%3A+RssBridge-%3Emain%28%29%0Alib%2FRssBridge.php%2839%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+CacheMiddleware-%3E__invoke%28%29%0Amiddlewares%2FCacheMiddleware.php%2844%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+ExceptionMiddleware-%3E__invoke%28%29%0Amiddlewares%2FExceptionMiddleware.php%2817%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+SecurityMiddleware-%3E__invoke%28%29%0Amiddlewares%2FSecurityMiddleware.php%2819%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+MaintenanceMiddleware-%3E__invoke%28%29%0Amiddlewares%2FMaintenanceMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+BasicAuthMiddleware-%3E__invoke%28%29%0Amiddlewares%2FBasicAuthMiddleware.php%2813%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+TokenAuthenticationMiddleware-%3E__invoke%28%29%0Amiddlewares%2FTokenAuthenticationMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2834%29%3A+DisplayAction-%3E__invoke%28%29%0Aactions%2FDisplayAction.php%2854%29%3A+DisplayAction-%3EcreateResponse%28%29%0Aactions%2FDisplayAction.php%2889%29%3A+GiteaBridge-%3EcollectData%28%29%0Abridges%2FGiteaBridge.php%28174%29%3A+GiteaBridge-%3EcollectSingleIssueOrPrData%28%29%0Abridges%2FGiteaBridge.php%28281%29%3A+%7Bclosure%7D%28%29%0Abridges%2FGiteaBridge.php%28281%29%0A%0AQuery+string%3A+action%3Ddisplay%26bridge%3DGiteaBridge%26context%3DSingle%2Bissue%26issue%3D100%26host%3Dhttps%253A%252F%252Fgitea.com%26user%3Dgitea%26project%3Dhelm-chart%26format%3DHtml%0AVersion%3A+2025-01-26+%28git.fork-master.96a958c%29%0AOs%3A+Linux%0APHP+version%3A+8.2.28%0A%60%60%60%0AMaintainer%3A+%40gileri&labels=Bridge-Broken&assignee=g" title="After clicking this button you can review the issue before submitting it">
+<a href="https://github.com/RSS-Bridge/rss-bridge/issues/new?title=Issue+100%3A++failed+with%3A+Attempt+to+read+property+%22content%22+on+null&body=%60%60%60%0AErrorException%3A+Attempt+to+read+property+%22content%22+on+null+in+bridges%2FGiteaBridge.php+line+161%0A%0Aindex.php%2873%29%3A+RssBridge-%3Emain%28%29%0Alib%2FRssBridge.php%2839%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+CacheMiddleware-%3E__invoke%28%29%0Amiddlewares%2FCacheMiddleware.php%2844%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+ExceptionMiddleware-%3E__invoke%28%29%0Amiddlewares%2FExceptionMiddleware.php%2817%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+SecurityMiddleware-%3E__invoke%28%29%0Amiddlewares%2FSecurityMiddleware.php%2819%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+MaintenanceMiddleware-%3E__invoke%28%29%0Amiddlewares%2FMaintenanceMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+BasicAuthMiddleware-%3E__invoke%28%29%0Amiddlewares%2FBasicAuthMiddleware.php%2813%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+TokenAuthenticationMiddleware-%3E__invoke%28%29%0Amiddlewares%2FTokenAuthenticationMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2834%29%3A+DisplayAction-%3E__invoke%28%29%0Aactions%2FDisplayAction.php%2854%29%3A+DisplayAction-%3EcreateResponse%28%29%0Aactions%2FDisplayAction.php%2889%29%3A+GiteaBridge-%3EcollectData%28%29%0Abridges%2FGiteaBridge.php%28161%29%3A+%7Bclosure%7D%28%29%0Abridges%2FGiteaBridge.php%28161%29%0A%0AQuery+string%3A+action%3Ddisplay%26bridge%3DGiteaBridge%26context%3DSingle%2Bissue%26issue%3D100%26host%3Dhttps%253A%252F%252Fgitea.com%26user%3Dgitea%26project%3Dhelm-chart%26format%3DHtml%0AVersion%3A+2025-01-26+%28git.fork-master.fe395c3%29%0AOs%3A+Linux%0APHP+version%3A+8.2.28%0A%60%60%60%0AMaintainer%3A+%40gileri&labels=Bridge-Broken&assignee=g" title="After clicking this button you can review the issue before submitting it">
     <button>Create GitHub Issue</button>
 </a>
 
