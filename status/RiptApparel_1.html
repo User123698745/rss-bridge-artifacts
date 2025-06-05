@@ -87,11 +87,11 @@
                     <a
                         class="itemtitle"
                         href="http://localhost:3000/?action=display&amp;bridge=RiptApparelBridge&amp;format=Html"
-                    >Bridge returned error 423! (20237)</a>
+                    >Bridge returned error 0! (20244)</a>
                 </h2>
 
-                                    <time datetime="2025-05-29 01:16:46">
-                        2025-05-29 01:16:46                    </time>
+                                    <time datetime="2025-06-05 01:15:42">
+                        2025-06-05 01:15:42                    </time>
                     <p></p>
                 
                 
@@ -106,8 +106,11 @@
         
         
                     <p>
-                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/423">
-                    https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/423                </a>
+                See
+                <a href="https://curl.haxx.se/libcurl/c/libcurl-errors.html">
+                    https://curl.haxx.se/libcurl/c/libcurl-errors.html
+                </a>
+                for description of the curl error code.
             </p>
         
     
@@ -118,26 +121,16 @@
             <strong>Type:</strong> HttpException        </div>
 
         <div>
-            <strong>Code:</strong> 423        </div>
+            <strong>Code:</strong> 0        </div>
 
         <div class="error-message">
-            <strong>Message:</strong> https://www.riptapparel.com resulted in 423  &lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-  &lt;meta charset=&quot;utf-8&quot;&gt;
-  &lt;title&gt;This store is unavailable&lt;/title&gt;
-  &lt;meta name=&quot;referrer&quot; content=&quot;never&quot; /&gt;
-  &lt;style type=&quot;text/css&quot;&gt;
-
-    * { border:0; margin:0; padding:0; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; }
-    html,body { height:100%; border:0; margin:0; padding:0; font-family:&quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-weight:300; background:#fff; }
-    body { min-height:100%; font-size:16px;        </div>
+            <strong>Message:</strong> cURL error SSL: no alternative certificate subject name matches target hostname &#039;www.riptapparel.com&#039;: 60 (https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://www.riptapparel.com        </div>
 
         <div>
             <strong>File:</strong> lib/http.php        </div>
 
         <div>
-            <strong>Line:</strong> 36        </div>
+            <strong>Line:</strong> 184        </div>
     </div>
 
     <h2>Trace</h2>
@@ -200,10 +193,10 @@
             #18 lib/contents.php(151): getContents()        </code>
         <br>
             <code>
-            #19 lib/contents.php(106): HttpException::fromResponse()        </code>
+            #19 lib/contents.php(79): CurlHttpClient-&gt;request()        </code>
         <br>
             <code>
-            #20 lib/http.php(36)        </code>
+            #20 lib/http.php(184)        </code>
         <br>
     
     <br>
@@ -214,7 +207,7 @@
         <strong>Query:</strong> action=display&amp;bridge=RiptApparelBridge&amp;format=Html    </div>
 
     <div>
-        <strong>Version:</strong> 2025-01-26 (git.fork-master.fe395c3)    </div>
+        <strong>Version:</strong> 2025-06-03 (git.fork-master.5130b7b)    </div>
 
     <div>
         <strong>OS:</strong> Linux    </div>
@@ -232,7 +225,7 @@
     <button>Find similar bugs</button>
 </a>
 
-<a href="https://github.com/RSS-Bridge/rss-bridge/issues/new?title=RIPT+Apparel+failed+with%3A+https%3A%2F%2Fwww.riptapparel.com+resulted+in+423++%3C%21DOCTYPE+html%3E%0A%3Chtml+lang%3D%22en%22%3E%0A%3Chead%3E%0A++%3Cmeta+charset%3D%22utf-8%22%3E%0A++%3Ctitle%3EThis+store+is+unavailable%3C%2Ftitle%3E%0A++%3Cmeta+name%3D%22referrer%22+content%3D%22never%22+%2F%3E%0A++%3Cstyle+type%3D%22text%2Fcss%22%3E%0A%0A++++%2A+%7B+border%3A0%3B+margin%3A0%3B+padding%3A0%3B+-moz-box-sizing%3Aborder-box%3B+-webkit-box-sizing%3Aborder-box%3B+box-sizing%3Aborder-box%3B+%7D%0A++++html%2Cbody+%7B+height%3A100%25%3B+border%3A0%3B+margin%3A0%3B+padding%3A0%3B+font-family%3A%22Helvetica+Neue%22%2C+Helvetica%2C+Arial%2C+sans-serif%3B+font-weight%3A300%3B+background%3A%23fff%3B+%7D%0A++++body+%7B+min-height%3A100%25%3B+font-size%3A16px%3B&body=%60%60%60%0AHttpException%3A+https%3A%2F%2Fwww.riptapparel.com+resulted+in+423++%3C%21DOCTYPE+html%3E%0A%3Chtml+lang%3D%22en%22%3E%0A%3Chead%3E%0A++%3Cmeta+charset%3D%22utf-8%22%3E%0A++%3Ctitle%3EThis+store+is+unavailable%3C%2Ftitle%3E%0A++%3Cmeta+name%3D%22referrer%22+content%3D%22never%22+%2F%3E%0A++%3Cstyle+type%3D%22text%2Fcss%22%3E%0A%0A++++%2A+%7B+border%3A0%3B+margin%3A0%3B+padding%3A0%3B+-moz-box-sizing%3Aborder-box%3B+-webkit-box-sizing%3Aborder-box%3B+box-sizing%3Aborder-box%3B+%7D%0A++++html%2Cbody+%7B+height%3A100%25%3B+border%3A0%3B+margin%3A0%3B+padding%3A0%3B+font-family%3A%22Helvetica+Neue%22%2C+Helvetica%2C+Arial%2C+sans-serif%3B+font-weight%3A300%3B+background%3A%23fff%3B+%7D%0A++++body+%7B+min-height%3A100%25%3B+font-size%3A16px%3B+in+lib%2Fhttp.php+line+36%0A%0Aindex.php%2873%29%3A+RssBridge-%3Emain%28%29%0Alib%2FRssBridge.php%2839%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+CacheMiddleware-%3E__invoke%28%29%0Amiddlewares%2FCacheMiddleware.php%2844%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+ExceptionMiddleware-%3E__invoke%28%29%0Amiddlewares%2FExceptionMiddleware.php%2817%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+SecurityMiddleware-%3E__invoke%28%29%0Amiddlewares%2FSecurityMiddleware.php%2819%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+MaintenanceMiddleware-%3E__invoke%28%29%0Amiddlewares%2FMaintenanceMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+BasicAuthMiddleware-%3E__invoke%28%29%0Amiddlewares%2FBasicAuthMiddleware.php%2813%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+TokenAuthenticationMiddleware-%3E__invoke%28%29%0Amiddlewares%2FTokenAuthenticationMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2834%29%3A+DisplayAction-%3E__invoke%28%29%0Aactions%2FDisplayAction.php%2854%29%3A+DisplayAction-%3EcreateResponse%28%29%0Aactions%2FDisplayAction.php%2889%29%3A+RiptApparelBridge-%3EcollectData%28%29%0Abridges%2FRiptApparelBridge.php%2815%29%3A+getSimpleHTMLDOM%28%29%0Alib%2Fcontents.php%28151%29%3A+getContents%28%29%0Alib%2Fcontents.php%28106%29%3A+HttpException%3A%3AfromResponse%28%29%0Alib%2Fhttp.php%2836%29%0A%0AQuery+string%3A+action%3Ddisplay%26bridge%3DRiptApparelBridge%26format%3DHtml%0AVersion%3A+2025-01-26+%28git.fork-master.fe395c3%29%0AOs%3A+Linux%0APHP+version%3A+8.2.28%0A%60%60%60%0AMaintainer%3A+%40Bockiii&labels=Bridge-Broken&assignee=B" title="After clicking this button you can review the issue before submitting it">
+<a href="https://github.com/RSS-Bridge/rss-bridge/issues/new?title=RIPT+Apparel+failed+with%3A+cURL+error+SSL%3A+no+alternative+certificate+subject+name+matches+target+hostname+%27www.riptapparel.com%27%3A+60+%28https%3A%2F%2Fcurl.haxx.se%2Flibcurl%2Fc%2Flibcurl-errors.html%29+for+https%3A%2F%2Fwww.riptapparel.com&body=%60%60%60%0AHttpException%3A+cURL+error+SSL%3A+no+alternative+certificate+subject+name+matches+target+hostname+%27www.riptapparel.com%27%3A+60+%28https%3A%2F%2Fcurl.haxx.se%2Flibcurl%2Fc%2Flibcurl-errors.html%29+for+https%3A%2F%2Fwww.riptapparel.com+in+lib%2Fhttp.php+line+184%0A%0Aindex.php%2873%29%3A+RssBridge-%3Emain%28%29%0Alib%2FRssBridge.php%2839%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+CacheMiddleware-%3E__invoke%28%29%0Amiddlewares%2FCacheMiddleware.php%2844%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+ExceptionMiddleware-%3E__invoke%28%29%0Amiddlewares%2FExceptionMiddleware.php%2817%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+SecurityMiddleware-%3E__invoke%28%29%0Amiddlewares%2FSecurityMiddleware.php%2819%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+MaintenanceMiddleware-%3E__invoke%28%29%0Amiddlewares%2FMaintenanceMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+BasicAuthMiddleware-%3E__invoke%28%29%0Amiddlewares%2FBasicAuthMiddleware.php%2813%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+TokenAuthenticationMiddleware-%3E__invoke%28%29%0Amiddlewares%2FTokenAuthenticationMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2834%29%3A+DisplayAction-%3E__invoke%28%29%0Aactions%2FDisplayAction.php%2854%29%3A+DisplayAction-%3EcreateResponse%28%29%0Aactions%2FDisplayAction.php%2889%29%3A+RiptApparelBridge-%3EcollectData%28%29%0Abridges%2FRiptApparelBridge.php%2815%29%3A+getSimpleHTMLDOM%28%29%0Alib%2Fcontents.php%28151%29%3A+getContents%28%29%0Alib%2Fcontents.php%2879%29%3A+CurlHttpClient-%3Erequest%28%29%0Alib%2Fhttp.php%28184%29%0A%0AQuery+string%3A+action%3Ddisplay%26bridge%3DRiptApparelBridge%26format%3DHtml%0AVersion%3A+2025-06-03+%28git.fork-master.5130b7b%29%0AOs%3A+Linux%0APHP+version%3A+8.2.28%0A%60%60%60%0AMaintainer%3A+%40Bockiii&labels=Bridge-Broken&assignee=B" title="After clicking this button you can review the issue before submitting it">
     <button>Create GitHub Issue</button>
 </a>
 
