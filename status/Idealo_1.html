@@ -25,24 +25,37 @@
         <div class="error">
 
             
-            
+        
+        
+        
+        
+        
+                    <p>
+                See
+                <a href="https://curl.haxx.se/libcurl/c/libcurl-errors.html">
+                    https://curl.haxx.se/libcurl/c/libcurl-errors.html
+                </a>
+                for description of the curl error code.
+            </p>
+        
+    
     <h2>Details</h2>
 
     <div style="margin-bottom: 15px">
         <div class="error-type">
-            <strong>Type:</strong> ErrorException        </div>
+            <strong>Type:</strong> HttpException        </div>
 
         <div>
             <strong>Code:</strong> 0        </div>
 
         <div class="error-message">
-            <strong>Message:</strong> Undefined array key 1        </div>
+            <strong>Message:</strong> cURL error HTTP/2 stream 3 was not closed cleanly: PROTOCOL_ERROR (err 1): 92 (https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://www.idealo.de/preisvergleich/OffersOfProduct/202007367_-s7-pro-ultra-roborock.html        </div>
 
         <div>
-            <strong>File:</strong> bridges/PepperBridgeAbstract.php        </div>
+            <strong>File:</strong> lib/http.php        </div>
 
         <div>
-            <strong>Line:</strong> 291        </div>
+            <strong>Line:</strong> 184        </div>
     </div>
 
     <h2>Trace</h2>
@@ -99,16 +112,22 @@
             #16 actions/DisplayAction.php(118): DisplayAction-&gt;createFeedItemFromException()        </code>
         <br>
             <code>
-            #17 actions/DisplayAction.php(160): PepperBridgeAbstract-&gt;getName()        </code>
+            #17 actions/DisplayAction.php(160): IdealoBridge-&gt;getName()        </code>
         <br>
             <code>
-            #18 bridges/PepperBridgeAbstract.php(459): PepperBridgeAbstract-&gt;getGroupTitle()        </code>
+            #18 bridges/IdealoBridge.php(282): IdealoBridge-&gt;getFeedTitle()        </code>
         <br>
             <code>
-            #19 bridges/PepperBridgeAbstract.php(291): {closure}()        </code>
+            #19 bridges/IdealoBridge.php(66): getSimpleHTMLDOM()        </code>
         <br>
             <code>
-            #20 bridges/PepperBridgeAbstract.php(291)        </code>
+            #20 lib/contents.php(151): getContents()        </code>
+        <br>
+            <code>
+            #21 lib/contents.php(79): CurlHttpClient-&gt;request()        </code>
+        <br>
+            <code>
+            #22 lib/http.php(184)        </code>
         <br>
     
     <br>
@@ -116,7 +135,7 @@
     <h2>Context</h2>
 
     <div>
-        <strong>Query:</strong> action=display&amp;bridge=HotUKDealsBridge&amp;context=Deals per group&amp;order=-hot&amp;format=Html    </div>
+        <strong>Query:</strong> action=display&amp;bridge=IdealoBridge&amp;Link=https://www.idealo.de/preisvergleich/OffersOfProduct/202007367_-s7-pro-ultra-roborock.html&amp;format=Html    </div>
 
     <div>
         <strong>Version:</strong> 2025-06-03 (git.fork-master.2605704)    </div>
