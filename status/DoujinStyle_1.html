@@ -87,11 +87,11 @@
                     <a
                         class="itemtitle"
                         href="http://localhost:3000/?action=display&amp;bridge=DoujinStyleBridge&amp;context=Most+recent+submissions&amp;format=Html"
-                    >Bridge returned error 0! (20265)</a>
+                    >Bridge returned error 0! (20272)</a>
                 </h2>
 
-                                    <time datetime="2025-06-26 01:05:37">
-                        2025-06-26 01:05:37                    </time>
+                                    <time datetime="2025-07-03 01:05:19">
+                        2025-07-03 01:05:19                    </time>
                     <p></p>
                 
                 
@@ -124,7 +124,7 @@
             <strong>Code:</strong> 0        </div>
 
         <div class="error-message">
-            <strong>Message:</strong> cURL error Operation timed out after 5001 milliseconds with 0 bytes received: 28 (https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://doujinstyle.com/?p=page&amp;type=1&amp;id=28582        </div>
+            <strong>Message:</strong> cURL error Operation timed out after 5002 milliseconds with 0 bytes received: 28 (https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://doujinstyle.com/        </div>
 
         <div>
             <strong>File:</strong> lib/http.php        </div>
@@ -187,7 +187,7 @@
             #16 actions/DisplayAction.php(89): DoujinStyleBridge-&gt;collectData()        </code>
         <br>
             <code>
-            #17 bridges/DoujinStyleBridge.php(60): getSimpleHTMLDOM()        </code>
+            #17 bridges/DoujinStyleBridge.php(51): getSimpleHTMLDOM()        </code>
         <br>
             <code>
             #18 lib/contents.php(151): getContents()        </code>
@@ -225,7 +225,7 @@
     <button>Find similar bugs</button>
 </a>
 
-<a href="https://github.com/RSS-Bridge/rss-bridge/issues/new?title=DoujinStyle+Bridge+failed+with%3A+cURL+error+Operation+timed+out+after+5001+milliseconds+with+0+bytes+received%3A+28+%28https%3A%2F%2Fcurl.haxx.se%2Flibcurl%2Fc%2Flibcurl-errors.html%29+for+https%3A%2F%2Fdoujinstyle.com%2F%3Fp%3Dpage%26type%3D1%26id%3D28582&body=%60%60%60%0AHttpException%3A+cURL+error+Operation+timed+out+after+5001+milliseconds+with+0+bytes+received%3A+28+%28https%3A%2F%2Fcurl.haxx.se%2Flibcurl%2Fc%2Flibcurl-errors.html%29+for+https%3A%2F%2Fdoujinstyle.com%2F%3Fp%3Dpage%26type%3D1%26id%3D28582+in+lib%2Fhttp.php+line+184%0A%0Aindex.php%2873%29%3A+RssBridge-%3Emain%28%29%0Alib%2FRssBridge.php%2839%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+CacheMiddleware-%3E__invoke%28%29%0Amiddlewares%2FCacheMiddleware.php%2844%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+ExceptionMiddleware-%3E__invoke%28%29%0Amiddlewares%2FExceptionMiddleware.php%2817%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+SecurityMiddleware-%3E__invoke%28%29%0Amiddlewares%2FSecurityMiddleware.php%2819%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+MaintenanceMiddleware-%3E__invoke%28%29%0Amiddlewares%2FMaintenanceMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+BasicAuthMiddleware-%3E__invoke%28%29%0Amiddlewares%2FBasicAuthMiddleware.php%2813%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+TokenAuthenticationMiddleware-%3E__invoke%28%29%0Amiddlewares%2FTokenAuthenticationMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2834%29%3A+DisplayAction-%3E__invoke%28%29%0Aactions%2FDisplayAction.php%2854%29%3A+DisplayAction-%3EcreateResponse%28%29%0Aactions%2FDisplayAction.php%2889%29%3A+DoujinStyleBridge-%3EcollectData%28%29%0Abridges%2FDoujinStyleBridge.php%2860%29%3A+getSimpleHTMLDOM%28%29%0Alib%2Fcontents.php%28151%29%3A+getContents%28%29%0Alib%2Fcontents.php%2879%29%3A+CurlHttpClient-%3Erequest%28%29%0Alib%2Fhttp.php%28184%29%0A%0AQuery+string%3A+action%3Ddisplay%26bridge%3DDoujinStyleBridge%26context%3DMost%2Brecent%2Bsubmissions%26format%3DHtml%0AVersion%3A+2025-06-03+%28git.fork-master.2605704%29%0AOs%3A+Linux%0APHP+version%3A+8.2.28%0A%60%60%60%0AMaintainer%3A+%40mrtnvgr&labels=Bridge-Broken&assignee=m" title="After clicking this button you can review the issue before submitting it">
+<a href="https://github.com/RSS-Bridge/rss-bridge/issues/new?title=DoujinStyle+Bridge+failed+with%3A+cURL+error+Operation+timed+out+after+5002+milliseconds+with+0+bytes+received%3A+28+%28https%3A%2F%2Fcurl.haxx.se%2Flibcurl%2Fc%2Flibcurl-errors.html%29+for+https%3A%2F%2Fdoujinstyle.com%2F&body=%60%60%60%0AHttpException%3A+cURL+error+Operation+timed+out+after+5002+milliseconds+with+0+bytes+received%3A+28+%28https%3A%2F%2Fcurl.haxx.se%2Flibcurl%2Fc%2Flibcurl-errors.html%29+for+https%3A%2F%2Fdoujinstyle.com%2F+in+lib%2Fhttp.php+line+184%0A%0Aindex.php%2873%29%3A+RssBridge-%3Emain%28%29%0Alib%2FRssBridge.php%2839%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+CacheMiddleware-%3E__invoke%28%29%0Amiddlewares%2FCacheMiddleware.php%2844%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+ExceptionMiddleware-%3E__invoke%28%29%0Amiddlewares%2FExceptionMiddleware.php%2817%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+SecurityMiddleware-%3E__invoke%28%29%0Amiddlewares%2FSecurityMiddleware.php%2819%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+MaintenanceMiddleware-%3E__invoke%28%29%0Amiddlewares%2FMaintenanceMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+BasicAuthMiddleware-%3E__invoke%28%29%0Amiddlewares%2FBasicAuthMiddleware.php%2813%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+TokenAuthenticationMiddleware-%3E__invoke%28%29%0Amiddlewares%2FTokenAuthenticationMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2834%29%3A+DisplayAction-%3E__invoke%28%29%0Aactions%2FDisplayAction.php%2854%29%3A+DisplayAction-%3EcreateResponse%28%29%0Aactions%2FDisplayAction.php%2889%29%3A+DoujinStyleBridge-%3EcollectData%28%29%0Abridges%2FDoujinStyleBridge.php%2851%29%3A+getSimpleHTMLDOM%28%29%0Alib%2Fcontents.php%28151%29%3A+getContents%28%29%0Alib%2Fcontents.php%2879%29%3A+CurlHttpClient-%3Erequest%28%29%0Alib%2Fhttp.php%28184%29%0A%0AQuery+string%3A+action%3Ddisplay%26bridge%3DDoujinStyleBridge%26context%3DMost%2Brecent%2Bsubmissions%26format%3DHtml%0AVersion%3A+2025-06-03+%28git.fork-master.2605704%29%0AOs%3A+Linux%0APHP+version%3A+8.2.28%0A%60%60%60%0AMaintainer%3A+%40mrtnvgr&labels=Bridge-Broken&assignee=m" title="After clicking this button you can review the issue before submitting it">
     <button>Create GitHub Issue</button>
 </a>
 
