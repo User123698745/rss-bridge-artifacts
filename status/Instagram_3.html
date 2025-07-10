@@ -82,6 +82,173 @@
             
                     </div>
 
+                    <section class="feeditem">
+                <h2>
+                    <a
+                        class="itemtitle"
+                        href="http://localhost:3000/?action=display&amp;bridge=InstagramBridge&amp;context=Location&amp;l=london&amp;media_type=all&amp;format=Html"
+                    >Bridge returned error 404! (20279)</a>
+                </h2>
+
+                                    <time datetime="2025-07-10 01:11:16">
+                        2025-07-10 01:11:16                    </time>
+                    <p></p>
+                
+                
+                <!-- Intentionally not escaping for html context -->
+                
+<div class="error">
+
+            
+        
+        
+                    <h2>404 Page Not Found</h2>
+            <p>
+                RSS-Bridge tried to fetch a page on a website.
+                But it doesn't exists.
+            </p>
+        
+        
+        
+                    <p>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404">
+                    https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404                </a>
+            </p>
+        
+    
+    <h2>Details</h2>
+
+    <div style="margin-bottom: 15px">
+        <div class="error-type">
+            <strong>Type:</strong> HttpException        </div>
+
+        <div>
+            <strong>Code:</strong> 404        </div>
+
+        <div class="error-message">
+            <strong>Message:</strong> https://www.instagram.com/explore/locations/london resulted in 404 Not Found &lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;None&quot; class=&quot;no-js not-logged-in &quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+
+        &lt;title&gt;
+                  Page Not Found &amp;bull; Instagram
+                &lt;/title&gt;
+
+        
+        &lt;meta name=&quot;robots&quot; content=&quot;noimageindex, noarchive&quot;&gt;
+        &lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot;default&quot;&gt;
+        &lt;meta name=&quot;mobile-web-app-capable&quot; content=&quot;yes&quot;&gt;
+        &lt;meta name=&quot;theme-colo        </div>
+
+        <div>
+            <strong>File:</strong> lib/http.php        </div>
+
+        <div>
+            <strong>Line:</strong> 36        </div>
+    </div>
+
+    <h2>Trace</h2>
+
+            <code>
+            #0 index.php(73): RssBridge-&gt;main()        </code>
+        <br>
+            <code>
+            #1 lib/RssBridge.php(39): RssBridge-&gt;{closure}()        </code>
+        <br>
+            <code>
+            #2 lib/RssBridge.php(37): CacheMiddleware-&gt;__invoke()        </code>
+        <br>
+            <code>
+            #3 middlewares/CacheMiddleware.php(44): RssBridge-&gt;{closure}()        </code>
+        <br>
+            <code>
+            #4 lib/RssBridge.php(37): ExceptionMiddleware-&gt;__invoke()        </code>
+        <br>
+            <code>
+            #5 middlewares/ExceptionMiddleware.php(17): RssBridge-&gt;{closure}()        </code>
+        <br>
+            <code>
+            #6 lib/RssBridge.php(37): SecurityMiddleware-&gt;__invoke()        </code>
+        <br>
+            <code>
+            #7 middlewares/SecurityMiddleware.php(19): RssBridge-&gt;{closure}()        </code>
+        <br>
+            <code>
+            #8 lib/RssBridge.php(37): MaintenanceMiddleware-&gt;__invoke()        </code>
+        <br>
+            <code>
+            #9 middlewares/MaintenanceMiddleware.php(10): RssBridge-&gt;{closure}()        </code>
+        <br>
+            <code>
+            #10 lib/RssBridge.php(37): BasicAuthMiddleware-&gt;__invoke()        </code>
+        <br>
+            <code>
+            #11 middlewares/BasicAuthMiddleware.php(13): RssBridge-&gt;{closure}()        </code>
+        <br>
+            <code>
+            #12 lib/RssBridge.php(37): TokenAuthenticationMiddleware-&gt;__invoke()        </code>
+        <br>
+            <code>
+            #13 middlewares/TokenAuthenticationMiddleware.php(10): RssBridge-&gt;{closure}()        </code>
+        <br>
+            <code>
+            #14 lib/RssBridge.php(34): DisplayAction-&gt;__invoke()        </code>
+        <br>
+            <code>
+            #15 actions/DisplayAction.php(54): DisplayAction-&gt;createResponse()        </code>
+        <br>
+            <code>
+            #16 actions/DisplayAction.php(89): InstagramBridge-&gt;collectData()        </code>
+        <br>
+            <code>
+            #17 bridges/InstagramBridge.php(126): InstagramBridge-&gt;getInstagramJSON()        </code>
+        <br>
+            <code>
+            #18 bridges/InstagramBridge.php(313): getContents()        </code>
+        <br>
+            <code>
+            #19 lib/contents.php(106): HttpException::fromResponse()        </code>
+        <br>
+            <code>
+            #20 lib/http.php(36)        </code>
+        <br>
+    
+    <br>
+
+    <h2>Context</h2>
+
+    <div>
+        <strong>Query:</strong> action=display&amp;bridge=InstagramBridge&amp;context=Location&amp;l=london&amp;media_type=all&amp;format=Html    </div>
+
+    <div>
+        <strong>Version:</strong> 2025-06-03 (git.fork-master.2605704)    </div>
+
+    <div>
+        <strong>OS:</strong> Linux    </div>
+
+    <div>
+        <strong>PHP:</strong> 8.2.28    </div>
+
+    <br>
+
+    <a href="/">Go back</a>
+</div>
+
+
+<a href="https://github.com/RSS-Bridge/rss-bridge/issues?q=is%3Aissue+is%3Aopen+Instagram+Bridge" title="Opens GitHub to search for similar issues">
+    <button>Find similar bugs</button>
+</a>
+
+<a href="https://github.com/RSS-Bridge/rss-bridge/issues/new?title=Instagram+Bridge+failed+with%3A+https%3A%2F%2Fwww.instagram.com%2Fexplore%2Flocations%2Flondon+resulted+in+404+Not+Found+%3C%21DOCTYPE+html%3E%0A%3Chtml+lang%3D%22None%22+class%3D%22no-js+not-logged-in+%22%3E%0A++++%3Chead%3E%0A++++++++%3Cmeta+charset%3D%22utf-8%22%3E%0A++++++++%3Cmeta+http-equiv%3D%22X-UA-Compatible%22+content%3D%22IE%3Dedge%22%3E%0A%0A++++++++%3Ctitle%3E%0A++++++++++++++++++Page+Not+Found+%26bull%3B+Instagram%0A++++++++++++++++%3C%2Ftitle%3E%0A%0A++++++++%0A++++++++%3Cmeta+name%3D%22robots%22+content%3D%22noimageindex%2C+noarchive%22%3E%0A++++++++%3Cmeta+name%3D%22apple-mobile-web-app-status-bar-style%22+content%3D%22default%22%3E%0A++++++++%3Cmeta+name%3D%22mobile-web-app-capable%22+content%3D%22yes%22%3E%0A++++++++%3Cmeta+name%3D%22theme-colo&body=%60%60%60%0AHttpException%3A+https%3A%2F%2Fwww.instagram.com%2Fexplore%2Flocations%2Flondon+resulted+in+404+Not+Found+%3C%21DOCTYPE+html%3E%0A%3Chtml+lang%3D%22None%22+class%3D%22no-js+not-logged-in+%22%3E%0A++++%3Chead%3E%0A++++++++%3Cmeta+charset%3D%22utf-8%22%3E%0A++++++++%3Cmeta+http-equiv%3D%22X-UA-Compatible%22+content%3D%22IE%3Dedge%22%3E%0A%0A++++++++%3Ctitle%3E%0A++++++++++++++++++Page+Not+Found+%26bull%3B+Instagram%0A++++++++++++++++%3C%2Ftitle%3E%0A%0A++++++++%0A++++++++%3Cmeta+name%3D%22robots%22+content%3D%22noimageindex%2C+noarchive%22%3E%0A++++++++%3Cmeta+name%3D%22apple-mobile-web-app-status-bar-style%22+content%3D%22default%22%3E%0A++++++++%3Cmeta+name%3D%22mobile-web-app-capable%22+content%3D%22yes%22%3E%0A++++++++%3Cmeta+name%3D%22theme-colo+in+lib%2Fhttp.php+line+36%0A%0Aindex.php%2873%29%3A+RssBridge-%3Emain%28%29%0Alib%2FRssBridge.php%2839%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+CacheMiddleware-%3E__invoke%28%29%0Amiddlewares%2FCacheMiddleware.php%2844%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+ExceptionMiddleware-%3E__invoke%28%29%0Amiddlewares%2FExceptionMiddleware.php%2817%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+SecurityMiddleware-%3E__invoke%28%29%0Amiddlewares%2FSecurityMiddleware.php%2819%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+MaintenanceMiddleware-%3E__invoke%28%29%0Amiddlewares%2FMaintenanceMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+BasicAuthMiddleware-%3E__invoke%28%29%0Amiddlewares%2FBasicAuthMiddleware.php%2813%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+TokenAuthenticationMiddleware-%3E__invoke%28%29%0Amiddlewares%2FTokenAuthenticationMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2834%29%3A+DisplayAction-%3E__invoke%28%29%0Aactions%2FDisplayAction.php%2854%29%3A+DisplayAction-%3EcreateResponse%28%29%0Aactions%2FDisplayAction.php%2889%29%3A+InstagramBridge-%3EcollectData%28%29%0Abridges%2FInstagramBridge.php%28126%29%3A+InstagramBridge-%3EgetInstagramJSON%28%29%0Abridges%2FInstagramBridge.php%28313%29%3A+getContents%28%29%0Alib%2Fcontents.php%28106%29%3A+HttpException%3A%3AfromResponse%28%29%0Alib%2Fhttp.php%2836%29%0A%0AQuery+string%3A+action%3Ddisplay%26bridge%3DInstagramBridge%26context%3DLocation%26l%3Dlondon%26media_type%3Dall%26format%3DHtml%0AVersion%3A+2025-06-03+%28git.fork-master.2605704%29%0AOs%3A+Linux%0APHP+version%3A+8.2.28%0A%60%60%60%0AMaintainer%3A+%40No+maintainer&labels=Bridge-Broken&assignee=N" title="After clicking this button you can review the issue before submitting it">
+    <button>Create GitHub Issue</button>
+</a>
+
+<p class="maintainer">
+    No maintainer</p>
+                
+                            </section>
         
     </div>
  </body>
