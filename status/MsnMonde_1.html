@@ -53,8 +53,8 @@
         <div class="error-message">
             <strong>Message:</strong> https://rss.msn.com/fr-fr resulted in 503 Service Unavailable &lt;HTML&gt;&lt;HEAD&gt;&lt;TITLE&gt;Error&lt;/TITLE&gt;&lt;/HEAD&gt;&lt;BODY&gt;
 An error occurred while processing your request.&lt;p&gt;
-Reference&amp;#32;&amp;#35;30&amp;#46;18163e17&amp;#46;1753924738&amp;#46;24c0009f
-&lt;P&gt;https&amp;#58;&amp;#47;&amp;#47;errors&amp;#46;edgesuite&amp;#46;net&amp;#47;30&amp;#46;18163e17&amp;#46;1753924738&amp;#46;24c0009f&lt;/P&gt;
+Reference&amp;#32;&amp;#35;30&amp;#46;48f7dead&amp;#46;1754529541&amp;#46;430f3e4a
+&lt;P&gt;https&amp;#58;&amp;#47;&amp;#47;errors&amp;#46;edgesuite&amp;#46;net&amp;#47;30&amp;#46;48f7dead&amp;#46;1754529541&amp;#46;430f3e4a&lt;/P&gt;
 &lt;/BODY&gt;&lt;/HTML&gt;        </div>
 
         <div>
@@ -73,34 +73,34 @@ Reference&amp;#32;&amp;#35;30&amp;#46;18163e17&amp;#46;1753924738&amp;#46;24c000
             #1 lib/RssBridge.php(39): RssBridge-&gt;{closure}()        </code>
         <br>
             <code>
-            #2 lib/RssBridge.php(37): CacheMiddleware-&gt;__invoke()        </code>
+            #2 lib/RssBridge.php(37): BasicAuthMiddleware-&gt;__invoke()        </code>
         <br>
             <code>
-            #3 middlewares/CacheMiddleware.php(44): RssBridge-&gt;{closure}()        </code>
+            #3 middlewares/BasicAuthMiddleware.php(13): RssBridge-&gt;{closure}()        </code>
         <br>
             <code>
-            #4 lib/RssBridge.php(37): ExceptionMiddleware-&gt;__invoke()        </code>
+            #4 lib/RssBridge.php(37): CacheMiddleware-&gt;__invoke()        </code>
         <br>
             <code>
-            #5 middlewares/ExceptionMiddleware.php(17): RssBridge-&gt;{closure}()        </code>
+            #5 middlewares/CacheMiddleware.php(44): RssBridge-&gt;{closure}()        </code>
         <br>
             <code>
-            #6 lib/RssBridge.php(37): SecurityMiddleware-&gt;__invoke()        </code>
+            #6 lib/RssBridge.php(37): ExceptionMiddleware-&gt;__invoke()        </code>
         <br>
             <code>
-            #7 middlewares/SecurityMiddleware.php(19): RssBridge-&gt;{closure}()        </code>
+            #7 middlewares/ExceptionMiddleware.php(17): RssBridge-&gt;{closure}()        </code>
         <br>
             <code>
-            #8 lib/RssBridge.php(37): MaintenanceMiddleware-&gt;__invoke()        </code>
+            #8 lib/RssBridge.php(37): SecurityMiddleware-&gt;__invoke()        </code>
         <br>
             <code>
-            #9 middlewares/MaintenanceMiddleware.php(10): RssBridge-&gt;{closure}()        </code>
+            #9 middlewares/SecurityMiddleware.php(19): RssBridge-&gt;{closure}()        </code>
         <br>
             <code>
-            #10 lib/RssBridge.php(37): BasicAuthMiddleware-&gt;__invoke()        </code>
+            #10 lib/RssBridge.php(37): MaintenanceMiddleware-&gt;__invoke()        </code>
         <br>
             <code>
-            #11 middlewares/BasicAuthMiddleware.php(13): RssBridge-&gt;{closure}()        </code>
+            #11 middlewares/MaintenanceMiddleware.php(10): RssBridge-&gt;{closure}()        </code>
         <br>
             <code>
             #12 lib/RssBridge.php(37): TokenAuthenticationMiddleware-&gt;__invoke()        </code>
@@ -138,7 +138,7 @@ Reference&amp;#32;&amp;#35;30&amp;#46;18163e17&amp;#46;1753924738&amp;#46;24c000
         <strong>Query:</strong> action=display&amp;bridge=MsnMondeBridge&amp;format=Html    </div>
 
     <div>
-        <strong>Version:</strong> 2025-06-03 (git.fork-master.3a18ba9)    </div>
+        <strong>Version:</strong> 2025-08-05 (git.fork-master.9ff5f17)    </div>
 
     <div>
         <strong>OS:</strong> Linux    </div>

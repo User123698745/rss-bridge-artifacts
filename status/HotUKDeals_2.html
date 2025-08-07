@@ -42,7 +42,7 @@
             <strong>File:</strong> bridges/PepperBridgeAbstract.php        </div>
 
         <div>
-            <strong>Line:</strong> 291        </div>
+            <strong>Line:</strong> 295        </div>
     </div>
 
     <h2>Trace</h2>
@@ -54,34 +54,34 @@
             #1 lib/RssBridge.php(39): RssBridge-&gt;{closure}()        </code>
         <br>
             <code>
-            #2 lib/RssBridge.php(37): CacheMiddleware-&gt;__invoke()        </code>
+            #2 lib/RssBridge.php(37): BasicAuthMiddleware-&gt;__invoke()        </code>
         <br>
             <code>
-            #3 middlewares/CacheMiddleware.php(44): RssBridge-&gt;{closure}()        </code>
+            #3 middlewares/BasicAuthMiddleware.php(13): RssBridge-&gt;{closure}()        </code>
         <br>
             <code>
-            #4 lib/RssBridge.php(37): ExceptionMiddleware-&gt;__invoke()        </code>
+            #4 lib/RssBridge.php(37): CacheMiddleware-&gt;__invoke()        </code>
         <br>
             <code>
-            #5 middlewares/ExceptionMiddleware.php(17): RssBridge-&gt;{closure}()        </code>
+            #5 middlewares/CacheMiddleware.php(44): RssBridge-&gt;{closure}()        </code>
         <br>
             <code>
-            #6 lib/RssBridge.php(37): SecurityMiddleware-&gt;__invoke()        </code>
+            #6 lib/RssBridge.php(37): ExceptionMiddleware-&gt;__invoke()        </code>
         <br>
             <code>
-            #7 middlewares/SecurityMiddleware.php(19): RssBridge-&gt;{closure}()        </code>
+            #7 middlewares/ExceptionMiddleware.php(17): RssBridge-&gt;{closure}()        </code>
         <br>
             <code>
-            #8 lib/RssBridge.php(37): MaintenanceMiddleware-&gt;__invoke()        </code>
+            #8 lib/RssBridge.php(37): SecurityMiddleware-&gt;__invoke()        </code>
         <br>
             <code>
-            #9 middlewares/MaintenanceMiddleware.php(10): RssBridge-&gt;{closure}()        </code>
+            #9 middlewares/SecurityMiddleware.php(19): RssBridge-&gt;{closure}()        </code>
         <br>
             <code>
-            #10 lib/RssBridge.php(37): BasicAuthMiddleware-&gt;__invoke()        </code>
+            #10 lib/RssBridge.php(37): MaintenanceMiddleware-&gt;__invoke()        </code>
         <br>
             <code>
-            #11 middlewares/BasicAuthMiddleware.php(13): RssBridge-&gt;{closure}()        </code>
+            #11 middlewares/MaintenanceMiddleware.php(10): RssBridge-&gt;{closure}()        </code>
         <br>
             <code>
             #12 lib/RssBridge.php(37): TokenAuthenticationMiddleware-&gt;__invoke()        </code>
@@ -102,13 +102,13 @@
             #17 actions/DisplayAction.php(160): PepperBridgeAbstract-&gt;getName()        </code>
         <br>
             <code>
-            #18 bridges/PepperBridgeAbstract.php(459): PepperBridgeAbstract-&gt;getGroupTitle()        </code>
+            #18 bridges/PepperBridgeAbstract.php(464): PepperBridgeAbstract-&gt;getGroupTitle()        </code>
         <br>
             <code>
-            #19 bridges/PepperBridgeAbstract.php(291): {closure}()        </code>
+            #19 bridges/PepperBridgeAbstract.php(295): {closure}()        </code>
         <br>
             <code>
-            #20 bridges/PepperBridgeAbstract.php(291)        </code>
+            #20 bridges/PepperBridgeAbstract.php(295)        </code>
         <br>
     
     <br>
@@ -119,7 +119,7 @@
         <strong>Query:</strong> action=display&amp;bridge=HotUKDealsBridge&amp;context=Deals per group&amp;order=-hot&amp;format=Html    </div>
 
     <div>
-        <strong>Version:</strong> 2025-06-03 (git.fork-master.3a18ba9)    </div>
+        <strong>Version:</strong> 2025-08-05 (git.fork-master.9ff5f17)    </div>
 
     <div>
         <strong>OS:</strong> Linux    </div>
