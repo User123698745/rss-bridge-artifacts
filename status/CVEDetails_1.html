@@ -19,8 +19,6 @@
             </a>
         </header>
 
-                    <div class="alert-error">
-                Warning : Debug mode is active from any location, make sure only you can access RSS-Bridge.            </div>
         
         <div class="error">
 
@@ -58,13 +56,13 @@
             <strong>Code:</strong> 403        </div>
 
         <div class="error-message">
-            <strong>Message:</strong> https://www.cvedetails.com/vulnerability-list/vendor_id-74/product_id-?order=1 resulted in 403 Forbidden &lt;!DOCTYPE html&gt;&lt;html lang=&quot;en-US&quot;&gt;&lt;head&gt;&lt;title&gt;Just a moment...&lt;/title&gt;&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=Edge&quot;&gt;&lt;meta name=&quot;robots&quot; content=&quot;noindex,nofollow&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;&lt;style&gt;*{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,Roboto,&quot;Helve        </div>
+            <strong>Message:</strong> https://www.cvedetails.com/vulnerability-list/vendor_id-74/product_id-?order=1 resulted in 403 Forbidden        </div>
 
         <div>
             <strong>File:</strong> lib/http.php        </div>
 
         <div>
-            <strong>Line:</strong> 34        </div>
+            <strong>Line:</strong> 32        </div>
     </div>
 
     <h2>Trace</h2>
@@ -118,10 +116,10 @@
             #15 actions/DisplayAction.php(54): DisplayAction-&gt;createResponse()        </code>
         <br>
             <code>
-            #16 actions/DisplayAction.php(118): DisplayAction-&gt;createFeedItemFromException()        </code>
+            #16 actions/DisplayAction.php(117): DisplayAction-&gt;createFeedItemFromException()        </code>
         <br>
             <code>
-            #17 actions/DisplayAction.php(160): CVEDetailsBridge-&gt;getName()        </code>
+            #17 actions/DisplayAction.php(159): CVEDetailsBridge-&gt;getName()        </code>
         <br>
             <code>
             #18 bridges/CVEDetailsBridge.php(107): CVEDetailsBridge-&gt;fetchContent()        </code>
@@ -136,7 +134,7 @@
             #21 lib/contents.php(106): HttpException::fromResponse()        </code>
         <br>
             <code>
-            #22 lib/http.php(34)        </code>
+            #22 lib/http.php(32)        </code>
         <br>
     
     <br>
@@ -147,7 +145,7 @@
         <strong>Query:</strong> action=display&amp;bridge=CVEDetailsBridge&amp;vendor_id=74&amp;format=Html    </div>
 
     <div>
-        <strong>Version:</strong> 2025-08-05 (git.fork-master.9ff5f17)    </div>
+        <strong>Version:</strong> 2025-08-05 (git.fork-master.1b56f21)    </div>
 
     <div>
         <strong>OS:</strong> Linux    </div>
