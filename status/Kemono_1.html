@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/ >
     <meta name="description" content="RSS-Bridge" />
-    <title>Kemono - Thomas Joy</title>
+    <title>Kemono</title>
     <link href="static/style.css?2023-03-24" rel="stylesheet">
     <link rel="icon" type="image/png" href="static/favicon.png">
 
@@ -51,7 +51,7 @@
     <div class="container">
 
         <h1 class="pagetitle">
-            <a href="https://kemono.su/patreon/user/9069743" target="_blank">Kemono - Thomas Joy</a>
+            <a href="https://kemono.su/patreon/user/9069743" target="_blank">Kemono</a>
         </h1>
 
         <div class="buttons">
@@ -87,11 +87,11 @@
                     <a
                         class="itemtitle"
                         href="http://localhost:3000/?action=display&amp;bridge=KemonoBridge&amp;user=9069743&amp;service=patreon&amp;format=Html"
-                    >Bridge returned error 404! (20314)</a>
+                    >Bridge returned error 403! (20315)</a>
                 </h2>
 
-                                    <time datetime="2025-08-14 01:14:09">
-                        2025-08-14 01:14:09                    </time>
+                                    <time datetime="2025-08-15 16:14:36">
+                        2025-08-15 16:14:36                    </time>
                     <p></p>
                 
                 
@@ -101,18 +101,18 @@
 
             
         
-        
-                    <h2>404 Page Not Found</h2>
+                    <h2>403 Forbidden</h2>
             <p>
-                RSS-Bridge tried to fetch a page on a website.
-                But it doesn't exists.
+                The HTTP 403 Forbidden response status code indicates that the
+                server understands the request but refuses to authorize it.
             </p>
         
         
         
+        
                     <p>
-                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404">
-                    https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404                </a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403">
+                    https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403                </a>
             </p>
         
     
@@ -123,10 +123,10 @@
             <strong>Type:</strong> HttpException        </div>
 
         <div>
-            <strong>Code:</strong> 404        </div>
+            <strong>Code:</strong> 403        </div>
 
         <div class="error-message">
-            <strong>Message:</strong> https://kemono.su/api/v1/patreon/user/9069743 resulted in 404 Not Found        </div>
+            <strong>Message:</strong> https://kemono.su/api/v1/patreon/user/9069743/profile resulted in 403 Forbidden        </div>
 
         <div>
             <strong>File:</strong> lib/http.php        </div>
@@ -189,7 +189,7 @@
             #16 actions/DisplayAction.php(89): KemonoBridge-&gt;collectData()        </code>
         <br>
             <code>
-            #17 bridges/KemonoBridge.php(49): getContents()        </code>
+            #17 bridges/KemonoBridge.php(42): getContents()        </code>
         <br>
             <code>
             #18 lib/contents.php(106): HttpException::fromResponse()        </code>
@@ -206,7 +206,7 @@
         <strong>Query:</strong> action=display&amp;bridge=KemonoBridge&amp;user=9069743&amp;service=patreon&amp;format=Html    </div>
 
     <div>
-        <strong>Version:</strong> 2025-08-05 (git.fork-master.1b56f21)    </div>
+        <strong>Version:</strong> 2025-08-05 (git.fork-master.57efaac)    </div>
 
     <div>
         <strong>OS:</strong> Linux    </div>
@@ -220,11 +220,11 @@
 </div>
 
 
-<a href="https://github.com/RSS-Bridge/rss-bridge/issues?q=is%3Aissue+is%3Aopen+Kemono+-+Thomas+Joy" title="Opens GitHub to search for similar issues">
+<a href="https://github.com/RSS-Bridge/rss-bridge/issues?q=is%3Aissue+is%3Aopen+Kemono" title="Opens GitHub to search for similar issues">
     <button>Find similar bugs</button>
 </a>
 
-<a href="https://github.com/RSS-Bridge/rss-bridge/issues/new?title=Kemono+-+Thomas+Joy+failed+with%3A+https%3A%2F%2Fkemono.su%2Fapi%2Fv1%2Fpatreon%2Fuser%2F9069743+resulted+in+404+Not+Found&body=%60%60%60%0AHttpException%3A+https%3A%2F%2Fkemono.su%2Fapi%2Fv1%2Fpatreon%2Fuser%2F9069743+resulted+in+404+Not+Found+in+lib%2Fhttp.php+line+34%0A%0Aindex.php%2873%29%3A+RssBridge-%3Emain%28%29%0Alib%2FRssBridge.php%2839%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+BasicAuthMiddleware-%3E__invoke%28%29%0Amiddlewares%2FBasicAuthMiddleware.php%2813%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+CacheMiddleware-%3E__invoke%28%29%0Amiddlewares%2FCacheMiddleware.php%2844%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+ExceptionMiddleware-%3E__invoke%28%29%0Amiddlewares%2FExceptionMiddleware.php%2817%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+SecurityMiddleware-%3E__invoke%28%29%0Amiddlewares%2FSecurityMiddleware.php%2819%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+MaintenanceMiddleware-%3E__invoke%28%29%0Amiddlewares%2FMaintenanceMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+TokenAuthenticationMiddleware-%3E__invoke%28%29%0Amiddlewares%2FTokenAuthenticationMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2834%29%3A+DisplayAction-%3E__invoke%28%29%0Aactions%2FDisplayAction.php%2854%29%3A+DisplayAction-%3EcreateResponse%28%29%0Aactions%2FDisplayAction.php%2889%29%3A+KemonoBridge-%3EcollectData%28%29%0Abridges%2FKemonoBridge.php%2849%29%3A+getContents%28%29%0Alib%2Fcontents.php%28106%29%3A+HttpException%3A%3AfromResponse%28%29%0Alib%2Fhttp.php%2834%29%0A%0AQuery+string%3A+action%3Ddisplay%26bridge%3DKemonoBridge%26user%3D9069743%26service%3Dpatreon%26format%3DHtml%0AVersion%3A+2025-08-05+%28git.fork-master.1b56f21%29%0AOs%3A+Linux%0APHP+version%3A+8.2.29%0A%60%60%60%0AMaintainer%3A+%40phantop&labels=Bridge-Broken&assignee=p" title="After clicking this button you can review the issue before submitting it">
+<a href="https://github.com/RSS-Bridge/rss-bridge/issues/new?title=Kemono+failed+with%3A+https%3A%2F%2Fkemono.su%2Fapi%2Fv1%2Fpatreon%2Fuser%2F9069743%2Fprofile+resulted+in+403+Forbidden&body=%60%60%60%0AHttpException%3A+https%3A%2F%2Fkemono.su%2Fapi%2Fv1%2Fpatreon%2Fuser%2F9069743%2Fprofile+resulted+in+403+Forbidden+in+lib%2Fhttp.php+line+34%0A%0Aindex.php%2873%29%3A+RssBridge-%3Emain%28%29%0Alib%2FRssBridge.php%2839%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+BasicAuthMiddleware-%3E__invoke%28%29%0Amiddlewares%2FBasicAuthMiddleware.php%2813%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+CacheMiddleware-%3E__invoke%28%29%0Amiddlewares%2FCacheMiddleware.php%2844%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+ExceptionMiddleware-%3E__invoke%28%29%0Amiddlewares%2FExceptionMiddleware.php%2817%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+SecurityMiddleware-%3E__invoke%28%29%0Amiddlewares%2FSecurityMiddleware.php%2819%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+MaintenanceMiddleware-%3E__invoke%28%29%0Amiddlewares%2FMaintenanceMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+TokenAuthenticationMiddleware-%3E__invoke%28%29%0Amiddlewares%2FTokenAuthenticationMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2834%29%3A+DisplayAction-%3E__invoke%28%29%0Aactions%2FDisplayAction.php%2854%29%3A+DisplayAction-%3EcreateResponse%28%29%0Aactions%2FDisplayAction.php%2889%29%3A+KemonoBridge-%3EcollectData%28%29%0Abridges%2FKemonoBridge.php%2842%29%3A+getContents%28%29%0Alib%2Fcontents.php%28106%29%3A+HttpException%3A%3AfromResponse%28%29%0Alib%2Fhttp.php%2834%29%0A%0AQuery+string%3A+action%3Ddisplay%26bridge%3DKemonoBridge%26user%3D9069743%26service%3Dpatreon%26format%3DHtml%0AVersion%3A+2025-08-05+%28git.fork-master.57efaac%29%0AOs%3A+Linux%0APHP+version%3A+8.2.29%0A%60%60%60%0AMaintainer%3A+%40phantop&labels=Bridge-Broken&assignee=p" title="After clicking this button you can review the issue before submitting it">
     <button>Create GitHub Issue</button>
 </a>
 
