@@ -27,13 +27,15 @@
         
         
         
+                    <h2>503 Service Unavailable</h2>
+            <p>
+                Common causes are a server that is down for maintenance
+                or that is overloaded.
+            </p>
         
                     <p>
-                See
-                <a href="https://curl.haxx.se/libcurl/c/libcurl-errors.html">
-                    https://curl.haxx.se/libcurl/c/libcurl-errors.html
-                </a>
-                for description of the curl error code.
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503">
+                    https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503                </a>
             </p>
         
     
@@ -44,16 +46,16 @@
             <strong>Type:</strong> HttpException        </div>
 
         <div>
-            <strong>Code:</strong> 0        </div>
+            <strong>Code:</strong> 503        </div>
 
         <div class="error-message">
-            <strong>Message:</strong> cURL error HTTP/2 stream 3 was not closed cleanly: PROTOCOL_ERROR (err 1): 92 (https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://www.idealo.de/preisvergleich/OffersOfProduct/202007367_-s7-pro-ultra-roborock.html        </div>
+            <strong>Message:</strong> https://cdaction.pl/najnowsze resulted in 503 Service Unavailable        </div>
 
         <div>
             <strong>File:</strong> lib/http.php        </div>
 
         <div>
-            <strong>Line:</strong> 182        </div>
+            <strong>Line:</strong> 34        </div>
     </div>
 
     <h2>Trace</h2>
@@ -107,25 +109,19 @@
             #15 actions/DisplayAction.php(54): DisplayAction-&gt;createResponse()        </code>
         <br>
             <code>
-            #16 actions/DisplayAction.php(117): DisplayAction-&gt;createFeedItemFromException()        </code>
+            #16 actions/DisplayAction.php(89): CdactionBridge-&gt;collectData()        </code>
         <br>
             <code>
-            #17 actions/DisplayAction.php(159): IdealoBridge-&gt;getName()        </code>
+            #17 bridges/CdactionBridge.php(40): getSimpleHTMLDOM()        </code>
         <br>
             <code>
-            #18 bridges/IdealoBridge.php(282): IdealoBridge-&gt;getFeedTitle()        </code>
+            #18 lib/contents.php(151): getContents()        </code>
         <br>
             <code>
-            #19 bridges/IdealoBridge.php(66): getSimpleHTMLDOM()        </code>
+            #19 lib/contents.php(106): HttpException::fromResponse()        </code>
         <br>
             <code>
-            #20 lib/contents.php(151): getContents()        </code>
-        <br>
-            <code>
-            #21 lib/contents.php(79): CurlHttpClient-&gt;request()        </code>
-        <br>
-            <code>
-            #22 lib/http.php(182)        </code>
+            #20 lib/http.php(34)        </code>
         <br>
     
     <br>
@@ -133,10 +129,10 @@
     <h2>Context</h2>
 
     <div>
-        <strong>Query:</strong> action=display&amp;bridge=IdealoBridge&amp;Link=https://www.idealo.de/preisvergleich/OffersOfProduct/202007367_-s7-pro-ultra-roborock.html&amp;format=Html    </div>
+        <strong>Query:</strong> action=display&amp;bridge=CdactionBridge&amp;category=najnowsze&amp;format=Html    </div>
 
     <div>
-        <strong>Version:</strong> 2025-08-05 (git.fork-master.7235960)    </div>
+        <strong>Version:</strong> 2025-08-05 (git.fork-master.051ac06)    </div>
 
     <div>
         <strong>OS:</strong> Linux    </div>
