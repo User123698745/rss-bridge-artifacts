@@ -4,41 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/ >
     <meta name="description" content="RSS-Bridge" />
-    <title>NiceMatin</title>
+    <title> (@rssbridge) - Telegram</title>
     <link href="static/style.css?2023-03-24" rel="stylesheet">
     <link rel="icon" type="image/png" href="static/favicon.png">
 
     
         <link
-            href="?action=display&amp;bridge=NiceMatinBridge&amp;format=Atom"
+            href="?action=display&amp;bridge=TelegramBridge&amp;username=%40rssbridge&amp;format=Atom"
             title="Atom"
             rel="alternate"
             type="application/atom+xml"
         >
 	
         <link
-            href="?action=display&amp;bridge=NiceMatinBridge&amp;format=Json"
+            href="?action=display&amp;bridge=TelegramBridge&amp;username=%40rssbridge&amp;format=Json"
             title="Json"
             rel="alternate"
             type="application/json"
         >
 	
         <link
-            href="?action=display&amp;bridge=NiceMatinBridge&amp;format=Mrss"
+            href="?action=display&amp;bridge=TelegramBridge&amp;username=%40rssbridge&amp;format=Mrss"
             title="Mrss"
             rel="alternate"
             type="application/rss+xml"
         >
 	
         <link
-            href="?action=display&amp;bridge=NiceMatinBridge&amp;format=Plaintext"
+            href="?action=display&amp;bridge=TelegramBridge&amp;username=%40rssbridge&amp;format=Plaintext"
             title="Plaintext"
             rel="alternate"
             type="text/plain"
         >
 	
         <link
-            href="?action=display&amp;bridge=NiceMatinBridge&amp;format=Sfeed"
+            href="?action=display&amp;bridge=TelegramBridge&amp;username=%40rssbridge&amp;format=Sfeed"
             title="Sfeed"
             rel="alternate"
             type="text/plain"
@@ -51,31 +51,31 @@
     <div class="container">
 
         <h1 class="pagetitle">
-            <a href="https://www.nicematin.com/" target="_blank">NiceMatin</a>
+            <a href="https://t.me/s/rssbridge" target="_blank"> (@rssbridge) - Telegram</a>
         </h1>
 
         <div class="buttons">
-            <a href="./#bridge-NiceMatinBridge">
+            <a href="./#bridge-TelegramBridge">
                 <button class="backbutton">← back to rss-bridge</button>
             </a>
 
-                            <a href="?action=display&amp;bridge=NiceMatinBridge&amp;format=Atom">
+                            <a href="?action=display&amp;bridge=TelegramBridge&amp;username=%40rssbridge&amp;format=Atom">
                     <button class="rss-feed">
                         Atom                    </button>
                 </a>
-                            <a href="?action=display&amp;bridge=NiceMatinBridge&amp;format=Json">
+                            <a href="?action=display&amp;bridge=TelegramBridge&amp;username=%40rssbridge&amp;format=Json">
                     <button class="rss-feed">
                         Json                    </button>
                 </a>
-                            <a href="?action=display&amp;bridge=NiceMatinBridge&amp;format=Mrss">
+                            <a href="?action=display&amp;bridge=TelegramBridge&amp;username=%40rssbridge&amp;format=Mrss">
                     <button class="rss-feed">
                         Mrss                    </button>
                 </a>
-                            <a href="?action=display&amp;bridge=NiceMatinBridge&amp;format=Plaintext">
+                            <a href="?action=display&amp;bridge=TelegramBridge&amp;username=%40rssbridge&amp;format=Plaintext">
                     <button class="rss-feed">
                         Plaintext                    </button>
                 </a>
-                            <a href="?action=display&amp;bridge=NiceMatinBridge&amp;format=Sfeed">
+                            <a href="?action=display&amp;bridge=TelegramBridge&amp;username=%40rssbridge&amp;format=Sfeed">
                     <button class="rss-feed">
                         Sfeed                    </button>
                 </a>
@@ -86,12 +86,12 @@
                 <h2>
                     <a
                         class="itemtitle"
-                        href="http://localhost:3000/?action=display&amp;bridge=NiceMatinBridge&amp;format=Html"
-                    >Bridge returned error 0! (20335)</a>
+                        href="http://localhost:3000/?action=display&amp;bridge=TelegramBridge&amp;username=%40rssbridge&amp;format=Html"
+                    >Bridge returned error 400! (20342)</a>
                 </h2>
 
-                                    <time datetime="2025-09-04 01:09:51">
-                        2025-09-04 01:09:51                    </time>
+                                    <time datetime="2025-09-11 01:14:42">
+                        2025-09-11 01:14:42                    </time>
                     <p></p>
                 
                 
@@ -105,20 +105,19 @@
 
     <div style="margin-bottom: 15px">
         <div class="error-type">
-            <strong>Type:</strong> Exception        </div>
+            <strong>Type:</strong> ClientException        </div>
 
         <div>
-            <strong>Code:</strong> 0        </div>
+            <strong>Code:</strong> 400        </div>
 
         <div class="error-message">
-            <strong>Message:</strong> Failed to parse xml from https://www.nicematin.com/derniere-minute/rss: Exception: Unable to parse xml: PCDATA invalid Char value 7
- in lib/FeedParser.php line 26        </div>
+            <strong>Message:</strong> Unable to find channel. The channel is non-existing or non-public.        </div>
 
         <div>
-            <strong>File:</strong> lib/FeedExpander.php        </div>
+            <strong>File:</strong> lib/utils.php        </div>
 
         <div>
-            <strong>Line:</strong> 31        </div>
+            <strong>Line:</strong> 254        </div>
     </div>
 
     <h2>Trace</h2>
@@ -172,13 +171,13 @@
             #15 actions/DisplayAction.php(54): DisplayAction-&gt;createResponse()        </code>
         <br>
             <code>
-            #16 actions/DisplayAction.php(89): NiceMatinBridge-&gt;collectData()        </code>
+            #16 actions/DisplayAction.php(89): TelegramBridge-&gt;collectData()        </code>
         <br>
             <code>
-            #17 bridges/NiceMatinBridge.php(12): FeedExpander-&gt;collectExpandableDatas()        </code>
+            #17 bridges/TelegramBridge.php(64): throwClientException()        </code>
         <br>
             <code>
-            #18 lib/FeedExpander.php(31)        </code>
+            #18 lib/utils.php(254)        </code>
         <br>
     
     <br>
@@ -186,10 +185,10 @@
     <h2>Context</h2>
 
     <div>
-        <strong>Query:</strong> action=display&amp;bridge=NiceMatinBridge&amp;format=Html    </div>
+        <strong>Query:</strong> action=display&amp;bridge=TelegramBridge&amp;username=@rssbridge&amp;format=Html    </div>
 
     <div>
-        <strong>Version:</strong> 2025-08-05 (git.fork-master.051ac06)    </div>
+        <strong>Version:</strong> 2025-08-05 (git.fork-master.80e6101)    </div>
 
     <div>
         <strong>OS:</strong> Linux    </div>
@@ -203,16 +202,16 @@
 </div>
 
 
-<a href="https://github.com/RSS-Bridge/rss-bridge/issues?q=is%3Aissue+is%3Aopen+NiceMatin" title="Opens GitHub to search for similar issues">
+<a href="https://github.com/RSS-Bridge/rss-bridge/issues?q=is%3Aissue+is%3Aopen++%28%40rssbridge%29+-+Telegram" title="Opens GitHub to search for similar issues">
     <button>Find similar bugs</button>
 </a>
 
-<a href="https://github.com/RSS-Bridge/rss-bridge/issues/new?title=NiceMatin+failed+with%3A+Failed+to+parse+xml+from+https%3A%2F%2Fwww.nicematin.com%2Fderniere-minute%2Frss%3A+Exception%3A+Unable+to+parse+xml%3A+PCDATA+invalid+Char+value+7%0A+in+lib%2FFeedParser.php+line+26&body=%60%60%60%0AException%3A+Failed+to+parse+xml+from+https%3A%2F%2Fwww.nicematin.com%2Fderniere-minute%2Frss%3A+Exception%3A+Unable+to+parse+xml%3A+PCDATA+invalid+Char+value+7%0A+in+lib%2FFeedParser.php+line+26+in+lib%2FFeedExpander.php+line+31%0A%0Aindex.php%2873%29%3A+RssBridge-%3Emain%28%29%0Alib%2FRssBridge.php%2839%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+BasicAuthMiddleware-%3E__invoke%28%29%0Amiddlewares%2FBasicAuthMiddleware.php%2813%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+CacheMiddleware-%3E__invoke%28%29%0Amiddlewares%2FCacheMiddleware.php%2844%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+ExceptionMiddleware-%3E__invoke%28%29%0Amiddlewares%2FExceptionMiddleware.php%2817%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+SecurityMiddleware-%3E__invoke%28%29%0Amiddlewares%2FSecurityMiddleware.php%2819%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+MaintenanceMiddleware-%3E__invoke%28%29%0Amiddlewares%2FMaintenanceMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+TokenAuthenticationMiddleware-%3E__invoke%28%29%0Amiddlewares%2FTokenAuthenticationMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2834%29%3A+DisplayAction-%3E__invoke%28%29%0Aactions%2FDisplayAction.php%2854%29%3A+DisplayAction-%3EcreateResponse%28%29%0Aactions%2FDisplayAction.php%2889%29%3A+NiceMatinBridge-%3EcollectData%28%29%0Abridges%2FNiceMatinBridge.php%2812%29%3A+FeedExpander-%3EcollectExpandableDatas%28%29%0Alib%2FFeedExpander.php%2831%29%0A%0AQuery+string%3A+action%3Ddisplay%26bridge%3DNiceMatinBridge%26format%3DHtml%0AVersion%3A+2025-08-05+%28git.fork-master.051ac06%29%0AOs%3A+Linux%0APHP+version%3A+8.2.29%0A%60%60%60%0AMaintainer%3A+%40pit-fgfjiudghdf&labels=Bridge-Broken&assignee=p" title="After clicking this button you can review the issue before submitting it">
+<a href="https://github.com/RSS-Bridge/rss-bridge/issues/new?title=+%28%40rssbridge%29+-+Telegram+failed+with%3A+Unable+to+find+channel.+The+channel+is+non-existing+or+non-public.&body=%60%60%60%0AClientException%3A+Unable+to+find+channel.+The+channel+is+non-existing+or+non-public.+in+lib%2Futils.php+line+254%0A%0Aindex.php%2873%29%3A+RssBridge-%3Emain%28%29%0Alib%2FRssBridge.php%2839%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+BasicAuthMiddleware-%3E__invoke%28%29%0Amiddlewares%2FBasicAuthMiddleware.php%2813%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+CacheMiddleware-%3E__invoke%28%29%0Amiddlewares%2FCacheMiddleware.php%2844%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+ExceptionMiddleware-%3E__invoke%28%29%0Amiddlewares%2FExceptionMiddleware.php%2817%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+SecurityMiddleware-%3E__invoke%28%29%0Amiddlewares%2FSecurityMiddleware.php%2819%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+MaintenanceMiddleware-%3E__invoke%28%29%0Amiddlewares%2FMaintenanceMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+TokenAuthenticationMiddleware-%3E__invoke%28%29%0Amiddlewares%2FTokenAuthenticationMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2834%29%3A+DisplayAction-%3E__invoke%28%29%0Aactions%2FDisplayAction.php%2854%29%3A+DisplayAction-%3EcreateResponse%28%29%0Aactions%2FDisplayAction.php%2889%29%3A+TelegramBridge-%3EcollectData%28%29%0Abridges%2FTelegramBridge.php%2864%29%3A+throwClientException%28%29%0Alib%2Futils.php%28254%29%0A%0AQuery+string%3A+action%3Ddisplay%26bridge%3DTelegramBridge%26username%3D%2540rssbridge%26format%3DHtml%0AVersion%3A+2025-08-05+%28git.fork-master.80e6101%29%0AOs%3A+Linux%0APHP+version%3A+8.2.29%0A%60%60%60%0AMaintainer%3A+%40VerifiedJoseph&labels=Bridge-Broken&assignee=V" title="After clicking this button you can review the issue before submitting it">
     <button>Create GitHub Issue</button>
 </a>
 
 <p class="maintainer">
-    pit-fgfjiudghdf</p>
+    VerifiedJoseph</p>
                 
                             </section>
         
