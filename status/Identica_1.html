@@ -4,41 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/ >
     <meta name="description" content="RSS-Bridge" />
-    <title>ASRock News Bridge</title>
+    <title>jxself - Identica Bridge</title>
     <link href="static/style.css?2023-03-24" rel="stylesheet">
     <link rel="icon" type="image/png" href="static/favicon.png">
 
     
         <link
-            href="?action=display&amp;bridge=ASRockNewsBridge&amp;format=Atom"
+            href="?action=display&amp;bridge=IdenticaBridge&amp;u=jxself&amp;format=Atom"
             title="Atom"
             rel="alternate"
             type="application/atom+xml"
         >
 	
         <link
-            href="?action=display&amp;bridge=ASRockNewsBridge&amp;format=Json"
+            href="?action=display&amp;bridge=IdenticaBridge&amp;u=jxself&amp;format=Json"
             title="Json"
             rel="alternate"
             type="application/json"
         >
 	
         <link
-            href="?action=display&amp;bridge=ASRockNewsBridge&amp;format=Mrss"
+            href="?action=display&amp;bridge=IdenticaBridge&amp;u=jxself&amp;format=Mrss"
             title="Mrss"
             rel="alternate"
             type="application/rss+xml"
         >
 	
         <link
-            href="?action=display&amp;bridge=ASRockNewsBridge&amp;format=Plaintext"
+            href="?action=display&amp;bridge=IdenticaBridge&amp;u=jxself&amp;format=Plaintext"
             title="Plaintext"
             rel="alternate"
             type="text/plain"
         >
 	
         <link
-            href="?action=display&amp;bridge=ASRockNewsBridge&amp;format=Sfeed"
+            href="?action=display&amp;bridge=IdenticaBridge&amp;u=jxself&amp;format=Sfeed"
             title="Sfeed"
             rel="alternate"
             type="text/plain"
@@ -51,31 +51,31 @@
     <div class="container">
 
         <h1 class="pagetitle">
-            <a href="https://www.asrock.com" target="_blank">ASRock News Bridge</a>
+            <a href="https://identi.ca/jxself" target="_blank">jxself - Identica Bridge</a>
         </h1>
 
         <div class="buttons">
-            <a href="./#bridge-ASRockNewsBridge">
+            <a href="./#bridge-IdenticaBridge">
                 <button class="backbutton">← back to rss-bridge</button>
             </a>
 
-                            <a href="?action=display&amp;bridge=ASRockNewsBridge&amp;format=Atom">
+                            <a href="?action=display&amp;bridge=IdenticaBridge&amp;u=jxself&amp;format=Atom">
                     <button class="rss-feed">
                         Atom                    </button>
                 </a>
-                            <a href="?action=display&amp;bridge=ASRockNewsBridge&amp;format=Json">
+                            <a href="?action=display&amp;bridge=IdenticaBridge&amp;u=jxself&amp;format=Json">
                     <button class="rss-feed">
                         Json                    </button>
                 </a>
-                            <a href="?action=display&amp;bridge=ASRockNewsBridge&amp;format=Mrss">
+                            <a href="?action=display&amp;bridge=IdenticaBridge&amp;u=jxself&amp;format=Mrss">
                     <button class="rss-feed">
                         Mrss                    </button>
                 </a>
-                            <a href="?action=display&amp;bridge=ASRockNewsBridge&amp;format=Plaintext">
+                            <a href="?action=display&amp;bridge=IdenticaBridge&amp;u=jxself&amp;format=Plaintext">
                     <button class="rss-feed">
                         Plaintext                    </button>
                 </a>
-                            <a href="?action=display&amp;bridge=ASRockNewsBridge&amp;format=Sfeed">
+                            <a href="?action=display&amp;bridge=IdenticaBridge&amp;u=jxself&amp;format=Sfeed">
                     <button class="rss-feed">
                         Sfeed                    </button>
                 </a>
@@ -86,12 +86,12 @@
                 <h2>
                     <a
                         class="itemtitle"
-                        href="http://localhost:3000/?action=display&amp;bridge=ASRockNewsBridge&amp;format=Html"
-                    >Bridge returned error 0! (20342)</a>
+                        href="http://localhost:3000/?action=display&amp;bridge=IdenticaBridge&amp;u=jxself&amp;format=Html"
+                    >Bridge returned error 0! (20349)</a>
                 </h2>
 
-                                    <time datetime="2025-09-11 00:52:54">
-                        2025-09-11 00:52:54                    </time>
+                                    <time datetime="2025-09-18 01:04:15">
+                        2025-09-18 01:04:15                    </time>
                     <p></p>
                 
                 
@@ -124,7 +124,7 @@
             <strong>Code:</strong> 0        </div>
 
         <div class="error-message">
-            <strong>Message:</strong> cURL error SSL certificate problem: unable to get local issuer certificate: 60 (https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://www.asrock.com/news/index.asp        </div>
+            <strong>Message:</strong> cURL error Failed to connect to identi.ca port 443 after 37 ms: Could not connect to server: 7 (https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://identi.ca/jxself        </div>
 
         <div>
             <strong>File:</strong> lib/http.php        </div>
@@ -184,10 +184,10 @@
             #15 actions/DisplayAction.php(54): DisplayAction-&gt;createResponse()        </code>
         <br>
             <code>
-            #16 actions/DisplayAction.php(89): ASRockNewsBridge-&gt;collectData()        </code>
+            #16 actions/DisplayAction.php(89): IdenticaBridge-&gt;collectData()        </code>
         <br>
             <code>
-            #17 bridges/ASRockNewsBridge.php(15): getSimpleHTMLDOM()        </code>
+            #17 bridges/IdenticaBridge.php(21): getSimpleHTMLDOM()        </code>
         <br>
             <code>
             #18 lib/contents.php(151): getContents()        </code>
@@ -204,10 +204,10 @@
     <h2>Context</h2>
 
     <div>
-        <strong>Query:</strong> action=display&amp;bridge=ASRockNewsBridge&amp;format=Html    </div>
+        <strong>Query:</strong> action=display&amp;bridge=IdenticaBridge&amp;u=jxself&amp;format=Html    </div>
 
     <div>
-        <strong>Version:</strong> 2025-08-05 (git.fork-master.80e6101)    </div>
+        <strong>Version:</strong> 2025-08-05 (git.fork-master.59814e3)    </div>
 
     <div>
         <strong>OS:</strong> Linux    </div>
@@ -221,16 +221,16 @@
 </div>
 
 
-<a href="https://github.com/RSS-Bridge/rss-bridge/issues?q=is%3Aissue+is%3Aopen+ASRock+News+Bridge" title="Opens GitHub to search for similar issues">
+<a href="https://github.com/RSS-Bridge/rss-bridge/issues?q=is%3Aissue+is%3Aopen+jxself+-+Identica+Bridge" title="Opens GitHub to search for similar issues">
     <button>Find similar bugs</button>
 </a>
 
-<a href="https://github.com/RSS-Bridge/rss-bridge/issues/new?title=ASRock+News+Bridge+failed+with%3A+cURL+error+SSL+certificate+problem%3A+unable+to+get+local+issuer+certificate%3A+60+%28https%3A%2F%2Fcurl.haxx.se%2Flibcurl%2Fc%2Flibcurl-errors.html%29+for+https%3A%2F%2Fwww.asrock.com%2Fnews%2Findex.asp&body=%60%60%60%0AHttpException%3A+cURL+error+SSL+certificate+problem%3A+unable+to+get+local+issuer+certificate%3A+60+%28https%3A%2F%2Fcurl.haxx.se%2Flibcurl%2Fc%2Flibcurl-errors.html%29+for+https%3A%2F%2Fwww.asrock.com%2Fnews%2Findex.asp+in+lib%2Fhttp.php+line+182%0A%0Aindex.php%2873%29%3A+RssBridge-%3Emain%28%29%0Alib%2FRssBridge.php%2839%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+BasicAuthMiddleware-%3E__invoke%28%29%0Amiddlewares%2FBasicAuthMiddleware.php%2813%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+CacheMiddleware-%3E__invoke%28%29%0Amiddlewares%2FCacheMiddleware.php%2844%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+ExceptionMiddleware-%3E__invoke%28%29%0Amiddlewares%2FExceptionMiddleware.php%2817%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+SecurityMiddleware-%3E__invoke%28%29%0Amiddlewares%2FSecurityMiddleware.php%2819%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+MaintenanceMiddleware-%3E__invoke%28%29%0Amiddlewares%2FMaintenanceMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+TokenAuthenticationMiddleware-%3E__invoke%28%29%0Amiddlewares%2FTokenAuthenticationMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2834%29%3A+DisplayAction-%3E__invoke%28%29%0Aactions%2FDisplayAction.php%2854%29%3A+DisplayAction-%3EcreateResponse%28%29%0Aactions%2FDisplayAction.php%2889%29%3A+ASRockNewsBridge-%3EcollectData%28%29%0Abridges%2FASRockNewsBridge.php%2815%29%3A+getSimpleHTMLDOM%28%29%0Alib%2Fcontents.php%28151%29%3A+getContents%28%29%0Alib%2Fcontents.php%2879%29%3A+CurlHttpClient-%3Erequest%28%29%0Alib%2Fhttp.php%28182%29%0A%0AQuery+string%3A+action%3Ddisplay%26bridge%3DASRockNewsBridge%26format%3DHtml%0AVersion%3A+2025-08-05+%28git.fork-master.80e6101%29%0AOs%3A+Linux%0APHP+version%3A+8.2.29%0A%60%60%60%0AMaintainer%3A+%40VerifiedJoseph&labels=Bridge-Broken&assignee=V" title="After clicking this button you can review the issue before submitting it">
+<a href="https://github.com/RSS-Bridge/rss-bridge/issues/new?title=jxself+-+Identica+Bridge+failed+with%3A+cURL+error+Failed+to+connect+to+identi.ca+port+443+after+37+ms%3A+Could+not+connect+to+server%3A+7+%28https%3A%2F%2Fcurl.haxx.se%2Flibcurl%2Fc%2Flibcurl-errors.html%29+for+https%3A%2F%2Fidenti.ca%2Fjxself&body=%60%60%60%0AHttpException%3A+cURL+error+Failed+to+connect+to+identi.ca+port+443+after+37+ms%3A+Could+not+connect+to+server%3A+7+%28https%3A%2F%2Fcurl.haxx.se%2Flibcurl%2Fc%2Flibcurl-errors.html%29+for+https%3A%2F%2Fidenti.ca%2Fjxself+in+lib%2Fhttp.php+line+182%0A%0Aindex.php%2873%29%3A+RssBridge-%3Emain%28%29%0Alib%2FRssBridge.php%2839%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+BasicAuthMiddleware-%3E__invoke%28%29%0Amiddlewares%2FBasicAuthMiddleware.php%2813%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+CacheMiddleware-%3E__invoke%28%29%0Amiddlewares%2FCacheMiddleware.php%2844%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+ExceptionMiddleware-%3E__invoke%28%29%0Amiddlewares%2FExceptionMiddleware.php%2817%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+SecurityMiddleware-%3E__invoke%28%29%0Amiddlewares%2FSecurityMiddleware.php%2819%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+MaintenanceMiddleware-%3E__invoke%28%29%0Amiddlewares%2FMaintenanceMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+TokenAuthenticationMiddleware-%3E__invoke%28%29%0Amiddlewares%2FTokenAuthenticationMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2834%29%3A+DisplayAction-%3E__invoke%28%29%0Aactions%2FDisplayAction.php%2854%29%3A+DisplayAction-%3EcreateResponse%28%29%0Aactions%2FDisplayAction.php%2889%29%3A+IdenticaBridge-%3EcollectData%28%29%0Abridges%2FIdenticaBridge.php%2821%29%3A+getSimpleHTMLDOM%28%29%0Alib%2Fcontents.php%28151%29%3A+getContents%28%29%0Alib%2Fcontents.php%2879%29%3A+CurlHttpClient-%3Erequest%28%29%0Alib%2Fhttp.php%28182%29%0A%0AQuery+string%3A+action%3Ddisplay%26bridge%3DIdenticaBridge%26u%3Djxself%26format%3DHtml%0AVersion%3A+2025-08-05+%28git.fork-master.59814e3%29%0AOs%3A+Linux%0APHP+version%3A+8.2.29%0A%60%60%60%0AMaintainer%3A+%40mitsukarenai&labels=Bridge-Broken&assignee=m" title="After clicking this button you can review the issue before submitting it">
     <button>Create GitHub Issue</button>
 </a>
 
 <p class="maintainer">
-    VerifiedJoseph</p>
+    mitsukarenai</p>
                 
                             </section>
         
