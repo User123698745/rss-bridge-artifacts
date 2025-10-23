@@ -22,27 +22,20 @@
         
         <div class="error">
 
-                        <h2>The website is protected by CloudFlare</h2>
+            
+        
+        
+        
+        
+                    <h2>503 Service Unavailable</h2>
             <p>
-                RSS-Bridge tried to fetch a website.
-                The fetching was blocked by CloudFlare.
-                CloudFlare is anti-bot software.
-                Its purpose is to block non-humans.
+                Common causes are a server that is down for maintenance
+                or that is overloaded.
             </p>
-        
-        
-        
-        
-                    <h2>429 Too Many Requests</h2>
-            <p>
-                RSS-Bridge tried to fetch a website.
-                They told us to try again later.
-            </p>
-        
         
                     <p>
-                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429">
-                    https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429                </a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503">
+                    https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503                </a>
             </p>
         
     
@@ -50,19 +43,19 @@
 
     <div style="margin-bottom: 15px">
         <div class="error-type">
-            <strong>Type:</strong> CloudFlareException        </div>
+            <strong>Type:</strong> HttpException        </div>
 
         <div>
-            <strong>Code:</strong> 429        </div>
+            <strong>Code:</strong> 503        </div>
 
         <div class="error-message">
-            <strong>Message:</strong> https://www.bleepingcomputer.com/news/microsoft/final-windows-10-patch-tuesday-update-rolls-out-as-support-ends/ resulted in 429 Too Many Requests        </div>
+            <strong>Message:</strong> https://archiveofourown.org//users/Nyaaru/bookmarks?bookmark_search[sort_column]=bookmarkable_date resulted in 503 Service Unavailable        </div>
 
         <div>
             <strong>File:</strong> lib/http.php        </div>
 
         <div>
-            <strong>Line:</strong> 32        </div>
+            <strong>Line:</strong> 34        </div>
     </div>
 
     <h2>Trace</h2>
@@ -116,25 +109,19 @@
             #15 actions/DisplayAction.php(54): DisplayAction-&gt;createResponse()        </code>
         <br>
             <code>
-            #16 actions/DisplayAction.php(89): BleepingComputerBridge-&gt;collectData()        </code>
+            #16 actions/DisplayAction.php(89): AO3Bridge-&gt;collectData()        </code>
         <br>
             <code>
-            #17 bridges/BleepingComputerBridge.php(13): FeedExpander-&gt;collectExpandableDatas()        </code>
+            #17 bridges/AO3Bridge.php(62): AO3Bridge-&gt;collectList()        </code>
         <br>
             <code>
-            #18 lib/FeedExpander.php(38): BleepingComputerBridge-&gt;parseItem()        </code>
+            #18 bridges/AO3Bridge.php(83): getContents()        </code>
         <br>
             <code>
-            #19 bridges/BleepingComputerBridge.php(18): getSimpleHTMLDOMCached()        </code>
+            #19 lib/contents.php(106): HttpException::fromResponse()        </code>
         <br>
             <code>
-            #20 lib/contents.php(215): getContents()        </code>
-        <br>
-            <code>
-            #21 lib/contents.php(106): HttpException::fromResponse()        </code>
-        <br>
-            <code>
-            #22 lib/http.php(32)        </code>
+            #20 lib/http.php(34)        </code>
         <br>
     
     <br>
@@ -142,7 +129,7 @@
     <h2>Context</h2>
 
     <div>
-        <strong>Query:</strong> action=display&amp;bridge=BleepingComputerBridge&amp;format=Html    </div>
+        <strong>Query:</strong> action=display&amp;bridge=AO3Bridge&amp;context=Bookmarks&amp;user=Nyaaru&amp;format=Html    </div>
 
     <div>
         <strong>Version:</strong> 2025-08-05 (git.fork-master.932baf6)    </div>
