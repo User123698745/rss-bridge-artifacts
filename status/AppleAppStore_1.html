@@ -4,41 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/ >
     <meta name="description" content="RSS-Bridge" />
-    <title>ВКонтакте</title>
+    <title>Apple App Store</title>
     <link href="static/style.css?2023-03-24" rel="stylesheet">
     <link rel="icon" type="image/png" href="static/favicon.png">
 
     
         <link
-            href="?action=display&amp;bridge=Vk2Bridge&amp;u=goblin_oper_ru&amp;format=Atom"
+            href="?action=display&amp;bridge=AppleAppStoreBridge&amp;id=310633997&amp;p=iphone&amp;country=US&amp;format=Atom"
             title="Atom"
             rel="alternate"
             type="application/atom+xml"
         >
 	
         <link
-            href="?action=display&amp;bridge=Vk2Bridge&amp;u=goblin_oper_ru&amp;format=Json"
+            href="?action=display&amp;bridge=AppleAppStoreBridge&amp;id=310633997&amp;p=iphone&amp;country=US&amp;format=Json"
             title="Json"
             rel="alternate"
             type="application/json"
         >
 	
         <link
-            href="?action=display&amp;bridge=Vk2Bridge&amp;u=goblin_oper_ru&amp;format=Mrss"
+            href="?action=display&amp;bridge=AppleAppStoreBridge&amp;id=310633997&amp;p=iphone&amp;country=US&amp;format=Mrss"
             title="Mrss"
             rel="alternate"
             type="application/rss+xml"
         >
 	
         <link
-            href="?action=display&amp;bridge=Vk2Bridge&amp;u=goblin_oper_ru&amp;format=Plaintext"
+            href="?action=display&amp;bridge=AppleAppStoreBridge&amp;id=310633997&amp;p=iphone&amp;country=US&amp;format=Plaintext"
             title="Plaintext"
             rel="alternate"
             type="text/plain"
         >
 	
         <link
-            href="?action=display&amp;bridge=Vk2Bridge&amp;u=goblin_oper_ru&amp;format=Sfeed"
+            href="?action=display&amp;bridge=AppleAppStoreBridge&amp;id=310633997&amp;p=iphone&amp;country=US&amp;format=Sfeed"
             title="Sfeed"
             rel="alternate"
             type="text/plain"
@@ -51,31 +51,31 @@
     <div class="container">
 
         <h1 class="pagetitle">
-            <a href="https://vk.com" target="_blank">ВКонтакте</a>
+            <a href="https://apps.apple.com/" target="_blank">Apple App Store</a>
         </h1>
 
         <div class="buttons">
-            <a href="./#bridge-Vk2Bridge">
+            <a href="./#bridge-AppleAppStoreBridge">
                 <button class="backbutton">← back to rss-bridge</button>
             </a>
 
-                            <a href="?action=display&amp;bridge=Vk2Bridge&amp;u=goblin_oper_ru&amp;format=Atom">
+                            <a href="?action=display&amp;bridge=AppleAppStoreBridge&amp;id=310633997&amp;p=iphone&amp;country=US&amp;format=Atom">
                     <button class="rss-feed">
                         Atom                    </button>
                 </a>
-                            <a href="?action=display&amp;bridge=Vk2Bridge&amp;u=goblin_oper_ru&amp;format=Json">
+                            <a href="?action=display&amp;bridge=AppleAppStoreBridge&amp;id=310633997&amp;p=iphone&amp;country=US&amp;format=Json">
                     <button class="rss-feed">
                         Json                    </button>
                 </a>
-                            <a href="?action=display&amp;bridge=Vk2Bridge&amp;u=goblin_oper_ru&amp;format=Mrss">
+                            <a href="?action=display&amp;bridge=AppleAppStoreBridge&amp;id=310633997&amp;p=iphone&amp;country=US&amp;format=Mrss">
                     <button class="rss-feed">
                         Mrss                    </button>
                 </a>
-                            <a href="?action=display&amp;bridge=Vk2Bridge&amp;u=goblin_oper_ru&amp;format=Plaintext">
+                            <a href="?action=display&amp;bridge=AppleAppStoreBridge&amp;id=310633997&amp;p=iphone&amp;country=US&amp;format=Plaintext">
                     <button class="rss-feed">
                         Plaintext                    </button>
                 </a>
-                            <a href="?action=display&amp;bridge=Vk2Bridge&amp;u=goblin_oper_ru&amp;format=Sfeed">
+                            <a href="?action=display&amp;bridge=AppleAppStoreBridge&amp;id=310633997&amp;p=iphone&amp;country=US&amp;format=Sfeed">
                     <button class="rss-feed">
                         Sfeed                    </button>
                 </a>
@@ -86,12 +86,12 @@
                 <h2>
                     <a
                         class="itemtitle"
-                        href="http://localhost:3000/?action=display&amp;bridge=Vk2Bridge&amp;u=goblin_oper_ru&amp;format=Html"
+                        href="http://localhost:3000/?action=display&amp;bridge=AppleAppStoreBridge&amp;id=310633997&amp;p=iphone&amp;country=US&amp;format=Html"
                     >Bridge returned error 0! (20398)</a>
                 </h2>
 
-                                    <time datetime="2025-11-06 01:20:25">
-                        2025-11-06 01:20:25                    </time>
+                                    <time datetime="2025-11-06 00:57:04">
+                        2025-11-06 00:57:04                    </time>
                     <p></p>
                 
                 
@@ -111,13 +111,13 @@
             <strong>Code:</strong> 0        </div>
 
         <div class="error-message">
-            <strong>Message:</strong> Missing configuration option: access_token        </div>
+            <strong>Message:</strong> JWT token not found in page content        </div>
 
         <div>
-            <strong>File:</strong> lib/BridgeAbstract.php        </div>
+            <strong>File:</strong> bridges/AppleAppStoreBridge.php        </div>
 
         <div>
-            <strong>Line:</strong> 134        </div>
+            <strong>Line:</strong> 123        </div>
     </div>
 
     <h2>Trace</h2>
@@ -171,10 +171,16 @@
             #15 actions/DisplayAction.php(54): DisplayAction-&gt;createResponse()        </code>
         <br>
             <code>
-            #16 actions/DisplayAction.php(74): BridgeAbstract-&gt;loadConfiguration()        </code>
+            #16 actions/DisplayAction.php(89): AppleAppStoreBridge-&gt;collectData()        </code>
         <br>
             <code>
-            #17 lib/BridgeAbstract.php(134)        </code>
+            #17 bridges/AppleAppStoreBridge.php(208): AppleAppStoreBridge-&gt;getAppData()        </code>
+        <br>
+            <code>
+            #18 bridges/AppleAppStoreBridge.php(146): AppleAppStoreBridge-&gt;getJWTToken()        </code>
+        <br>
+            <code>
+            #19 bridges/AppleAppStoreBridge.php(123)        </code>
         <br>
     
     <br>
@@ -182,7 +188,7 @@
     <h2>Context</h2>
 
     <div>
-        <strong>Query:</strong> action=display&amp;bridge=Vk2Bridge&amp;u=goblin_oper_ru&amp;format=Html    </div>
+        <strong>Query:</strong> action=display&amp;bridge=AppleAppStoreBridge&amp;id=310633997&amp;p=iphone&amp;country=US&amp;format=Html    </div>
 
     <div>
         <strong>Version:</strong> 2025-08-05 (git.fork-master.d563613)    </div>
@@ -199,16 +205,16 @@
 </div>
 
 
-<a href="https://github.com/RSS-Bridge/rss-bridge/issues?q=is%3Aissue+is%3Aopen+%D0%92%D0%9A%D0%BE%D0%BD%D1%82%D0%B0%D0%BA%D1%82%D0%B5" title="Opens GitHub to search for similar issues">
+<a href="https://github.com/RSS-Bridge/rss-bridge/issues?q=is%3Aissue+is%3Aopen+Apple+App+Store" title="Opens GitHub to search for similar issues">
     <button>Find similar bugs</button>
 </a>
 
-<a href="https://github.com/RSS-Bridge/rss-bridge/issues/new?title=%D0%92%D0%9A%D0%BE%D0%BD%D1%82%D0%B0%D0%BA%D1%82%D0%B5+failed+with%3A+Missing+configuration+option%3A+access_token&body=%60%60%60%0AException%3A+Missing+configuration+option%3A+access_token+in+lib%2FBridgeAbstract.php+line+134%0A%0Aindex.php%2873%29%3A+RssBridge-%3Emain%28%29%0Alib%2FRssBridge.php%2839%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+BasicAuthMiddleware-%3E__invoke%28%29%0Amiddlewares%2FBasicAuthMiddleware.php%2813%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+CacheMiddleware-%3E__invoke%28%29%0Amiddlewares%2FCacheMiddleware.php%2844%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+ExceptionMiddleware-%3E__invoke%28%29%0Amiddlewares%2FExceptionMiddleware.php%2817%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+SecurityMiddleware-%3E__invoke%28%29%0Amiddlewares%2FSecurityMiddleware.php%2819%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+MaintenanceMiddleware-%3E__invoke%28%29%0Amiddlewares%2FMaintenanceMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+TokenAuthenticationMiddleware-%3E__invoke%28%29%0Amiddlewares%2FTokenAuthenticationMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2834%29%3A+DisplayAction-%3E__invoke%28%29%0Aactions%2FDisplayAction.php%2854%29%3A+DisplayAction-%3EcreateResponse%28%29%0Aactions%2FDisplayAction.php%2874%29%3A+BridgeAbstract-%3EloadConfiguration%28%29%0Alib%2FBridgeAbstract.php%28134%29%0A%0AQuery+string%3A+action%3Ddisplay%26bridge%3DVk2Bridge%26u%3Dgoblin_oper_ru%26format%3DHtml%0AVersion%3A+2025-08-05+%28git.fork-master.d563613%29%0AOs%3A+Linux%0APHP+version%3A+8.2.29%0A%60%60%60%0AMaintainer%3A+%40em92&labels=Bridge-Broken&assignee=e" title="After clicking this button you can review the issue before submitting it">
+<a href="https://github.com/RSS-Bridge/rss-bridge/issues/new?title=Apple+App+Store+failed+with%3A+JWT+token+not+found+in+page+content&body=%60%60%60%0AException%3A+JWT+token+not+found+in+page+content+in+bridges%2FAppleAppStoreBridge.php+line+123%0A%0Aindex.php%2873%29%3A+RssBridge-%3Emain%28%29%0Alib%2FRssBridge.php%2839%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+BasicAuthMiddleware-%3E__invoke%28%29%0Amiddlewares%2FBasicAuthMiddleware.php%2813%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+CacheMiddleware-%3E__invoke%28%29%0Amiddlewares%2FCacheMiddleware.php%2844%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+ExceptionMiddleware-%3E__invoke%28%29%0Amiddlewares%2FExceptionMiddleware.php%2817%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+SecurityMiddleware-%3E__invoke%28%29%0Amiddlewares%2FSecurityMiddleware.php%2819%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+MaintenanceMiddleware-%3E__invoke%28%29%0Amiddlewares%2FMaintenanceMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+TokenAuthenticationMiddleware-%3E__invoke%28%29%0Amiddlewares%2FTokenAuthenticationMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2834%29%3A+DisplayAction-%3E__invoke%28%29%0Aactions%2FDisplayAction.php%2854%29%3A+DisplayAction-%3EcreateResponse%28%29%0Aactions%2FDisplayAction.php%2889%29%3A+AppleAppStoreBridge-%3EcollectData%28%29%0Abridges%2FAppleAppStoreBridge.php%28208%29%3A+AppleAppStoreBridge-%3EgetAppData%28%29%0Abridges%2FAppleAppStoreBridge.php%28146%29%3A+AppleAppStoreBridge-%3EgetJWTToken%28%29%0Abridges%2FAppleAppStoreBridge.php%28123%29%0A%0AQuery+string%3A+action%3Ddisplay%26bridge%3DAppleAppStoreBridge%26id%3D310633997%26p%3Diphone%26country%3DUS%26format%3DHtml%0AVersion%3A+2025-08-05+%28git.fork-master.d563613%29%0AOs%3A+Linux%0APHP+version%3A+8.2.29%0A%60%60%60%0AMaintainer%3A+%40captn3m0&labels=Bridge-Broken&assignee=c" title="After clicking this button you can review the issue before submitting it">
     <button>Create GitHub Issue</button>
 </a>
 
 <p class="maintainer">
-    em92</p>
+    captn3m0</p>
                 
                             </section>
         

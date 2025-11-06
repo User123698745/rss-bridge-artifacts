@@ -87,11 +87,11 @@
                     <a
                         class="itemtitle"
                         href="http://localhost:3000/?action=display&amp;bridge=RiptApparelBridge&amp;format=Html"
-                    >Bridge returned error 0! (20391)</a>
+                    >Bridge returned error 0! (20398)</a>
                 </h2>
 
-                                    <time datetime="2025-10-30 03:49:06">
-                        2025-10-30 03:49:06                    </time>
+                                    <time datetime="2025-11-06 01:16:51">
+                        2025-11-06 01:16:51                    </time>
                     <p></p>
                 
                 
@@ -100,37 +100,24 @@
 <div class="error">
 
             
-        
-        
-        
-        
-        
-                    <p>
-                See
-                <a href="https://curl.haxx.se/libcurl/c/libcurl-errors.html">
-                    https://curl.haxx.se/libcurl/c/libcurl-errors.html
-                </a>
-                for description of the curl error code.
-            </p>
-        
-    
+            
     <h2>Details</h2>
 
     <div style="margin-bottom: 15px">
         <div class="error-type">
-            <strong>Type:</strong> HttpException        </div>
+            <strong>Type:</strong> Error        </div>
 
         <div>
             <strong>Code:</strong> 0        </div>
 
         <div class="error-message">
-            <strong>Message:</strong> cURL error Operation timed out after 5002 milliseconds with 0 bytes received: 28 (https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://www.riptapparel.com        </div>
+            <strong>Message:</strong> Call to a member function find() on null        </div>
 
         <div>
-            <strong>File:</strong> lib/http.php        </div>
+            <strong>File:</strong> bridges/RiptApparelBridge.php        </div>
 
         <div>
-            <strong>Line:</strong> 185        </div>
+            <strong>Line:</strong> 17        </div>
     </div>
 
     <h2>Trace</h2>
@@ -187,16 +174,7 @@
             #16 actions/DisplayAction.php(89): RiptApparelBridge-&gt;collectData()        </code>
         <br>
             <code>
-            #17 bridges/RiptApparelBridge.php(15): getSimpleHTMLDOM()        </code>
-        <br>
-            <code>
-            #18 lib/contents.php(176): getContents()        </code>
-        <br>
-            <code>
-            #19 lib/contents.php(104): CurlHttpClient-&gt;request()        </code>
-        <br>
-            <code>
-            #20 lib/http.php(185)        </code>
+            #17 bridges/RiptApparelBridge.php(17)        </code>
         <br>
     
     <br>
@@ -207,7 +185,7 @@
         <strong>Query:</strong> action=display&amp;bridge=RiptApparelBridge&amp;format=Html    </div>
 
     <div>
-        <strong>Version:</strong> 2025-08-05 (git.fork-master.6c363fd)    </div>
+        <strong>Version:</strong> 2025-08-05 (git.fork-master.d563613)    </div>
 
     <div>
         <strong>OS:</strong> Linux    </div>
@@ -225,7 +203,7 @@
     <button>Find similar bugs</button>
 </a>
 
-<a href="https://github.com/RSS-Bridge/rss-bridge/issues/new?title=RIPT+Apparel+failed+with%3A+cURL+error+Operation+timed+out+after+5002+milliseconds+with+0+bytes+received%3A+28+%28https%3A%2F%2Fcurl.haxx.se%2Flibcurl%2Fc%2Flibcurl-errors.html%29+for+https%3A%2F%2Fwww.riptapparel.com&body=%60%60%60%0AHttpException%3A+cURL+error+Operation+timed+out+after+5002+milliseconds+with+0+bytes+received%3A+28+%28https%3A%2F%2Fcurl.haxx.se%2Flibcurl%2Fc%2Flibcurl-errors.html%29+for+https%3A%2F%2Fwww.riptapparel.com+in+lib%2Fhttp.php+line+185%0A%0Aindex.php%2873%29%3A+RssBridge-%3Emain%28%29%0Alib%2FRssBridge.php%2839%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+BasicAuthMiddleware-%3E__invoke%28%29%0Amiddlewares%2FBasicAuthMiddleware.php%2813%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+CacheMiddleware-%3E__invoke%28%29%0Amiddlewares%2FCacheMiddleware.php%2844%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+ExceptionMiddleware-%3E__invoke%28%29%0Amiddlewares%2FExceptionMiddleware.php%2817%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+SecurityMiddleware-%3E__invoke%28%29%0Amiddlewares%2FSecurityMiddleware.php%2819%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+MaintenanceMiddleware-%3E__invoke%28%29%0Amiddlewares%2FMaintenanceMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+TokenAuthenticationMiddleware-%3E__invoke%28%29%0Amiddlewares%2FTokenAuthenticationMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2834%29%3A+DisplayAction-%3E__invoke%28%29%0Aactions%2FDisplayAction.php%2854%29%3A+DisplayAction-%3EcreateResponse%28%29%0Aactions%2FDisplayAction.php%2889%29%3A+RiptApparelBridge-%3EcollectData%28%29%0Abridges%2FRiptApparelBridge.php%2815%29%3A+getSimpleHTMLDOM%28%29%0Alib%2Fcontents.php%28176%29%3A+getContents%28%29%0Alib%2Fcontents.php%28104%29%3A+CurlHttpClient-%3Erequest%28%29%0Alib%2Fhttp.php%28185%29%0A%0AQuery+string%3A+action%3Ddisplay%26bridge%3DRiptApparelBridge%26format%3DHtml%0AVersion%3A+2025-08-05+%28git.fork-master.6c363fd%29%0AOs%3A+Linux%0APHP+version%3A+8.2.29%0A%60%60%60%0AMaintainer%3A+%40Bockiii&labels=Bridge-Broken&assignee=B" title="After clicking this button you can review the issue before submitting it">
+<a href="https://github.com/RSS-Bridge/rss-bridge/issues/new?title=RIPT+Apparel+failed+with%3A+Call+to+a+member+function+find%28%29+on+null&body=%60%60%60%0AError%3A+Call+to+a+member+function+find%28%29+on+null+in+bridges%2FRiptApparelBridge.php+line+17%0A%0Aindex.php%2873%29%3A+RssBridge-%3Emain%28%29%0Alib%2FRssBridge.php%2839%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+BasicAuthMiddleware-%3E__invoke%28%29%0Amiddlewares%2FBasicAuthMiddleware.php%2813%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+CacheMiddleware-%3E__invoke%28%29%0Amiddlewares%2FCacheMiddleware.php%2844%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+ExceptionMiddleware-%3E__invoke%28%29%0Amiddlewares%2FExceptionMiddleware.php%2817%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+SecurityMiddleware-%3E__invoke%28%29%0Amiddlewares%2FSecurityMiddleware.php%2819%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+MaintenanceMiddleware-%3E__invoke%28%29%0Amiddlewares%2FMaintenanceMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+TokenAuthenticationMiddleware-%3E__invoke%28%29%0Amiddlewares%2FTokenAuthenticationMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2834%29%3A+DisplayAction-%3E__invoke%28%29%0Aactions%2FDisplayAction.php%2854%29%3A+DisplayAction-%3EcreateResponse%28%29%0Aactions%2FDisplayAction.php%2889%29%3A+RiptApparelBridge-%3EcollectData%28%29%0Abridges%2FRiptApparelBridge.php%2817%29%0A%0AQuery+string%3A+action%3Ddisplay%26bridge%3DRiptApparelBridge%26format%3DHtml%0AVersion%3A+2025-08-05+%28git.fork-master.d563613%29%0AOs%3A+Linux%0APHP+version%3A+8.2.29%0A%60%60%60%0AMaintainer%3A+%40Bockiii&labels=Bridge-Broken&assignee=B" title="After clicking this button you can review the issue before submitting it">
     <button>Create GitHub Issue</button>
 </a>
 
