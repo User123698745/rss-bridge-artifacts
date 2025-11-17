@@ -31,18 +31,18 @@
             </p>
         
         
-                    <h2>403 Forbidden</h2>
+        
+        
+                    <h2>429 Too Many Requests</h2>
             <p>
-                The HTTP 403 Forbidden response status code indicates that the
-                server understands the request but refuses to authorize it.
+                RSS-Bridge tried to fetch a website.
+                They told us to try again later.
             </p>
         
         
-        
-        
                     <p>
-                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403">
-                    https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403                </a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429">
+                    https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429                </a>
             </p>
         
     
@@ -53,10 +53,10 @@
             <strong>Type:</strong> CloudFlareException        </div>
 
         <div>
-            <strong>Code:</strong> 403        </div>
+            <strong>Code:</strong> 429        </div>
 
         <div class="error-message">
-            <strong>Message:</strong> https://www.cvedetails.com/vulnerability-list/vendor_id-74/product_id-?order=1 resulted in 403 Forbidden        </div>
+            <strong>Message:</strong> https://www.bleepingcomputer.com/news/google/google-backpedals-on-new-android-developer-registration-rules/ resulted in 429 Too Many Requests        </div>
 
         <div>
             <strong>File:</strong> lib/http.php        </div>
@@ -116,19 +116,19 @@
             #15 actions/DisplayAction.php(54): DisplayAction-&gt;createResponse()        </code>
         <br>
             <code>
-            #16 actions/DisplayAction.php(117): DisplayAction-&gt;createFeedItemFromException()        </code>
+            #16 actions/DisplayAction.php(89): BleepingComputerBridge-&gt;collectData()        </code>
         <br>
             <code>
-            #17 actions/DisplayAction.php(159): CVEDetailsBridge-&gt;getName()        </code>
+            #17 bridges/BleepingComputerBridge.php(13): FeedExpander-&gt;collectExpandableDatas()        </code>
         <br>
             <code>
-            #18 bridges/CVEDetailsBridge.php(107): CVEDetailsBridge-&gt;fetchContent()        </code>
+            #18 lib/FeedExpander.php(38): BleepingComputerBridge-&gt;parseItem()        </code>
         <br>
             <code>
-            #19 bridges/CVEDetailsBridge.php(85): getSimpleHTMLDOM()        </code>
+            #19 bridges/BleepingComputerBridge.php(18): getSimpleHTMLDOMCached()        </code>
         <br>
             <code>
-            #20 lib/contents.php(176): getContents()        </code>
+            #20 lib/contents.php(240): getContents()        </code>
         <br>
             <code>
             #21 lib/contents.php(131): HttpException::fromResponse()        </code>
@@ -142,7 +142,7 @@
     <h2>Context</h2>
 
     <div>
-        <strong>Query:</strong> action=display&amp;bridge=CVEDetailsBridge&amp;vendor_id=74&amp;format=Html    </div>
+        <strong>Query:</strong> action=display&amp;bridge=BleepingComputerBridge&amp;format=Html    </div>
 
     <div>
         <strong>Version:</strong> 2025-08-05 (git.fork-master.9c9821f)    </div>
