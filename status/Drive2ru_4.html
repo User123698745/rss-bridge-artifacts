@@ -26,16 +26,16 @@
         
         
         
-                    <h2>429 Too Many Requests</h2>
+        
+                    <h2>503 Service Unavailable</h2>
             <p>
-                RSS-Bridge tried to fetch a website.
-                They told us to try again later.
+                Common causes are a server that is down for maintenance
+                or that is overloaded.
             </p>
         
-        
                     <p>
-                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429">
-                    https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429                </a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503">
+                    https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503                </a>
             </p>
         
     
@@ -46,10 +46,10 @@
             <strong>Type:</strong> HttpException        </div>
 
         <div>
-            <strong>Code:</strong> 429        </div>
+            <strong>Code:</strong> 503        </div>
 
         <div class="error-message">
-            <strong>Message:</strong> https://scholar.google.com/scholar?q=machine+learning&amp;as_vis=0 resulted in 429 Too Many Requests        </div>
+            <strong>Message:</strong> https://www.drive2.ru/topics/16 resulted in 503 Service Unavailable        </div>
 
         <div>
             <strong>File:</strong> lib/http.php        </div>
@@ -109,19 +109,22 @@
             #15 actions/DisplayAction.php(54): DisplayAction-&gt;createResponse()        </code>
         <br>
             <code>
-            #16 actions/DisplayAction.php(89): GoogleScholarBridge-&gt;collectData()        </code>
+            #16 actions/DisplayAction.php(89): Drive2ruBridge-&gt;collectData()        </code>
         <br>
             <code>
-            #17 bridges/GoogleScholarBridge.php(187): getSimpleHTMLDOM()        </code>
+            #17 bridges/Drive2ruBridge.php(218): Drive2ruBridge-&gt;getUserContent()        </code>
         <br>
             <code>
-            #18 lib/contents.php(176): getContents()        </code>
+            #18 bridges/Drive2ruBridge.php(83): getSimpleHTMLDOM()        </code>
         <br>
             <code>
-            #19 lib/contents.php(131): HttpException::fromResponse()        </code>
+            #19 lib/contents.php(176): getContents()        </code>
         <br>
             <code>
-            #20 lib/http.php(34)        </code>
+            #20 lib/contents.php(131): HttpException::fromResponse()        </code>
+        <br>
+            <code>
+            #21 lib/http.php(34)        </code>
         <br>
     
     <br>
@@ -129,7 +132,7 @@
     <h2>Context</h2>
 
     <div>
-        <strong>Query:</strong> action=display&amp;bridge=GoogleScholarBridge&amp;context=query&amp;q=machine learning&amp;format=Html    </div>
+        <strong>Query:</strong> action=display&amp;bridge=Drive2ruBridge&amp;context=Публикации по темам (Стоит почитать)&amp;topic=16&amp;format=Html    </div>
 
     <div>
         <strong>Version:</strong> 2025-08-05 (git.fork-master.9f1d08d)    </div>
