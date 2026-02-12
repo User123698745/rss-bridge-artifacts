@@ -87,11 +87,11 @@
                     <a
                         class="itemtitle"
                         href="http://localhost:3000/?action=display&amp;bridge=BakaUpdatesMangaReleasesBridge&amp;context=By+list&amp;list_id=4395%26list%3Dread&amp;format=Html"
-                    >Bridge returned error 0! (20489)</a>
+                    >Bridge returned error 404! (20496)</a>
                 </h2>
 
-                                    <time datetime="2026-02-05 01:13:31">
-                        2026-02-05 01:13:31                    </time>
+                                    <time datetime="2026-02-12 01:18:42">
+                        2026-02-12 01:18:42                    </time>
                     <p></p>
                 
                 
@@ -102,15 +102,17 @@
             
         
         
+                    <h2>404 Page Not Found</h2>
+            <p>
+                RSS-Bridge tried to fetch a page on a website.
+                But it doesn't exists.
+            </p>
         
         
         
                     <p>
-                See
-                <a href="https://curl.haxx.se/libcurl/c/libcurl-errors.html">
-                    https://curl.haxx.se/libcurl/c/libcurl-errors.html
-                </a>
-                for description of the curl error code.
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404">
+                    https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404                </a>
             </p>
         
     
@@ -121,16 +123,16 @@
             <strong>Type:</strong> HttpException        </div>
 
         <div>
-            <strong>Code:</strong> 0        </div>
+            <strong>Code:</strong> 404        </div>
 
         <div class="error-message">
-            <strong>Message:</strong> cURL error Operation timed out after 5000 milliseconds with 0 bytes received: 28 (https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://www.mangaupdates.com/releases.html        </div>
+            <strong>Message:</strong> https://www.mangaupdates.com/mylist.html?id=4395&amp;list=read resulted in 404 Not Found        </div>
 
         <div>
             <strong>File:</strong> lib/http.php        </div>
 
         <div>
-            <strong>Line:</strong> 185        </div>
+            <strong>Line:</strong> 34        </div>
     </div>
 
     <h2>Trace</h2>
@@ -190,16 +192,16 @@
             #17 bridges/BakaUpdatesMangaReleasesBridge.php(38): BakaUpdatesMangaReleasesBridge-&gt;collectDataByList()        </code>
         <br>
             <code>
-            #18 bridges/BakaUpdatesMangaReleasesBridge.php(160): getSimpleHTMLDOM()        </code>
+            #18 bridges/BakaUpdatesMangaReleasesBridge.php(163): getSimpleHTMLDOM()        </code>
         <br>
             <code>
             #19 lib/contents.php(176): getContents()        </code>
         <br>
             <code>
-            #20 lib/contents.php(104): CurlHttpClient-&gt;request()        </code>
+            #20 lib/contents.php(131): HttpException::fromResponse()        </code>
         <br>
             <code>
-            #21 lib/http.php(185)        </code>
+            #21 lib/http.php(34)        </code>
         <br>
     
     <br>
@@ -210,7 +212,7 @@
         <strong>Query:</strong> action=display&amp;bridge=BakaUpdatesMangaReleasesBridge&amp;context=By list&amp;list_id=4395&amp;list=read&amp;format=Html    </div>
 
     <div>
-        <strong>Version:</strong> 2025-08-05 (git.fork-master.49dbeec)    </div>
+        <strong>Version:</strong> 2025-08-05 (git.fork-master.46e3909)    </div>
 
     <div>
         <strong>OS:</strong> Linux    </div>
@@ -228,7 +230,7 @@
     <button>Find similar bugs</button>
 </a>
 
-<a href="https://github.com/RSS-Bridge/rss-bridge/issues/new?title=Releases+-+Baka+Updates+Manga+Releases+failed+with%3A+cURL+error+Operation+timed+out+after+5000+milliseconds+with+0+bytes+received%3A+28+%28https%3A%2F%2Fcurl.haxx.se%2Flibcurl%2Fc%2Flibcurl-errors.html%29+for+https%3A%2F%2Fwww.mangaupdates.com%2Freleases.html&body=%60%60%60%0AHttpException%3A+cURL+error+Operation+timed+out+after+5000+milliseconds+with+0+bytes+received%3A+28+%28https%3A%2F%2Fcurl.haxx.se%2Flibcurl%2Fc%2Flibcurl-errors.html%29+for+https%3A%2F%2Fwww.mangaupdates.com%2Freleases.html+in+lib%2Fhttp.php+line+185%0A%0Aindex.php%2873%29%3A+RssBridge-%3Emain%28%29%0Alib%2FRssBridge.php%2839%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+BasicAuthMiddleware-%3E__invoke%28%29%0Amiddlewares%2FBasicAuthMiddleware.php%2813%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+CacheMiddleware-%3E__invoke%28%29%0Amiddlewares%2FCacheMiddleware.php%2844%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+ExceptionMiddleware-%3E__invoke%28%29%0Amiddlewares%2FExceptionMiddleware.php%2817%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+SecurityMiddleware-%3E__invoke%28%29%0Amiddlewares%2FSecurityMiddleware.php%2819%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+MaintenanceMiddleware-%3E__invoke%28%29%0Amiddlewares%2FMaintenanceMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+TokenAuthenticationMiddleware-%3E__invoke%28%29%0Amiddlewares%2FTokenAuthenticationMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2834%29%3A+DisplayAction-%3E__invoke%28%29%0Aactions%2FDisplayAction.php%2854%29%3A+DisplayAction-%3EcreateResponse%28%29%0Aactions%2FDisplayAction.php%2889%29%3A+BakaUpdatesMangaReleasesBridge-%3EcollectData%28%29%0Abridges%2FBakaUpdatesMangaReleasesBridge.php%2838%29%3A+BakaUpdatesMangaReleasesBridge-%3EcollectDataByList%28%29%0Abridges%2FBakaUpdatesMangaReleasesBridge.php%28160%29%3A+getSimpleHTMLDOM%28%29%0Alib%2Fcontents.php%28176%29%3A+getContents%28%29%0Alib%2Fcontents.php%28104%29%3A+CurlHttpClient-%3Erequest%28%29%0Alib%2Fhttp.php%28185%29%0A%0AQuery+string%3A+action%3Ddisplay%26bridge%3DBakaUpdatesMangaReleasesBridge%26context%3DBy%2Blist%26list_id%3D4395%2526list%253Dread%26format%3DHtml%0AVersion%3A+2025-08-05+%28git.fork-master.49dbeec%29%0AOs%3A+Linux%0APHP+version%3A+8.2.29%0A%60%60%60%0AMaintainer%3A+%40fulmeek%2C+%40KamaleiZestri&labels=Bridge-Broken&assignee=f" title="After clicking this button you can review the issue before submitting it">
+<a href="https://github.com/RSS-Bridge/rss-bridge/issues/new?title=Releases+-+Baka+Updates+Manga+Releases+failed+with%3A+https%3A%2F%2Fwww.mangaupdates.com%2Fmylist.html%3Fid%3D4395%26list%3Dread+resulted+in+404+Not+Found&body=%60%60%60%0AHttpException%3A+https%3A%2F%2Fwww.mangaupdates.com%2Fmylist.html%3Fid%3D4395%26list%3Dread+resulted+in+404+Not+Found+in+lib%2Fhttp.php+line+34%0A%0Aindex.php%2873%29%3A+RssBridge-%3Emain%28%29%0Alib%2FRssBridge.php%2839%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+BasicAuthMiddleware-%3E__invoke%28%29%0Amiddlewares%2FBasicAuthMiddleware.php%2813%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+CacheMiddleware-%3E__invoke%28%29%0Amiddlewares%2FCacheMiddleware.php%2844%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+ExceptionMiddleware-%3E__invoke%28%29%0Amiddlewares%2FExceptionMiddleware.php%2817%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+SecurityMiddleware-%3E__invoke%28%29%0Amiddlewares%2FSecurityMiddleware.php%2819%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+MaintenanceMiddleware-%3E__invoke%28%29%0Amiddlewares%2FMaintenanceMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+TokenAuthenticationMiddleware-%3E__invoke%28%29%0Amiddlewares%2FTokenAuthenticationMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2834%29%3A+DisplayAction-%3E__invoke%28%29%0Aactions%2FDisplayAction.php%2854%29%3A+DisplayAction-%3EcreateResponse%28%29%0Aactions%2FDisplayAction.php%2889%29%3A+BakaUpdatesMangaReleasesBridge-%3EcollectData%28%29%0Abridges%2FBakaUpdatesMangaReleasesBridge.php%2838%29%3A+BakaUpdatesMangaReleasesBridge-%3EcollectDataByList%28%29%0Abridges%2FBakaUpdatesMangaReleasesBridge.php%28163%29%3A+getSimpleHTMLDOM%28%29%0Alib%2Fcontents.php%28176%29%3A+getContents%28%29%0Alib%2Fcontents.php%28131%29%3A+HttpException%3A%3AfromResponse%28%29%0Alib%2Fhttp.php%2834%29%0A%0AQuery+string%3A+action%3Ddisplay%26bridge%3DBakaUpdatesMangaReleasesBridge%26context%3DBy%2Blist%26list_id%3D4395%2526list%253Dread%26format%3DHtml%0AVersion%3A+2025-08-05+%28git.fork-master.46e3909%29%0AOs%3A+Linux%0APHP+version%3A+8.2.29%0A%60%60%60%0AMaintainer%3A+%40fulmeek%2C+%40KamaleiZestri&labels=Bridge-Broken&assignee=f" title="After clicking this button you can review the issue before submitting it">
     <button>Create GitHub Issue</button>
 </a>
 

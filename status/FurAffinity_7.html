@@ -23,39 +23,24 @@
         <div class="error">
 
             
-        
-        
-        
-                    <h2>429 Too Many Requests</h2>
-            <p>
-                RSS-Bridge tried to fetch a website.
-                They told us to try again later.
-            </p>
-        
-        
-                    <p>
-                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429">
-                    https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429                </a>
-            </p>
-        
-    
+            
     <h2>Details</h2>
 
     <div style="margin-bottom: 15px">
         <div class="error-type">
-            <strong>Type:</strong> HttpException        </div>
+            <strong>Type:</strong> TypeError        </div>
 
         <div>
-            <strong>Code:</strong> 429        </div>
+            <strong>Code:</strong> 0        </div>
 
         <div class="error-message">
-            <strong>Message:</strong> https://amp-api-edge.apps.apple.com/v1/catalog/USs/310633997?platform=mac&amp;extend=versionHistory resulted in 429 Too Many Requests        </div>
+            <strong>Message:</strong> e(): Argument #1 ($s) must be of type string, null given, called in templates/html-format.html.php on line 7        </div>
 
         <div>
-            <strong>File:</strong> lib/http.php        </div>
+            <strong>File:</strong> lib/html.php        </div>
 
         <div>
-            <strong>Line:</strong> 34        </div>
+            <strong>Line:</strong> 63        </div>
     </div>
 
     <h2>Trace</h2>
@@ -109,19 +94,19 @@
             #15 actions/DisplayAction.php(54): DisplayAction-&gt;createResponse()        </code>
         <br>
             <code>
-            #16 actions/DisplayAction.php(89): AppleAppStoreBridge-&gt;collectData()        </code>
+            #16 actions/DisplayAction.php(137): HtmlFormat-&gt;render()        </code>
         <br>
             <code>
-            #17 bridges/AppleAppStoreBridge.php(205): AppleAppStoreBridge-&gt;getAppData()        </code>
+            #17 formats/HtmlFormat.php(53): render_template()        </code>
         <br>
             <code>
-            #18 bridges/AppleAppStoreBridge.php(154): getContents()        </code>
+            #18 lib/html.php(47): require()        </code>
         <br>
             <code>
-            #19 lib/contents.php(131): HttpException::fromResponse()        </code>
+            #19 templates/html-format.html.php(7): e()        </code>
         <br>
             <code>
-            #20 lib/http.php(34)        </code>
+            #20 lib/html.php(63)        </code>
         <br>
     
     <br>
@@ -129,10 +114,10 @@
     <h2>Context</h2>
 
     <div>
-        <strong>Query:</strong> action=display&amp;bridge=AppleAppStoreBridge&amp;id=310633997&amp;p=mac&amp;country=US&amp;format=Html    </div>
+        <strong>Query:</strong> action=display&amp;bridge=FurAffinityBridge&amp;context=Favorites&amp;username-favorites=dhw&amp;limit=None&amp;full=on&amp;cache=on&amp;format=Html    </div>
 
     <div>
-        <strong>Version:</strong> 2025-08-05 (git.fork-master.49dbeec)    </div>
+        <strong>Version:</strong> 2025-08-05 (git.fork-master.46e3909)    </div>
 
     <div>
         <strong>OS:</strong> Linux    </div>
