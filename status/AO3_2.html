@@ -22,27 +22,20 @@
         
         <div class="error">
 
-                        <h2>The website is protected by CloudFlare</h2>
+            
+        
+        
+        
+        
+                    <h2>503 Service Unavailable</h2>
             <p>
-                RSS-Bridge tried to fetch a website.
-                The fetching was blocked by CloudFlare.
-                CloudFlare is anti-bot software.
-                Its purpose is to block non-humans.
+                Common causes are a server that is down for maintenance
+                or that is overloaded.
             </p>
-        
-        
-                    <h2>403 Forbidden</h2>
-            <p>
-                The HTTP 403 Forbidden response status code indicates that the
-                server understands the request but refuses to authorize it.
-            </p>
-        
-        
-        
         
                     <p>
-                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403">
-                    https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403                </a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503">
+                    https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503                </a>
             </p>
         
     
@@ -50,19 +43,19 @@
 
     <div style="margin-bottom: 15px">
         <div class="error-type">
-            <strong>Type:</strong> CloudFlareException        </div>
+            <strong>Type:</strong> HttpException        </div>
 
         <div>
-            <strong>Code:</strong> 403        </div>
+            <strong>Code:</strong> 503        </div>
 
         <div class="error-message">
-            <strong>Message:</strong> https://www.cvedetails.com/vulnerability-list/vendor_id-74/product_id-?order=1 resulted in 403 Forbidden        </div>
+            <strong>Message:</strong> https://archiveofourown.org//users/Nyaaru/bookmarks?bookmark_search[sort_column]=bookmarkable_date resulted in 503 Service Unavailable        </div>
 
         <div>
             <strong>File:</strong> lib/http.php        </div>
 
         <div>
-            <strong>Line:</strong> 32        </div>
+            <strong>Line:</strong> 34        </div>
     </div>
 
     <h2>Trace</h2>
@@ -116,25 +109,19 @@
             #15 actions/DisplayAction.php(54): DisplayAction-&gt;createResponse()        </code>
         <br>
             <code>
-            #16 actions/DisplayAction.php(117): DisplayAction-&gt;createFeedItemFromException()        </code>
+            #16 actions/DisplayAction.php(89): AO3Bridge-&gt;collectData()        </code>
         <br>
             <code>
-            #17 actions/DisplayAction.php(159): CVEDetailsBridge-&gt;getName()        </code>
+            #17 bridges/AO3Bridge.php(62): AO3Bridge-&gt;collectList()        </code>
         <br>
             <code>
-            #18 bridges/CVEDetailsBridge.php(107): CVEDetailsBridge-&gt;fetchContent()        </code>
+            #18 bridges/AO3Bridge.php(83): getContents()        </code>
         <br>
             <code>
-            #19 bridges/CVEDetailsBridge.php(85): getSimpleHTMLDOM()        </code>
+            #19 lib/contents.php(131): HttpException::fromResponse()        </code>
         <br>
             <code>
-            #20 lib/contents.php(176): getContents()        </code>
-        <br>
-            <code>
-            #21 lib/contents.php(131): HttpException::fromResponse()        </code>
-        <br>
-            <code>
-            #22 lib/http.php(32)        </code>
+            #20 lib/http.php(34)        </code>
         <br>
     
     <br>
@@ -142,16 +129,16 @@
     <h2>Context</h2>
 
     <div>
-        <strong>Query:</strong> action=display&amp;bridge=CVEDetailsBridge&amp;vendor_id=74&amp;format=Html    </div>
+        <strong>Query:</strong> action=display&amp;bridge=AO3Bridge&amp;context=Bookmarks&amp;user=Nyaaru&amp;format=Html    </div>
 
     <div>
-        <strong>Version:</strong> 2025-08-05 (git.fork-master.25d3927)    </div>
+        <strong>Version:</strong> 2025-08-05 (git.fork-master.61c9a60)    </div>
 
     <div>
         <strong>OS:</strong> Linux    </div>
 
     <div>
-        <strong>PHP:</strong> 8.2.29    </div>
+        <strong>PHP:</strong> 8.2.30    </div>
 
     <br>
 
