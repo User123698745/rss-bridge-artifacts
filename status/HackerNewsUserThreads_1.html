@@ -49,7 +49,7 @@
             <strong>Code:</strong> 429        </div>
 
         <div class="error-message">
-            <strong>Message:</strong> https://wordpress.org//?feed=atom resulted in 429 Too Many Requests        </div>
+            <strong>Message:</strong> https://news.ycombinator.com/threads?id=nixcraft resulted in 429 Too Many Requests        </div>
 
         <div>
             <strong>File:</strong> lib/http.php        </div>
@@ -109,13 +109,13 @@
             #15 actions/DisplayAction.php(54): DisplayAction-&gt;createResponse()        </code>
         <br>
             <code>
-            #16 actions/DisplayAction.php(89): WordPressBridge-&gt;collectData()        </code>
+            #16 actions/DisplayAction.php(89): HackerNewsUserThreadsBridge-&gt;collectData()        </code>
         <br>
             <code>
-            #17 bridges/WordPressBridge.php(33): FeedExpander-&gt;collectExpandableDatas()        </code>
+            #17 bridges/HackerNewsUserThreadsBridge.php(23): getSimpleHTMLDOM()        </code>
         <br>
             <code>
-            #18 lib/FeedExpander.php(21): getContents()        </code>
+            #18 lib/contents.php(176): getContents()        </code>
         <br>
             <code>
             #19 lib/contents.php(131): HttpException::fromResponse()        </code>
@@ -129,7 +129,7 @@
     <h2>Context</h2>
 
     <div>
-        <strong>Query:</strong> action=display&amp;bridge=WordPressBridge&amp;url=https://wordpress.org/&amp;format=Html    </div>
+        <strong>Query:</strong> action=display&amp;bridge=HackerNewsUserThreadsBridge&amp;user=nixcraft&amp;format=Html    </div>
 
     <div>
         <strong>Version:</strong> 2025-08-05 (git.fork-master.0bf57c5)    </div>
