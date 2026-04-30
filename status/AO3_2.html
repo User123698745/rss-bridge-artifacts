@@ -49,7 +49,7 @@
             <strong>Code:</strong> 503        </div>
 
         <div class="error-message">
-            <strong>Message:</strong> https://www.amazon.com/s/?field-keywords=watch&amp;sort=relevanceblender resulted in 503 Service Unavailable        </div>
+            <strong>Message:</strong> https://archiveofourown.org//users/Nyaaru/bookmarks?bookmark_search[sort_column]=bookmarkable_date resulted in 503 Service Unavailable        </div>
 
         <div>
             <strong>File:</strong> lib/http.php        </div>
@@ -109,13 +109,13 @@
             #15 actions/DisplayAction.php(54): DisplayAction-&gt;createResponse()        </code>
         <br>
             <code>
-            #16 actions/DisplayAction.php(89): AmazonBridge-&gt;collectData()        </code>
+            #16 actions/DisplayAction.php(89): AO3Bridge-&gt;collectData()        </code>
         <br>
             <code>
-            #17 bridges/AmazonBridge.php(66): getSimpleHTMLDOM()        </code>
+            #17 bridges/AO3Bridge.php(62): AO3Bridge-&gt;collectList()        </code>
         <br>
             <code>
-            #18 lib/contents.php(176): getContents()        </code>
+            #18 bridges/AO3Bridge.php(83): getContents()        </code>
         <br>
             <code>
             #19 lib/contents.php(131): HttpException::fromResponse()        </code>
@@ -129,10 +129,10 @@
     <h2>Context</h2>
 
     <div>
-        <strong>Query:</strong> action=display&amp;bridge=AmazonBridge&amp;q=watch&amp;sort=relevanceblender&amp;tld=com&amp;format=Html    </div>
+        <strong>Query:</strong> action=display&amp;bridge=AO3Bridge&amp;context=Bookmarks&amp;user=Nyaaru&amp;format=Html    </div>
 
     <div>
-        <strong>Version:</strong> 2025-08-05 (git.fork-master.0bf57c5)    </div>
+        <strong>Version:</strong> 2025-08-05 (git.fork-master.93560f2)    </div>
 
     <div>
         <strong>OS:</strong> Linux    </div>
