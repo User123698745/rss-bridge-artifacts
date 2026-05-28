@@ -87,13 +87,13 @@
                     <a
                         class="itemtitle"
                         href="http://localhost:3000/?action=display&amp;bridge=NautilusBridge&amp;limit=None&amp;topic=default&amp;format=Html"
-                    >Bridge returned error 0! (20594)</a>
+                    >Bridge returned error 400! (20601)</a>
                 </h2>
 
                 <div class="item-meta">
                                             <p>
-                            <time datetime="2026-05-21 02:42:53">
-                                2026-05-21 02:42:53                            </time>
+                            <time datetime="2026-05-28 02:23:57">
+                                2026-05-28 02:23:57                            </time>
                         </p>
                     
                                     </div>
@@ -109,19 +109,19 @@
 
     <div style="margin-bottom: 15px">
         <div class="error-type">
-            <strong>Type:</strong> Exception        </div>
+            <strong>Type:</strong> ClientException        </div>
 
         <div>
-            <strong>Code:</strong> 0        </div>
+            <strong>Code:</strong> 400        </div>
 
         <div class="error-message">
             <strong>Message:</strong> Invalid parameters value(s): limit        </div>
 
         <div>
-            <strong>File:</strong> lib/BridgeAbstract.php        </div>
+            <strong>File:</strong> lib/utils.php        </div>
 
         <div>
-            <strong>Line:</strong> 163        </div>
+            <strong>Line:</strong> 256        </div>
     </div>
 
     <h2>Trace</h2>
@@ -178,7 +178,10 @@
             #16 actions/DisplayAction.php(88): BridgeAbstract-&gt;setInput()        </code>
         <br>
             <code>
-            #17 lib/BridgeAbstract.php(163)        </code>
+            #17 lib/BridgeAbstract.php(163): throwClientException()        </code>
+        <br>
+            <code>
+            #18 lib/utils.php(256)        </code>
         <br>
     
     <br>
@@ -189,7 +192,7 @@
         <strong>Query:</strong> action=display&amp;bridge=NautilusBridge&amp;limit=None&amp;topic=default&amp;format=Html    </div>
 
     <div>
-        <strong>Version:</strong> 2025-08-05 (git.fork-master.f605f34)    </div>
+        <strong>Version:</strong> 2025-08-05 (git.fork-master.0e7f9b9)    </div>
 
     <div>
         <strong>OS:</strong> Linux    </div>
@@ -207,7 +210,7 @@
     <button>Find similar bugs</button>
 </a>
 
-<a href="https://github.com/RSS-Bridge/rss-bridge/issues/new?title=Nautilus+failed+with%3A+Invalid+parameters+value%28s%29%3A+limit&body=%60%60%60%0AException%3A+Invalid+parameters+value%28s%29%3A+limit+in+lib%2FBridgeAbstract.php+line+163%0A%0Aindex.php%2873%29%3A+RssBridge-%3Emain%28%29%0Alib%2FRssBridge.php%2839%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+BasicAuthMiddleware-%3E__invoke%28%29%0Amiddlewares%2FBasicAuthMiddleware.php%2813%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+CacheMiddleware-%3E__invoke%28%29%0Amiddlewares%2FCacheMiddleware.php%2844%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+ExceptionMiddleware-%3E__invoke%28%29%0Amiddlewares%2FExceptionMiddleware.php%2817%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+SecurityMiddleware-%3E__invoke%28%29%0Amiddlewares%2FSecurityMiddleware.php%2819%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+MaintenanceMiddleware-%3E__invoke%28%29%0Amiddlewares%2FMaintenanceMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+TokenAuthenticationMiddleware-%3E__invoke%28%29%0Amiddlewares%2FTokenAuthenticationMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2834%29%3A+DisplayAction-%3E__invoke%28%29%0Aactions%2FDisplayAction.php%2854%29%3A+DisplayAction-%3EcreateResponse%28%29%0Aactions%2FDisplayAction.php%2888%29%3A+BridgeAbstract-%3EsetInput%28%29%0Alib%2FBridgeAbstract.php%28163%29%0A%0AQuery+string%3A+action%3Ddisplay%26bridge%3DNautilusBridge%26limit%3DNone%26topic%3Ddefault%26format%3DHtml%0AVersion%3A+2025-08-05+%28git.fork-master.f605f34%29%0AOs%3A+Linux%0APHP+version%3A+8.2.31%0A%60%60%60%0AMaintainer%3A+%40sqrtminusone&labels=Bridge-Broken&assignee=s" title="After clicking this button you can review the issue before submitting it">
+<a href="https://github.com/RSS-Bridge/rss-bridge/issues/new?title=Nautilus+failed+with%3A+Invalid+parameters+value%28s%29%3A+limit&body=%60%60%60%0AClientException%3A+Invalid+parameters+value%28s%29%3A+limit+in+lib%2Futils.php+line+256%0A%0Aindex.php%2873%29%3A+RssBridge-%3Emain%28%29%0Alib%2FRssBridge.php%2839%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+BasicAuthMiddleware-%3E__invoke%28%29%0Amiddlewares%2FBasicAuthMiddleware.php%2813%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+CacheMiddleware-%3E__invoke%28%29%0Amiddlewares%2FCacheMiddleware.php%2844%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+ExceptionMiddleware-%3E__invoke%28%29%0Amiddlewares%2FExceptionMiddleware.php%2817%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+SecurityMiddleware-%3E__invoke%28%29%0Amiddlewares%2FSecurityMiddleware.php%2819%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+MaintenanceMiddleware-%3E__invoke%28%29%0Amiddlewares%2FMaintenanceMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+TokenAuthenticationMiddleware-%3E__invoke%28%29%0Amiddlewares%2FTokenAuthenticationMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2834%29%3A+DisplayAction-%3E__invoke%28%29%0Aactions%2FDisplayAction.php%2854%29%3A+DisplayAction-%3EcreateResponse%28%29%0Aactions%2FDisplayAction.php%2888%29%3A+BridgeAbstract-%3EsetInput%28%29%0Alib%2FBridgeAbstract.php%28163%29%3A+throwClientException%28%29%0Alib%2Futils.php%28256%29%0A%0AQuery+string%3A+action%3Ddisplay%26bridge%3DNautilusBridge%26limit%3DNone%26topic%3Ddefault%26format%3DHtml%0AVersion%3A+2025-08-05+%28git.fork-master.0e7f9b9%29%0AOs%3A+Linux%0APHP+version%3A+8.2.31%0A%60%60%60%0AMaintainer%3A+%40sqrtminusone&labels=Bridge-Broken&assignee=s" title="After clicking this button you can review the issue before submitting it">
     <button>Create GitHub Issue</button>
 </a>
 
