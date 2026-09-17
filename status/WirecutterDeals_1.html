@@ -4,41 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/ >
     <meta name="description" content="RSS-Bridge" />
-    <title>QNAP</title>
+    <title>Wirecutter Deals</title>
     <link href="static/style.css?2023-03-24" rel="stylesheet">
     <link rel="icon" type="image/png" href="static/favicon.png">
 
     
         <link
-            href="?action=display&amp;bridge=QnapBridge&amp;format=Atom"
+            href="?action=display&amp;bridge=WirecutterDealsBridge&amp;format=Atom"
             title="Atom"
             rel="alternate"
             type="application/atom+xml"
         >
 	
         <link
-            href="?action=display&amp;bridge=QnapBridge&amp;format=Json"
+            href="?action=display&amp;bridge=WirecutterDealsBridge&amp;format=Json"
             title="Json"
             rel="alternate"
             type="application/json"
         >
 	
         <link
-            href="?action=display&amp;bridge=QnapBridge&amp;format=Mrss"
+            href="?action=display&amp;bridge=WirecutterDealsBridge&amp;format=Mrss"
             title="Mrss"
             rel="alternate"
             type="application/rss+xml"
         >
 	
         <link
-            href="?action=display&amp;bridge=QnapBridge&amp;format=Plaintext"
+            href="?action=display&amp;bridge=WirecutterDealsBridge&amp;format=Plaintext"
             title="Plaintext"
             rel="alternate"
             type="text/plain"
         >
 	
         <link
-            href="?action=display&amp;bridge=QnapBridge&amp;format=Sfeed"
+            href="?action=display&amp;bridge=WirecutterDealsBridge&amp;format=Sfeed"
             title="Sfeed"
             rel="alternate"
             type="text/plain"
@@ -51,31 +51,31 @@
     <div class="container">
 
         <h1 class="pagetitle">
-            <a href="https://www.qnap.com/fr-fr/security-news/2022" target="_blank">QNAP</a>
+            <a href="https://www.nytimes.com/wirecutter/deals/" target="_blank">Wirecutter Deals</a>
         </h1>
 
         <div class="buttons">
-            <a href="./#bridge-QnapBridge">
+            <a href="./#bridge-WirecutterDealsBridge">
                 <button class="backbutton">← back to rss-bridge</button>
             </a>
 
-                            <a href="?action=display&amp;bridge=QnapBridge&amp;format=Atom">
+                            <a href="?action=display&amp;bridge=WirecutterDealsBridge&amp;format=Atom">
                     <button class="rss-feed">
                         Atom                    </button>
                 </a>
-                            <a href="?action=display&amp;bridge=QnapBridge&amp;format=Json">
+                            <a href="?action=display&amp;bridge=WirecutterDealsBridge&amp;format=Json">
                     <button class="rss-feed">
                         Json                    </button>
                 </a>
-                            <a href="?action=display&amp;bridge=QnapBridge&amp;format=Mrss">
+                            <a href="?action=display&amp;bridge=WirecutterDealsBridge&amp;format=Mrss">
                     <button class="rss-feed">
                         Mrss                    </button>
                 </a>
-                            <a href="?action=display&amp;bridge=QnapBridge&amp;format=Plaintext">
+                            <a href="?action=display&amp;bridge=WirecutterDealsBridge&amp;format=Plaintext">
                     <button class="rss-feed">
                         Plaintext                    </button>
                 </a>
-                            <a href="?action=display&amp;bridge=QnapBridge&amp;format=Sfeed">
+                            <a href="?action=display&amp;bridge=WirecutterDealsBridge&amp;format=Sfeed">
                     <button class="rss-feed">
                         Sfeed                    </button>
                 </a>
@@ -86,14 +86,14 @@
                 <h2>
                     <a
                         class="itemtitle"
-                        href="http://localhost:3000/?action=display&amp;bridge=QnapBridge&amp;format=Html"
-                    >Bridge returned error 403! (20706)</a>
+                        href="http://localhost:3000/?action=display&amp;bridge=WirecutterDealsBridge&amp;format=Html"
+                    >Bridge returned error 403! (20713)</a>
                 </h2>
 
                 <div class="item-meta">
                                             <p>
-                            <time datetime="2026-09-10 02:26:03">
-                                2026-09-10 02:26:03                            </time>
+                            <time datetime="2026-09-17 02:49:06">
+                                2026-09-17 02:49:06                            </time>
                         </p>
                     
                                     </div>
@@ -130,7 +130,7 @@
             <strong>Code:</strong> 403        </div>
 
         <div class="error-message">
-            <strong>Message:</strong> https://www.qnap.com/api/v1/articles/security-news?locale=fr-fr&amp;year=2026&amp;page=1 resulted in 403 Forbidden        </div>
+            <strong>Message:</strong> https://www.nytimes.com/wirecutter/deals/ resulted in 403 Forbidden        </div>
 
         <div>
             <strong>File:</strong> lib/http.php        </div>
@@ -190,16 +190,19 @@
             #15 actions/DisplayAction.php(54): DisplayAction-&gt;createResponse()        </code>
         <br>
             <code>
-            #16 actions/DisplayAction.php(89): QnapBridge-&gt;collectData()        </code>
+            #16 actions/DisplayAction.php(89): WirecutterDealsBridge-&gt;collectData()        </code>
         <br>
             <code>
-            #17 bridges/QnapBridge.php(20): getContents()        </code>
+            #17 bridges/WirecutterDealsBridge.php(13): getSimpleHTMLDOM()        </code>
         <br>
             <code>
-            #18 lib/contents.php(131): HttpException::fromResponse()        </code>
+            #18 lib/contents.php(176): getContents()        </code>
         <br>
             <code>
-            #19 lib/http.php(34)        </code>
+            #19 lib/contents.php(131): HttpException::fromResponse()        </code>
+        <br>
+            <code>
+            #20 lib/http.php(34)        </code>
         <br>
     
     <br>
@@ -207,7 +210,7 @@
     <h2>Context</h2>
 
     <div>
-        <strong>Query:</strong> action=display&amp;bridge=QnapBridge&amp;format=Html    </div>
+        <strong>Query:</strong> action=display&amp;bridge=WirecutterDealsBridge&amp;format=Html    </div>
 
     <div>
         <strong>Version:</strong> 2025-08-05 (git.fork-master.cf745c7)    </div>
@@ -224,16 +227,16 @@
 </div>
 
 
-<a href="https://github.com/RSS-Bridge/rss-bridge/issues?q=is%3Aissue+is%3Aopen+QNAP" title="Opens GitHub to search for similar issues">
+<a href="https://github.com/RSS-Bridge/rss-bridge/issues?q=is%3Aissue+is%3Aopen+Wirecutter+Deals" title="Opens GitHub to search for similar issues">
     <button>Find similar bugs</button>
 </a>
 
-<a href="https://github.com/RSS-Bridge/rss-bridge/issues/new?title=QNAP+failed+with%3A+https%3A%2F%2Fwww.qnap.com%2Fapi%2Fv1%2Farticles%2Fsecurity-news%3Flocale%3Dfr-fr%26year%3D2026%26page%3D1+resulted+in+403+Forbidden&body=%60%60%60%0AHttpException%3A+https%3A%2F%2Fwww.qnap.com%2Fapi%2Fv1%2Farticles%2Fsecurity-news%3Flocale%3Dfr-fr%26year%3D2026%26page%3D1+resulted+in+403+Forbidden+in+lib%2Fhttp.php+line+34%0A%0Aindex.php%2873%29%3A+RssBridge-%3Emain%28%29%0Alib%2FRssBridge.php%2839%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+BasicAuthMiddleware-%3E__invoke%28%29%0Amiddlewares%2FBasicAuthMiddleware.php%2813%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+CacheMiddleware-%3E__invoke%28%29%0Amiddlewares%2FCacheMiddleware.php%2844%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+ExceptionMiddleware-%3E__invoke%28%29%0Amiddlewares%2FExceptionMiddleware.php%2817%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+SecurityMiddleware-%3E__invoke%28%29%0Amiddlewares%2FSecurityMiddleware.php%2819%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+MaintenanceMiddleware-%3E__invoke%28%29%0Amiddlewares%2FMaintenanceMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+TokenAuthenticationMiddleware-%3E__invoke%28%29%0Amiddlewares%2FTokenAuthenticationMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2834%29%3A+DisplayAction-%3E__invoke%28%29%0Aactions%2FDisplayAction.php%2854%29%3A+DisplayAction-%3EcreateResponse%28%29%0Aactions%2FDisplayAction.php%2889%29%3A+QnapBridge-%3EcollectData%28%29%0Abridges%2FQnapBridge.php%2820%29%3A+getContents%28%29%0Alib%2Fcontents.php%28131%29%3A+HttpException%3A%3AfromResponse%28%29%0Alib%2Fhttp.php%2834%29%0A%0AQuery+string%3A+action%3Ddisplay%26bridge%3DQnapBridge%26format%3DHtml%0AVersion%3A+2025-08-05+%28git.fork-master.cf745c7%29%0AOs%3A+Linux%0APHP+version%3A+8.2.33%0A%60%60%60%0AMaintainer%3A+%40dvikan&labels=Bridge-Broken&assignee=d" title="After clicking this button you can review the issue before submitting it">
+<a href="https://github.com/RSS-Bridge/rss-bridge/issues/new?title=Wirecutter+Deals+failed+with%3A+https%3A%2F%2Fwww.nytimes.com%2Fwirecutter%2Fdeals%2F+resulted+in+403+Forbidden&body=%60%60%60%0AHttpException%3A+https%3A%2F%2Fwww.nytimes.com%2Fwirecutter%2Fdeals%2F+resulted+in+403+Forbidden+in+lib%2Fhttp.php+line+34%0A%0Aindex.php%2873%29%3A+RssBridge-%3Emain%28%29%0Alib%2FRssBridge.php%2839%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+BasicAuthMiddleware-%3E__invoke%28%29%0Amiddlewares%2FBasicAuthMiddleware.php%2813%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+CacheMiddleware-%3E__invoke%28%29%0Amiddlewares%2FCacheMiddleware.php%2844%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+ExceptionMiddleware-%3E__invoke%28%29%0Amiddlewares%2FExceptionMiddleware.php%2817%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+SecurityMiddleware-%3E__invoke%28%29%0Amiddlewares%2FSecurityMiddleware.php%2819%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+MaintenanceMiddleware-%3E__invoke%28%29%0Amiddlewares%2FMaintenanceMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+TokenAuthenticationMiddleware-%3E__invoke%28%29%0Amiddlewares%2FTokenAuthenticationMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2834%29%3A+DisplayAction-%3E__invoke%28%29%0Aactions%2FDisplayAction.php%2854%29%3A+DisplayAction-%3EcreateResponse%28%29%0Aactions%2FDisplayAction.php%2889%29%3A+WirecutterDealsBridge-%3EcollectData%28%29%0Abridges%2FWirecutterDealsBridge.php%2813%29%3A+getSimpleHTMLDOM%28%29%0Alib%2Fcontents.php%28176%29%3A+getContents%28%29%0Alib%2Fcontents.php%28131%29%3A+HttpException%3A%3AfromResponse%28%29%0Alib%2Fhttp.php%2834%29%0A%0AQuery+string%3A+action%3Ddisplay%26bridge%3DWirecutterDealsBridge%26format%3DHtml%0AVersion%3A+2025-08-05+%28git.fork-master.cf745c7%29%0AOs%3A+Linux%0APHP+version%3A+8.2.33%0A%60%60%60%0AMaintainer%3A+%40Vynce&labels=Bridge-Broken&assignee=V" title="After clicking this button you can review the issue before submitting it">
     <button>Create GitHub Issue</button>
 </a>
 
 <p class="maintainer">
-    dvikan</p>                </div>
+    Vynce</p>                </div>
 
                 
                             </section>
