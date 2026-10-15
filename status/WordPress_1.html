@@ -49,7 +49,7 @@
             <strong>Code:</strong> 429        </div>
 
         <div class="error-message">
-            <strong>Message:</strong> https://wordpress.org/news/2026/09/wordpress-7-1-1-maintenance-and-security-release/ resulted in 429 Too Many Requests        </div>
+            <strong>Message:</strong> https://wordpress.org//?feed=atom resulted in 429 Too Many Requests        </div>
 
         <div>
             <strong>File:</strong> lib/http.php        </div>
@@ -115,19 +115,13 @@
             #17 bridges/WordPressBridge.php(33): FeedExpander-&gt;collectExpandableDatas()        </code>
         <br>
             <code>
-            #18 lib/FeedExpander.php(38): WordPressBridge-&gt;parseItem()        </code>
+            #18 lib/FeedExpander.php(21): getContents()        </code>
         <br>
             <code>
-            #19 bridges/WordPressBridge.php(39): getSimpleHTMLDOMCached()        </code>
+            #19 lib/contents.php(138): HttpException::fromResponse()        </code>
         <br>
             <code>
-            #20 lib/contents.php(246): getContents()        </code>
-        <br>
-            <code>
-            #21 lib/contents.php(138): HttpException::fromResponse()        </code>
-        <br>
-            <code>
-            #22 lib/http.php(34)        </code>
+            #20 lib/http.php(34)        </code>
         <br>
     
     <br>
@@ -138,7 +132,7 @@
         <strong>Query:</strong> action=display&amp;bridge=WordPressBridge&amp;url=https://wordpress.org/&amp;format=Html    </div>
 
     <div>
-        <strong>Version:</strong> 2025-08-05 (git.fork-master.be23f9b)    </div>
+        <strong>Version:</strong> 2025-08-05 (git.fork-master.33bc8c6)    </div>
 
     <div>
         <strong>OS:</strong> Linux    </div>
