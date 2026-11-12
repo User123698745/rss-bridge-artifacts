@@ -4,41 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/ >
     <meta name="description" content="RSS-Bridge" />
-    <title>USENIX</title>
+    <title>Articles Feed</title>
     <link href="static/style.css?2023-03-24" rel="stylesheet">
     <link rel="icon" type="image/png" href="static/favicon.png">
 
     
         <link
-            href="?action=display&amp;bridge=UsenixBridge&amp;context=USENIX+%3Blogin%3A&amp;format=Atom"
+            href="?action=display&amp;bridge=OvertakeBridge&amp;format=Atom"
             title="Atom"
             rel="alternate"
             type="application/atom+xml"
         >
 	
         <link
-            href="?action=display&amp;bridge=UsenixBridge&amp;context=USENIX+%3Blogin%3A&amp;format=Json"
+            href="?action=display&amp;bridge=OvertakeBridge&amp;format=Json"
             title="Json"
             rel="alternate"
             type="application/json"
         >
 	
         <link
-            href="?action=display&amp;bridge=UsenixBridge&amp;context=USENIX+%3Blogin%3A&amp;format=Mrss"
+            href="?action=display&amp;bridge=OvertakeBridge&amp;format=Mrss"
             title="Mrss"
             rel="alternate"
             type="application/rss+xml"
         >
 	
         <link
-            href="?action=display&amp;bridge=UsenixBridge&amp;context=USENIX+%3Blogin%3A&amp;format=Plaintext"
+            href="?action=display&amp;bridge=OvertakeBridge&amp;format=Plaintext"
             title="Plaintext"
             rel="alternate"
             type="text/plain"
         >
 	
         <link
-            href="?action=display&amp;bridge=UsenixBridge&amp;context=USENIX+%3Blogin%3A&amp;format=Sfeed"
+            href="?action=display&amp;bridge=OvertakeBridge&amp;format=Sfeed"
             title="Sfeed"
             rel="alternate"
             type="text/plain"
@@ -51,49 +51,54 @@
     <div class="container">
 
         <h1 class="pagetitle">
-            <a href="https://www.usenix.org/publications" target="_blank">USENIX</a>
+            <a href="https://www.overtake.gg/" target="_blank">Articles Feed</a>
         </h1>
 
         <div class="buttons">
-            <a href="./#bridge-UsenixBridge">
+            <a href="./#bridge-OvertakeBridge">
                 <button class="backbutton">← back to rss-bridge</button>
             </a>
 
-                            <a href="?action=display&amp;bridge=UsenixBridge&amp;context=USENIX+%3Blogin%3A&amp;format=Atom">
+                            <a href="?action=display&amp;bridge=OvertakeBridge&amp;format=Atom">
                     <button class="rss-feed">
                         Atom                    </button>
                 </a>
-                            <a href="?action=display&amp;bridge=UsenixBridge&amp;context=USENIX+%3Blogin%3A&amp;format=Json">
+                            <a href="?action=display&amp;bridge=OvertakeBridge&amp;format=Json">
                     <button class="rss-feed">
                         Json                    </button>
                 </a>
-                            <a href="?action=display&amp;bridge=UsenixBridge&amp;context=USENIX+%3Blogin%3A&amp;format=Mrss">
+                            <a href="?action=display&amp;bridge=OvertakeBridge&amp;format=Mrss">
                     <button class="rss-feed">
                         Mrss                    </button>
                 </a>
-                            <a href="?action=display&amp;bridge=UsenixBridge&amp;context=USENIX+%3Blogin%3A&amp;format=Plaintext">
+                            <a href="?action=display&amp;bridge=OvertakeBridge&amp;format=Plaintext">
                     <button class="rss-feed">
                         Plaintext                    </button>
                 </a>
-                            <a href="?action=display&amp;bridge=UsenixBridge&amp;context=USENIX+%3Blogin%3A&amp;format=Sfeed">
+                            <a href="?action=display&amp;bridge=OvertakeBridge&amp;format=Sfeed">
                     <button class="rss-feed">
                         Sfeed                    </button>
                 </a>
             
+                            <a href="https://ko-fi.com/tostiman">
+                    <button class="rss-feed">
+                        Donate to maintainer
+                    </button>
+                </a>
                     </div>
 
                     <section class="feeditem">
                 <h2>
                     <a
                         class="itemtitle"
-                        href="http://localhost:3000/?action=display&amp;bridge=UsenixBridge&amp;context=USENIX+%3Blogin%3A&amp;format=Html"
-                    >Bridge returned error 403! (20762)</a>
+                        href="http://localhost:3000/?action=display&amp;bridge=OvertakeBridge&amp;format=Html"
+                    >Bridge returned error 403! (20769)</a>
                 </h2>
 
                 <div class="item-meta">
                                             <p>
-                            <time datetime="2026-11-05 04:29:39">
-                                2026-11-05 04:29:39                            </time>
+                            <time datetime="2026-11-12 05:05:57">
+                                2026-11-12 05:05:57                            </time>
                         </p>
                     
                                     </div>
@@ -137,7 +142,7 @@
             <strong>Code:</strong> 403        </div>
 
         <div class="error-message">
-            <strong>Message:</strong> https://www.usenix.org/publications/loginonline resulted in 403 Forbidden        </div>
+            <strong>Message:</strong> https://www.overtake.gg/news/black-friday-2026-the-best-sim-racing-deals.5034/ resulted in 403 Forbidden        </div>
 
         <div>
             <strong>File:</strong> lib/http.php        </div>
@@ -197,22 +202,25 @@
             #15 actions/DisplayAction.php(54): DisplayAction-&gt;createResponse()        </code>
         <br>
             <code>
-            #16 actions/DisplayAction.php(89): UsenixBridge-&gt;collectData()        </code>
+            #16 actions/DisplayAction.php(89): OvertakeBridge-&gt;collectData()        </code>
         <br>
             <code>
-            #17 bridges/UsenixBridge.php(19): UsenixBridge-&gt;collectLoginOnlineItems()        </code>
+            #17 bridges/OvertakeBridge.php(13): FeedExpander-&gt;collectExpandableDatas()        </code>
         <br>
             <code>
-            #18 bridges/UsenixBridge.php(28): getSimpleHTMLDOMCached()        </code>
+            #18 lib/FeedExpander.php(38): OvertakeBridge-&gt;parseItem()        </code>
         <br>
             <code>
-            #19 lib/contents.php(269): getContents()        </code>
+            #19 bridges/OvertakeBridge.php(18): getSimpleHTMLDOMCached()        </code>
         <br>
             <code>
-            #20 lib/contents.php(161): HttpException::fromResponse()        </code>
+            #20 lib/contents.php(269): getContents()        </code>
         <br>
             <code>
-            #21 lib/http.php(32)        </code>
+            #21 lib/contents.php(161): HttpException::fromResponse()        </code>
+        <br>
+            <code>
+            #22 lib/http.php(32)        </code>
         <br>
     
     <br>
@@ -220,10 +228,10 @@
     <h2>Context</h2>
 
     <div>
-        <strong>Query:</strong> action=display&amp;bridge=UsenixBridge&amp;context=USENIX ;login:&amp;format=Html    </div>
+        <strong>Query:</strong> action=display&amp;bridge=OvertakeBridge&amp;format=Html    </div>
 
     <div>
-        <strong>Version:</strong> 2025-08-05 (git.fork-master.c85f0cf)    </div>
+        <strong>Version:</strong> 2025-08-05 (git.fork-master.27d148d)    </div>
 
     <div>
         <strong>OS:</strong> Linux    </div>
@@ -237,16 +245,16 @@
 </div>
 
 
-<a href="https://github.com/RSS-Bridge/rss-bridge/issues?q=is%3Aissue+is%3Aopen+USENIX" title="Opens GitHub to search for similar issues">
+<a href="https://github.com/RSS-Bridge/rss-bridge/issues?q=is%3Aissue+is%3Aopen+Articles+Feed" title="Opens GitHub to search for similar issues">
     <button>Find similar bugs</button>
 </a>
 
-<a href="https://github.com/RSS-Bridge/rss-bridge/issues/new?title=USENIX+failed+with%3A+https%3A%2F%2Fwww.usenix.org%2Fpublications%2Floginonline+resulted+in+403+Forbidden&body=%60%60%60%0ACloudFlareException%3A+https%3A%2F%2Fwww.usenix.org%2Fpublications%2Floginonline+resulted+in+403+Forbidden+in+lib%2Fhttp.php+line+32%0A%0Aindex.php%2873%29%3A+RssBridge-%3Emain%28%29%0Alib%2FRssBridge.php%2839%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+BasicAuthMiddleware-%3E__invoke%28%29%0Amiddlewares%2FBasicAuthMiddleware.php%2813%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+CacheMiddleware-%3E__invoke%28%29%0Amiddlewares%2FCacheMiddleware.php%2844%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+ExceptionMiddleware-%3E__invoke%28%29%0Amiddlewares%2FExceptionMiddleware.php%2817%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+SecurityMiddleware-%3E__invoke%28%29%0Amiddlewares%2FSecurityMiddleware.php%2819%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+MaintenanceMiddleware-%3E__invoke%28%29%0Amiddlewares%2FMaintenanceMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+TokenAuthenticationMiddleware-%3E__invoke%28%29%0Amiddlewares%2FTokenAuthenticationMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2834%29%3A+DisplayAction-%3E__invoke%28%29%0Aactions%2FDisplayAction.php%2854%29%3A+DisplayAction-%3EcreateResponse%28%29%0Aactions%2FDisplayAction.php%2889%29%3A+UsenixBridge-%3EcollectData%28%29%0Abridges%2FUsenixBridge.php%2819%29%3A+UsenixBridge-%3EcollectLoginOnlineItems%28%29%0Abridges%2FUsenixBridge.php%2828%29%3A+getSimpleHTMLDOMCached%28%29%0Alib%2Fcontents.php%28269%29%3A+getContents%28%29%0Alib%2Fcontents.php%28161%29%3A+HttpException%3A%3AfromResponse%28%29%0Alib%2Fhttp.php%2832%29%0A%0AQuery+string%3A+action%3Ddisplay%26bridge%3DUsenixBridge%26context%3DUSENIX%2B%253Blogin%253A%26format%3DHtml%0AVersion%3A+2025-08-05+%28git.fork-master.c85f0cf%29%0AOs%3A+Linux%0APHP+version%3A+8.2.35%0A%60%60%60%0AMaintainer%3A+%40dvikan&labels=Bridge-Broken&assignee=d" title="After clicking this button you can review the issue before submitting it">
+<a href="https://github.com/RSS-Bridge/rss-bridge/issues/new?title=Articles+Feed+failed+with%3A+https%3A%2F%2Fwww.overtake.gg%2Fnews%2Fblack-friday-2026-the-best-sim-racing-deals.5034%2F+resulted+in+403+Forbidden&body=%60%60%60%0ACloudFlareException%3A+https%3A%2F%2Fwww.overtake.gg%2Fnews%2Fblack-friday-2026-the-best-sim-racing-deals.5034%2F+resulted+in+403+Forbidden+in+lib%2Fhttp.php+line+32%0A%0Aindex.php%2873%29%3A+RssBridge-%3Emain%28%29%0Alib%2FRssBridge.php%2839%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+BasicAuthMiddleware-%3E__invoke%28%29%0Amiddlewares%2FBasicAuthMiddleware.php%2813%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+CacheMiddleware-%3E__invoke%28%29%0Amiddlewares%2FCacheMiddleware.php%2844%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+ExceptionMiddleware-%3E__invoke%28%29%0Amiddlewares%2FExceptionMiddleware.php%2817%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+SecurityMiddleware-%3E__invoke%28%29%0Amiddlewares%2FSecurityMiddleware.php%2819%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+MaintenanceMiddleware-%3E__invoke%28%29%0Amiddlewares%2FMaintenanceMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2837%29%3A+TokenAuthenticationMiddleware-%3E__invoke%28%29%0Amiddlewares%2FTokenAuthenticationMiddleware.php%2810%29%3A+RssBridge-%3E%7Bclosure%7D%28%29%0Alib%2FRssBridge.php%2834%29%3A+DisplayAction-%3E__invoke%28%29%0Aactions%2FDisplayAction.php%2854%29%3A+DisplayAction-%3EcreateResponse%28%29%0Aactions%2FDisplayAction.php%2889%29%3A+OvertakeBridge-%3EcollectData%28%29%0Abridges%2FOvertakeBridge.php%2813%29%3A+FeedExpander-%3EcollectExpandableDatas%28%29%0Alib%2FFeedExpander.php%2838%29%3A+OvertakeBridge-%3EparseItem%28%29%0Abridges%2FOvertakeBridge.php%2818%29%3A+getSimpleHTMLDOMCached%28%29%0Alib%2Fcontents.php%28269%29%3A+getContents%28%29%0Alib%2Fcontents.php%28161%29%3A+HttpException%3A%3AfromResponse%28%29%0Alib%2Fhttp.php%2832%29%0A%0AQuery+string%3A+action%3Ddisplay%26bridge%3DOvertakeBridge%26format%3DHtml%0AVersion%3A+2025-08-05+%28git.fork-master.27d148d%29%0AOs%3A+Linux%0APHP+version%3A+8.2.35%0A%60%60%60%0AMaintainer%3A+%40t0stiman&labels=Bridge-Broken&assignee=t" title="After clicking this button you can review the issue before submitting it">
     <button>Create GitHub Issue</button>
 </a>
 
 <p class="maintainer">
-    dvikan</p>                </div>
+    t0stiman</p>                </div>
 
                 
                             </section>
